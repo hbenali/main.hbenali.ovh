@@ -1,29 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IP Address Detector</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #1f2937, #111827);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        color: #fff;
+    }
+
+    .card {
+        background: #1e293b;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        width: 400px;
+        max-width: 90%;
+        text-align: center;
+        transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    h1 {
+        margin-top: 0;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 25px;
+    }
+
+    .ip-box {
+        background: #0f172a;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .label {
+        opacity: 0.7;
+    }
+
+    .value {
+        font-family: monospace;
+        font-size: 14px;
+        word-break: break-all;
+    }
+
+    .loading {
+        opacity: 0.7;
+        font-style: italic;
+    }
+
+    .footer {
+        margin-top: 20px;
+        font-size: 12px;
+        opacity: 0.5;
+    }
+</style>
+</head>
 <body>
-<h3>Your IP Addresses</h3>
-<div id="result">Loading...</div>
+
+<div class="card">
+    <h1>Your IP Addresses</h1>
+
+    <div class="ip-box">
+        <span class="label">IPv4</span>
+        <span class="value" id="ipv4">Loading...</span>
+    </div>
+
+    <div class="ip-box">
+        <span class="label">IPv6</span>
+        <span class="value" id="ipv6">Checking...</span>
+    </div>
+
+    <div class="footer">
+        Public IP detection via ipify
+    </div>
+</div>
 
 <script>
+function isIPv6(ip) {
+    return ip.includes(":");
+}
+
 async function getIPs() {
     try {
-        const ipv4 = await fetch("https://api.ipify.org?format=json")
-            .then(res => res.json());
+        // IPv4
+        const ipv4Res = await fetch("https://api.ipify.org?format=json");
+        const ipv4Data = await ipv4Res.json();
+        document.getElementById("ipv4").textContent = ipv4Data.ip;
 
-        const ipv6 = await fetch("https://api64.ipify.org?format=json")
-            .then(res => res.json());
+        // IPv6 (if available)
+        const ipv6Res = await fetch("https://api64.ipify.org?format=json");
+        const ipv6Data = await ipv6Res.json();
 
-        document.getElementById("result").innerHTML =
-            "<strong>IPv4:</strong> " + ipv4.ip + "<br>" +
-            "<strong>IPv6:</strong> " + ipv6.ip;
+        if (isIPv6(ipv6Data.ip)) {
+            document.getElementById("ipv6").textContent = ipv6Data.ip;
+        } else {
+            document.getElementById("ipv6").textContent = "Not available";
+        }
 
-    } catch (e) {
-        document.getElementById("result").innerText =
-            "Could not retrieve IP addresses.";
+    } catch (error) {
+        document.getElementById("ipv4").textContent = "Error";
+        document.getElementById("ipv6").textContent = "Error";
     }
 }
 
 getIPs();
 </script>
+
 </body>
 </html>
