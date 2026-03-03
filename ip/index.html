@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Your IP Addresses</h3>
+<div id="result">Loading...</div>
+
+<script>
+async function getIPs() {
+    try {
+        const ipv4 = await fetch("https://api.ipify.org?format=json")
+            .then(res => res.json());
+
+        const ipv6 = await fetch("https://api64.ipify.org?format=json")
+            .then(res => res.json());
+
+        document.getElementById("result").innerHTML =
+            "<strong>IPv4:</strong> " + ipv4.ip + "<br>" +
+            "<strong>IPv6:</strong> " + ipv6.ip;
+
+    } catch (e) {
+        document.getElementById("result").innerText =
+            "Could not retrieve IP addresses.";
+    }
+}
+
+getIPs();
+</script>
+</body>
+</html>
