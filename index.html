@@ -4,19 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="10;url=https://about.hbenali.ovh">
-    <title>hbenali.ovh - Under Construction</title>
+    <title>hbenali.ovh - Houssem Ben Ali | DevOps Engineer & Security Tools</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="Houssem Ben Ali - DevOps Engineer portfolio and security tools. Explore CAA, DKIM, SPF, DMARC, BIMI, and IP inspection tools.">
+    <meta name="keywords" content="DevOps, Security, Email Authentication, CAA, DKIM, SPF, DMARC, BIMI, IP Inspector, Houssem Ben Ali">
+    <meta name="author" content="Houssem Ben Ali">
     
     <!-- Favicon Section -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Fonts -->
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#3b82f6">
+    <meta name="msapplication-TileColor" content="#3b82f6">
+    <meta name="theme-color" content="#0f172a">
+    
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -71,21 +75,13 @@
             box-sizing: border-box;
         }
 
-        html, body {
-            height: 100%;
-        }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.7;
             color: var(--text);
             background: var(--bg);
             transition: background-color 0.4s ease, color 0.4s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             min-height: 100vh;
-            overflow: hidden;
         }
 
         /* Animated Background */
@@ -132,34 +128,20 @@
             animation: float 15s infinite ease-in-out;
         }
 
-        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
-        .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 14s; }
-        .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 16s; }
-        .particle:nth-child(4) { left: 40%; animation-delay: 1s; animation-duration: 13s; }
-        .particle:nth-child(5) { left: 50%; animation-delay: 3s; animation-duration: 15s; }
-        .particle:nth-child(6) { left: 60%; animation-delay: 5s; animation-duration: 11s; }
-        .particle:nth-child(7) { left: 70%; animation-delay: 2.5s; animation-duration: 14s; }
-        .particle:nth-child(8) { left: 80%; animation-delay: 1.5s; animation-duration: 12s; }
-        .particle:nth-child(9) { left: 90%; animation-delay: 4.5s; animation-duration: 16s; }
-
         @keyframes float {
             0%, 100% {
                 transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
-            10% {
-                opacity: 0.3;
-            }
-            90% {
-                opacity: 0.3;
-            }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
             100% {
                 transform: translateY(-100vh) rotate(720deg);
                 opacity: 0;
             }
         }
-
-        /* Theme Toggle */
+        
+        /* Controls */
         .controls {
             position: fixed;
             top: 1.5rem;
@@ -179,155 +161,116 @@
             font-size: 1.1rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .theme-toggle {
             background: linear-gradient(135deg, var(--accent), var(--accent-dark));
             color: white;
-            box-shadow: var(--shadow-lg), 0 0 20px rgba(59, 130, 246, 0.3);
+            box-shadow: var(--shadow-lg);
         }
 
-        .theme-toggle:hover {
+        .control-btn:hover {
             transform: scale(1.1) rotate(15deg);
-            box-shadow: var(--shadow-xl), 0 0 30px rgba(59, 130, 246, 0.4);
         }
 
         /* Main Container */
         .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
             text-align: center;
-            padding: 2rem;
-            max-width: 600px;
+            margin-bottom: 4rem;
         }
 
-        /* Card */
-        .card {
-            background: var(--card-bg);
-            border-radius: var(--radius-xl);
-            border: 1px solid var(--card-border);
-            padding: 3rem 2.5rem;
-            box-shadow: var(--shadow-xl);
-            position: relative;
-            overflow: hidden;
-            animation: slideUp 0.8s ease forwards;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Construction Icon */
-        .icon-container {
-            width: 100px;
-            height: 100px;
+        .avatar {
+            width: 120px;
+            height: 120px;
             margin: 0 auto 1.5rem;
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
-            animation: pulse-icon 2s infinite ease-in-out;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+            animation: pulse 2s infinite ease-in-out;
         }
 
-        .icon-container i {
-            font-size: 2.5rem;
+        .avatar i {
+            font-size: 3rem;
             color: white;
         }
 
-        @keyframes pulse-icon {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 15px 50px rgba(59, 130, 246, 0.4);
-            }
-        }
-
-        /* Animated gear */
-        .gear-spin {
-            animation: spin 4s linear infinite;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 25px 50px rgba(59, 130, 246, 0.4); }
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--text), var(--text-secondary));
+            background: linear-gradient(135deg, var(--text), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
         }
 
-        .domain {
-            font-size: 1.1rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 1rem;
-            display: flex;
+        .badge {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
             gap: 0.5rem;
-        }
-
-        .domain::before {
-            content: '‹';
-            opacity: 0.5;
-        }
-
-        .domain::after {
-            content: '/›';
-            opacity: 0.5;
-        }
-
-        .message {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-
-        /* Progress bar */
-        .progress-container {
             background: var(--bg-secondary);
-            border-radius: 1rem;
-            height: 8px;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
+            border: 1px solid var(--card-border);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .badge i {
+            font-size: 0.9rem;
+        }
+
+        .hero-description {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Progress Banner */
+        .progress-banner {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
             border: 1px solid var(--card-border);
         }
 
-        .progress-bar {
+        .progress-banner p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .progress-bar-container {
+            width: 200px;
+            height: 6px;
+            background: var(--bg-secondary);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
             height: 100%;
+            width: 65%;
             background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-            border-radius: 1rem;
-            animation: progress 2s ease-in-out infinite;
-            width: 60%;
+            border-radius: 3px;
+            animation: progress 3s ease-in-out infinite;
         }
 
         @keyframes progress {
@@ -336,76 +279,178 @@
             100% { width: 20%; }
         }
 
-        /* Countdown */
         .countdown {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-            padding: 0.75rem 1.25rem;
-            background: var(--bg-secondary);
-            border-radius: 2rem;
-            display: inline-flex;
-            border: 1px solid var(--card-border);
-        }
-
-        .countdown i {
+            font-weight: 600;
             color: var(--accent);
-        }
-
-        .countdown-text {
-            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
             font-size: 0.9rem;
         }
 
-        .countdown-number {
-            font-weight: 700;
-            color: var(--accent);
-            font-size: 1rem;
-            min-width: 1.5rem;
-            display: inline-block;
-        }
-
-        /* CTA Button */
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-            color: white;
+        .skip-link {
+            color: var(--text-secondary);
             text-decoration: none;
-            border-radius: 2rem;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .skip-link:hover {
+            color: var(--accent);
+        }
+
+        /* Projects Grid */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title i {
+            color: var(--accent);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--accent);
+        }
+
+        .project-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .project-card h3 {
+            font-size: 1.2rem;
             font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: var(--shadow-lg), 0 0 20px rgba(59, 130, 246, 0.2);
-            border: none;
-            cursor: pointer;
+            margin-bottom: 0.5rem;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl), 0 0 30px rgba(59, 130, 246, 0.4);
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
         }
 
-        .cta-button i {
-            transition: transform 0.3s ease;
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
-        .cta-button:hover i {
-            transform: translateX(4px);
+        .tag {
+            background: var(--bg-secondary);
+            padding: 0.2rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--accent);
+            border: 1px solid var(--card-border);
         }
 
-        /* Social links */
+        /* About Section */
+        .about-section {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .stats {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: 1rem;
+        }
+
+        .stat-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--card-bg);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        .stat-info h4 {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .stat-info p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* Social Links */
         .social-links {
             display: flex;
             gap: 1rem;
             justify-content: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--card-border);
+            margin: 2rem 0;
         }
 
         .social-links a {
@@ -418,7 +463,7 @@
             border-radius: 50%;
             color: var(--text-secondary);
             font-size: 1.1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             border: 1px solid var(--card-border);
         }
 
@@ -426,47 +471,57 @@
             background: var(--accent);
             color: white;
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
         }
 
         /* Footer */
         .footer {
-            margin-top: 2rem;
+            text-align: center;
             color: var(--text-secondary);
             font-size: 0.85rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive */
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             .container {
-                padding: 1rem;
-            }
-
-            .card {
                 padding: 2rem 1.5rem;
             }
-
+            
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
-
-            .icon-container {
-                width: 80px;
-                height: 80px;
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
-
-            .icon-container i {
-                font-size: 2rem;
+            
+            .about-content {
+                flex-direction: column;
             }
-
+            
             .controls {
                 top: 1rem;
                 right: 1rem;
             }
-
+            
             .control-btn {
-                width: 44px;
-                height: 44px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .progress-banner p {
+                flex-direction: column;
             }
         }
     </style>
@@ -474,18 +529,7 @@
 
 <body>
     <div class="bg-gradient"></div>
-    
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
+    <div class="particles" id="particles"></div>
 
     <div class="controls">
         <button class="control-btn theme-toggle" aria-label="Toggle dark mode">
@@ -494,50 +538,137 @@
     </div>
 
     <div class="container">
-        <div class="card">
-            <div class="icon-container">
-                <i class="fas fa-cog gear-spin"></i>
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="avatar">
+                <i class="fas fa-user-astronaut"></i>
             </div>
-            
-            <h1>Under Construction</h1>
-            <p class="domain">hbenali.ovh</p>
-            
-            <p class="message">
-                I'm working on something awesome! This site is currently under construction. 
-                In the meantime, check out my about page for more information.
+            <div class="badge">
+                <i class="fas fa-map-marker-alt"></i> Tunisia / France · Remote
+                <i class="fas fa-circle" style="font-size: 4px; margin: 0 0.5rem;"></i>
+                5+ Years Experience
+            </div>
+            <h1>Houssem Ben Ali</h1>
+            <p class="hero-description">DevOps Engineer & Security Enthusiast. Building tools to make the internet more secure, one DNS record at a time.</p>
+        </div>
+
+        <!-- Progress Banner - Increased time to 30 seconds -->
+        <div class="progress-banner">
+            <p>
+                <i class="fas fa-tools"></i>
+                <span>Main site under construction — launching soon</span>
+                <span class="progress-bar-container"><span class="progress-bar-fill"></span></span>
+                <span class="countdown" id="countdown">⏳ Redirecting in 30s</span>
+                <a href="https://about.hbenali.ovh" class="skip-link" style="color: var(--accent); text-decoration: none; font-weight: 500;">Go now →</a>
             </p>
+        </div>
 
-            <div class="progress-container">
-                <div class="progress-bar"></div>
-            </div>
-
-            <div class="countdown">
-                <i class="fas fa-clock"></i>
-                <span class="countdown-text">Redirecting in <span class="countdown-number" id="countdown">10</span> seconds...</span>
-            </div>
-
-            <a href="https://about.hbenali.ovh" class="cta-button">
-                <span>Visit About Page</span>
-                <i class="fas fa-arrow-right"></i>
+        <!-- Projects Section -->
+        <div class="section-title">
+            <i class="fas fa-cubes"></i>
+            <span>My Security Tools</span>
+        </div>
+        <div class="projects-grid">
+            <a href="https://caa.hbenali.ovh" class="project-card" target="_blank">
+                <div class="project-icon"><i class="fas fa-lock"></i></div>
+                <h3>CAA Inspector</h3>
+                <p>Check Certification Authority Authorization records. Verify which CAs can issue certificates for your domain and ensure only authorized certificate authorities can issue SSL/TLS certificates.</p>
+                <div class="project-tags"><span class="tag">PKI</span><span class="tag">SSL/TLS</span><span class="tag">Security</span></div>
             </a>
+            <a href="https://dkim.hbenali.ovh" class="project-card" target="_blank">
+                <div class="project-icon"><i class="fas fa-envelope"></i></div>
+                <h3>DKIM Validator</h3>
+                <p>Validate DomainKeys Identified Mail records. Ensure your emails are properly authenticated, preventing spoofing and improving email deliverability to inboxes.</p>
+                <div class="project-tags"><span class="tag">Email Security</span><span class="tag">DKIM</span><span class="tag">Authentication</span></div>
+            </a>
+            <a href="https://spf.hbenali.ovh" class="project-card" target="_blank">
+                <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>SPF Checker</h3>
+                <p>Inspect Sender Policy Framework records. Prevent email spoofing by verifying authorized mail servers and protecting your domain from being used in phishing attacks.</p>
+                <div class="project-tags"><span class="tag">SPF</span><span class="tag">Anti-Spoofing</span><span class="tag">Email</span></div>
+            </a>
+            <a href="https://dmarc.hbenali.ovh" class="project-card" target="_blank">
+                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>DMARC Analyzer</h3>
+                <p>Analyze DMARC reports and policies. Monitor email authentication, receive aggregate reports, and protect your domain from unauthorized use with actionable insights.</p>
+                <div class="project-tags"><span class="tag">DMARC</span><span class="tag">Reporting</span><span class="tag">Compliance</span></div>
+            </a>
+            <a href="https://bimi.hbenali.ovh" class="project-card" target="_blank">
+                <div class="project-icon"><i class="fas fa-image"></i></div>
+                <h3>BIMI Inspector</h3>
+                <p>Check BIMI records and logo requirements. Display your brand logo in supported email clients (Gmail, Apple Mail, Yahoo) and increase brand trust and recognition.</p>
+                <div class="project-tags"><span class="tag">BIMI</span><span class="tag">Branding</span><span class="tag">Email</span></div>
+            </a>
+            <a href="https://ip.hbenali.ovh" class="project-card" target="_blank">
+                <div class="project-icon"><i class="fas fa-globe"></i></div>
+                <h3>IP Inspector</h3>
+                <p>Geolocation, network intelligence, and security insights for any IP address or domain. Get ISP information, coordinates, VPN detection, and risk assessment.</p>
+                <div class="project-tags"><span class="tag">Network</span><span class="tag">Geolocation</span><span class="tag">Security</span></div>
+            </a>
+        </div>
 
-            <div class="social-links">
-                <a href="https://github.com/hbenali" target="_blank" rel="noopener" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://linkedin.com/in/houssembali" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="mailto:contact@hbenali.ovh" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+        <!-- About Section -->
+        <div class="about-section">
+            <div class="section-title" style="margin-top: 0;">
+                <i class="fas fa-user-circle"></i>
+                <span>About Me</span>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>DevOps Engineer with 5+ years of experience in infrastructure automation, CI/CD pipelines, and security. Passionate about building tools that help developers and sysadmins secure their infrastructure and understand complex security standards.</p>
+                    <p>Currently working at <strong>eXo Platform</strong> managing cloud infrastructure, implementing security best practices, and automating everything from CI/CD to monitoring. Created these security tools to help the community understand and implement email authentication standards like SPF, DKIM, DMARC, and BIMI.</p>
+                    <p>All tools are open-source and free to use. Explore them above to check your domain's security posture!</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-code"></i></div>
+                        <div class="stat-info"><h4>Experience</h4><p>5+ Years</p></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-tools"></i></div>
+                        <div class="stat-info"><h4>Tools & Tech</h4><p>50+</p></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-language"></i></div>
+                        <div class="stat-info"><h4>Languages</h4><p>Arabic · French · English</p></div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-globe"></i></div>
+                        <div class="stat-info"><h4>Security Tools</h4><p>6 Active</p></div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <p class="footer">© 2026 Houssem Ben Ali</p>
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://github.com/hbenali" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/houssembali" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:contact@hbenali.ovh" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://about.hbenali.ovh" target="_blank" aria-label="About"><i class="fas fa-user"></i></a>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Houssem Ben Ali · <a href="https://github.com/hbenali" target="_blank">GitHub</a> · <a href="https://about.hbenali.ovh" target="_blank">About Me</a> · All tools are free and open-source</p>
+        </div>
     </div>
 
     <script>
+        // Generate particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 15;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 10}s`;
+                particle.style.animationDuration = `${12 + Math.random() * 8}s`;
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
         // Dark mode toggle
         const themeToggle = document.querySelector('.theme-toggle');
         const icon = themeToggle.querySelector('i');
@@ -570,13 +701,13 @@
             }
         });
 
-        // Countdown timer
-        let seconds = 10;
+        // Countdown timer - INCREASED TO 30 SECONDS
+        let seconds = 30;
         const countdownEl = document.getElementById('countdown');
 
         const countdown = setInterval(() => {
             seconds--;
-            countdownEl.textContent = seconds;
+            countdownEl.textContent = `⏳ Redirecting in ${seconds}s`;
             
             if (seconds <= 0) {
                 clearInterval(countdown);
