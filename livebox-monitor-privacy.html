@@ -144,6 +144,8 @@
             top: 1.5rem;
             right: 1.5rem;
             z-index: 100;
+            display: flex;
+            gap: 0.6rem;
         }
 
         .control-btn {
@@ -170,6 +172,13 @@
             color: white;
             border-color: var(--accent);
             box-shadow: 0 8px 24px var(--accent-glow);
+        }
+
+        .lang-toggle {
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
         }
 
         .container {
@@ -292,76 +301,170 @@
     </div>
 
     <div class="controls">
+        <button class="control-btn lang-toggle" aria-label="Switch language" title="Switch language">
+            <span class="lang-toggle-label">FR</span>
+        </button>
         <button class="control-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
             <i class="fas fa-moon"></i>
         </button>
     </div>
 
     <div class="container">
-        <a href="https://about.hbenali.ovh" class="back-link"><i class="fas fa-arrow-left"></i> Back to hbenali.ovh</a>
+        <div id="lang-en" class="lang-content">
+            <a href="https://about.hbenali.ovh" class="back-link"><i class="fas fa-arrow-left"></i> Back to hbenali.ovh</a>
 
-        <div class="page-header">
-            <div class="badge"><i class="fas fa-wifi"></i> Livebox Monitor for Android</div>
-            <h1>Privacy Policy</h1>
-            <p class="updated">Last updated: July 27, 2026</p>
+            <div class="page-header">
+                <div class="badge"><i class="fas fa-wifi"></i> Livebox Monitor for Android</div>
+                <h1>Privacy Policy</h1>
+                <p class="updated">Last updated: August 8, 2026</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                <p>Livebox Monitor is an unofficial, community-built companion app for Orange Livebox routers. It is not affiliated with, endorsed by, or officially provided by Orange S.A. or Orange France. Livebox is a registered trademark of Orange Brand Services Limited.</p>
+                <p>The app is a pure client: it talks directly from your phone to your own Livebox router on your local network (or to a remote address you configure yourself). There is no backend server operated by the developer and no user accounts. The only third parties involved are Google Play's own services, covered below.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-key"></i> Livebox credentials</h2>
+                <p>Your Livebox address, username, and password (if you choose "Remember password") are stored only on your device, encrypted using Android's EncryptedSharedPreferences (AES-256). They are never transmitted anywhere except directly to your own Livebox for authentication.</p>
+                <p>If you choose to save your password with your device's password manager (Google Password Manager or Samsung Pass), that copy is handled entirely by the password manager itself, under its own privacy policy - the app never sees or stores it.</p>
+                <p>You can erase all stored credentials at any time from Settings &rarr; "Forget credentials", or by uninstalling the app.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-fingerprint"></i> Biometric unlock</h2>
+                <p>If you enable fingerprint sign-in, authentication is handled entirely by Android's own BiometricPrompt API and your device's secure hardware. The app never receives, stores, or transmits any biometric data.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-globe"></i> WAN location lookup</h2>
+                <p>The Livebox Info screen can show the approximate geographic location and ISP of your router's public IP address. To do this, the app sends that public IP address (nothing else) to two third-party services when you view that screen:</p>
+                <ul>
+                    <li><strong>ip-api.com</strong> - for geolocation and ISP/organization data</li>
+                    <li><strong>OpenStreetMap's tile server</strong> - to display an approximate map image</li>
+                </ul>
+                <p>A reverse-DNS (PTR) lookup for the same IP is also performed, using your device's normal DNS resolver - the same kind of lookup any app or browser can trigger, and not something the app sends to any third party itself.</p>
+                <p>No other data is included in these requests, and they only happen when you open that specific screen.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-bell"></i> New-device notifications</h2>
+                <p>If you enable "New device alerts" in Settings, the app periodically connects directly to your own Livebox in the background (using your locally stored, encrypted credentials) to check for unrecognized devices on your network, and shows a local notification if one appears. This check never leaves your phone and your Livebox - no third party is involved.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-bug"></i> Crash reporting</h2>
+                <p>The app uses Firebase Crashlytics (a Google service) to automatically send a report when it crashes, so bugs can be found and fixed. These reports contain only technical details - a stack trace, device model, Android version, and app version - and aren't intentionally linked to your identity or your Livebox.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-google"></i> Google Play services</h2>
+                <p>A couple of optional features rely on Google Play's own infrastructure on your device: checking for and installing app updates, and - once the app has proven useful a few times - a native, Play-provided prompt to rate it, which Play itself decides whether to actually show. Both are handled entirely by Google Play; the app doesn't see or control what data Play associates with them.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-cog"></i> App preferences</h2>
+                <p>Your theme, language, and device-icon choices are stored locally on your device only, and are never transmitted anywhere.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-child"></i> Children's privacy</h2>
+                <p>Livebox Monitor is a network administration tool and is not directed at children. It does not knowingly collect any information from children.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-file-alt"></i> Changes to this policy</h2>
+                <p>If this policy changes, the "Last updated" date above will be revised. Continued use of the app after a change constitutes acceptance of the updated policy.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-envelope"></i> Contact</h2>
+                <p>Questions about this policy or the app can be sent to <a href="mailto:contact@hbenali.ovh" style="color: var(--accent);">contact@hbenali.ovh</a>.</p>
+            </div>
+
+            <footer>
+                &copy; 2026 Houssem Ben Ali &middot; <a href="https://about.hbenali.ovh">hbenali.ovh</a>
+            </footer>
         </div>
 
-        <div class="card">
-            <h2><i class="fas fa-info-circle"></i> Overview</h2>
-            <p>Livebox Monitor is an unofficial, community-built companion app for Orange Livebox routers. It is not affiliated with, endorsed by, or officially provided by Orange S.A. or Orange France.</p>
-            <p>The app is a pure client: it talks directly from your phone to your own Livebox router on your local network (or to a remote address you configure yourself). There is no backend server operated by the developer, no user accounts, and no analytics or advertising SDKs of any kind.</p>
-        </div>
+        <div id="lang-fr" class="lang-content" style="display: none;">
+            <a href="https://about.hbenali.ovh" class="back-link"><i class="fas fa-arrow-left"></i> Retour à hbenali.ovh</a>
 
-        <div class="card">
-            <h2><i class="fas fa-key"></i> Livebox credentials</h2>
-            <p>Your Livebox address, username, and password (if you choose "Remember password") are stored only on your device, encrypted using Android's EncryptedSharedPreferences (AES-256). They are never transmitted anywhere except directly to your own Livebox for authentication.</p>
-            <p>You can erase all stored credentials at any time from Settings &rarr; "Forget credentials", or by uninstalling the app.</p>
-        </div>
+            <div class="page-header">
+                <div class="badge"><i class="fas fa-wifi"></i> Livebox Monitor pour Android</div>
+                <h1>Politique de confidentialité</h1>
+                <p class="updated">Dernière mise à jour : 8 août 2026</p>
+            </div>
 
-        <div class="card">
-            <h2><i class="fas fa-fingerprint"></i> Biometric unlock</h2>
-            <p>If you enable fingerprint sign-in, authentication is handled entirely by Android's own BiometricPrompt API and your device's secure hardware. The app never receives, stores, or transmits any biometric data.</p>
-        </div>
+            <div class="card">
+                <h2><i class="fas fa-info-circle"></i> Aperçu</h2>
+                <p>Livebox Monitor est une application non officielle, développée par la communauté, pour les routeurs Livebox d'Orange. Elle n'est ni affiliée à, ni approuvée par, ni officiellement fournie par Orange S.A. ou Orange France. Livebox est une marque déposée d'Orange Brand Services Limited.</p>
+                <p>L'application est un simple client : elle communique directement depuis votre téléphone avec votre propre Livebox sur votre réseau local (ou avec une adresse distante que vous configurez vous-même). Il n'y a pas de serveur backend exploité par le développeur, ni de comptes utilisateurs. Les seuls tiers impliqués sont les services de Google Play eux-mêmes, détaillés plus bas.</p>
+            </div>
 
-        <div class="card">
-            <h2><i class="fas fa-globe"></i> WAN location lookup</h2>
-            <p>The Livebox Info screen can show the approximate geographic location and ISP of your router's public IP address. To do this, the app sends that public IP address (nothing else) to two third-party services when you view that screen:</p>
-            <ul>
-                <li><strong>ip-api.com</strong> - for geolocation and ISP/organization data</li>
-                <li><strong>OpenStreetMap's tile server</strong> - to display an approximate map image</li>
-            </ul>
-            <p>A reverse-DNS (PTR) lookup for the same IP is also performed, using your device's normal DNS resolver - the same kind of lookup any app or browser can trigger, and not something the app sends to any third party itself.</p>
-            <p>No other data is included in these requests, and they only happen when you open that specific screen.</p>
-        </div>
+            <div class="card">
+                <h2><i class="fas fa-key"></i> Identifiants Livebox</h2>
+                <p>Votre adresse Livebox, votre identifiant et votre mot de passe (si vous activez « Se souvenir du mot de passe ») sont stockés uniquement sur votre appareil, chiffrés avec EncryptedSharedPreferences d'Android (AES-256). Ils ne sont jamais transmis ailleurs qu'à votre propre Livebox, pour l'authentification.</p>
+                <p>Si vous choisissez d'enregistrer votre mot de passe avec le gestionnaire de mots de passe de votre appareil (gestionnaire de mots de passe Google ou Samsung Pass), cette copie est gérée entièrement par le gestionnaire de mots de passe lui-même, selon sa propre politique de confidentialité - l'application ne la voit ni ne la stocke jamais.</p>
+                <p>Vous pouvez effacer tous les identifiants enregistrés à tout moment depuis Paramètres &rarr; « Oublier les identifiants », ou en désinstallant l'application.</p>
+            </div>
 
-        <div class="card">
-            <h2><i class="fas fa-bell"></i> New-device notifications</h2>
-            <p>If you enable "New device alerts" in Settings, the app periodically connects directly to your own Livebox in the background (using your locally stored, encrypted credentials) to check for unrecognized devices on your network, and shows a local notification if one appears. This check never leaves your phone and your Livebox - no third party is involved.</p>
-        </div>
+            <div class="card">
+                <h2><i class="fas fa-fingerprint"></i> Déverrouillage biométrique</h2>
+                <p>Si vous activez la connexion par empreinte digitale, l'authentification est entièrement gérée par l'API BiometricPrompt d'Android et le matériel sécurisé de votre appareil. L'application ne reçoit, ne stocke, ni ne transmet aucune donnée biométrique.</p>
+            </div>
 
-        <div class="card">
-            <h2><i class="fas fa-cog"></i> App preferences</h2>
-            <p>Your theme, language, and device-icon choices are stored locally on your device only, and are never transmitted anywhere.</p>
-        </div>
+            <div class="card">
+                <h2><i class="fas fa-globe"></i> Localisation de l'adresse IP publique</h2>
+                <p>L'écran Infos Livebox peut afficher la localisation géographique approximative et le fournisseur d'accès associés à l'adresse IP publique de votre routeur. Pour cela, l'application envoie cette adresse IP publique (rien d'autre) à deux services tiers lorsque vous consultez cet écran :</p>
+                <ul>
+                    <li><strong>ip-api.com</strong> - pour la géolocalisation et les données de FAI/organisation</li>
+                    <li><strong>Le serveur de tuiles d'OpenStreetMap</strong> - pour afficher une carte approximative</li>
+                </ul>
+                <p>Une recherche DNS inversée (PTR) pour cette même adresse IP est également effectuée, via le résolveur DNS habituel de votre appareil - le même type de recherche que n'importe quelle application ou navigateur peut déclencher, et non quelque chose que l'application envoie elle-même à un tiers.</p>
+                <p>Aucune autre donnée n'est incluse dans ces requêtes, et elles n'ont lieu que lorsque vous ouvrez cet écran précis.</p>
+            </div>
 
-        <div class="card">
-            <h2><i class="fas fa-child"></i> Children's privacy</h2>
-            <p>Livebox Monitor is a network administration tool and is not directed at children. It does not knowingly collect any information from children.</p>
-        </div>
+            <div class="card">
+                <h2><i class="fas fa-bell"></i> Notifications de nouveaux appareils</h2>
+                <p>Si vous activez les « Alertes nouvel appareil » dans les Paramètres, l'application se connecte périodiquement, en arrière-plan, directement à votre propre Livebox (avec vos identifiants stockés localement et chiffrés) pour détecter les appareils inconnus sur votre réseau, et affiche une notification locale si l'un d'eux apparaît. Cette vérification ne quitte jamais votre téléphone et votre Livebox - aucun tiers n'est impliqué.</p>
+            </div>
 
-        <div class="card">
-            <h2><i class="fas fa-file-alt"></i> Changes to this policy</h2>
-            <p>If this policy changes, the "Last updated" date above will be revised. Continued use of the app after a change constitutes acceptance of the updated policy.</p>
-        </div>
+            <div class="card">
+                <h2><i class="fas fa-bug"></i> Rapports de plantage</h2>
+                <p>L'application utilise Firebase Crashlytics (un service Google) pour envoyer automatiquement un rapport en cas de plantage, afin que les bugs puissent être détectés et corrigés. Ces rapports contiennent uniquement des informations techniques - une pile d'appels, le modèle de l'appareil, la version d'Android et la version de l'application - et ne sont pas volontairement liés à votre identité ou à votre Livebox.</p>
+            </div>
 
-        <div class="card">
-            <h2><i class="fas fa-envelope"></i> Contact</h2>
-            <p>Questions about this policy or the app can be sent to <a href="mailto:contact@hbenali.ovh" style="color: var(--accent);">contact@hbenali.ovh</a>.</p>
-        </div>
+            <div class="card">
+                <h2><i class="fas fa-google"></i> Services Google Play</h2>
+                <p>Quelques fonctionnalités optionnelles s'appuient sur l'infrastructure propre de Google Play sur votre appareil : la vérification et l'installation des mises à jour de l'application, ainsi que - une fois que l'application s'est montrée utile à plusieurs reprises - une invite native fournie par Play pour la noter, Play décidant lui-même de l'afficher ou non. Les deux sont entièrement gérées par Google Play ; l'application ne voit ni ne contrôle les données que Play y associe.</p>
+            </div>
 
-        <footer>
-            &copy; 2026 Houssem Ben Ali &middot; <a href="https://about.hbenali.ovh">hbenali.ovh</a>
-        </footer>
+            <div class="card">
+                <h2><i class="fas fa-cog"></i> Préférences de l'application</h2>
+                <p>Votre thème, votre langue et vos choix d'icônes d'appareils sont stockés localement sur votre appareil uniquement, et ne sont jamais transmis ailleurs.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-child"></i> Confidentialité des enfants</h2>
+                <p>Livebox Monitor est un outil d'administration réseau et ne s'adresse pas aux enfants. Elle ne collecte sciemment aucune information auprès d'enfants.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-file-alt"></i> Modifications de cette politique</h2>
+                <p>Si cette politique change, la date de « Dernière mise à jour » ci-dessus sera révisée. L'utilisation continue de l'application après un changement constitue une acceptation de la politique mise à jour.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-envelope"></i> Contact</h2>
+                <p>Les questions sur cette politique ou sur l'application peuvent être envoyées à <a href="mailto:contact@hbenali.ovh" style="color: var(--accent);">contact@hbenali.ovh</a>.</p>
+            </div>
+
+            <footer>
+                &copy; 2026 Houssem Ben Ali &middot; <a href="https://about.hbenali.ovh">hbenali.ovh</a>
+            </footer>
+        </div>
     </div>
 
     <script>
@@ -392,6 +495,31 @@
 
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
             if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
+        });
+
+        const langToggle = document.querySelector('.lang-toggle');
+        const langLabel = langToggle.querySelector('.lang-toggle-label');
+        const contentEn = document.getElementById('lang-en');
+        const contentFr = document.getElementById('lang-fr');
+
+        const getPreferredLang = () => {
+            const saved = localStorage.getItem('lang');
+            if (saved) return saved;
+            return navigator.language.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+        };
+
+        const setLang = (lang) => {
+            contentEn.style.display = lang === 'en' ? '' : 'none';
+            contentFr.style.display = lang === 'fr' ? '' : 'none';
+            langLabel.textContent = lang === 'en' ? 'FR' : 'EN';
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+        };
+
+        setLang(getPreferredLang());
+
+        langToggle.addEventListener('click', () => {
+            setLang(contentEn.style.display === 'none' ? 'en' : 'fr');
         });
     </script>
 </body>
