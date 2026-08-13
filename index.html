@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hbenali.ovh - Houssem Ben Ali | DevOps Engineer & Security Tools</title>
+    <title>hbenali.ovh - Houssem Ben Ali | DevOps Engineer & Open-Source Security Tools</title>
 
     <!-- SEO -->
-    <meta name="description" content="Houssem Ben Ali - DevOps Engineer portfolio and security tools. Explore CAA, DKIM, SPF, DMARC, BIMI, and IP inspection tools.">
-    <meta name="keywords" content="DevOps, Security, Email Authentication, CAA, DKIM, SPF, DMARC, BIMI, IP Inspector, Houssem Ben Ali">
+    <meta name="description" content="Houssem Ben Ali - DevOps Engineer. Open-source security tools: CAA, DKIM, SPF, DMARC, BIMI, and IP inspection.">
+    <meta name="keywords" content="DevOps, Open Source, Security, Email Authentication, CAA, DKIM, SPF, DMARC, BIMI, IP Inspector, Houssem Ben Ali">
     <meta name="author" content="Houssem Ben Ali">
 
     <!-- Favicon Section -->
@@ -16,22 +16,22 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#3b82f6">
-    <meta name="theme-color" content="#0f172a">
+    <meta name="msapplication-TileColor" content="#3fb950">
+    <meta name="theme-color" content="#0d1117">
     <link rel="canonical" href="https://www.hbenali.ovh/">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="hbenali.ovh - Houssem Ben Ali | DevOps Engineer & Security Tools">
-    <meta property="og:description" content="DevOps Engineer portfolio and security tools. Explore CAA, DKIM, SPF, DMARC, BIMI, and IP inspection tools.">
+    <meta property="og:title" content="hbenali.ovh - Houssem Ben Ali | DevOps Engineer & Open-Source Security Tools">
+    <meta property="og:description" content="DevOps Engineer. Open-source security tools: CAA, DKIM, SPF, DMARC, BIMI, and IP inspection.">
     <meta property="og:url" content="https://www.hbenali.ovh/">
     <meta property="og:image" content="https://www.hbenali.ovh/android-chrome-512x512.png">
     <meta property="og:site_name" content="Houssem Ben Ali">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="hbenali.ovh - Houssem Ben Ali | DevOps Engineer & Security Tools">
-    <meta name="twitter:description" content="DevOps Engineer portfolio and security tools. Explore CAA, DKIM, SPF, DMARC, BIMI, and IP inspection tools.">
+    <meta name="twitter:title" content="hbenali.ovh - Houssem Ben Ali | DevOps Engineer & Open-Source Security Tools">
+    <meta name="twitter:description" content="DevOps Engineer. Open-source security tools: CAA, DKIM, SPF, DMARC, BIMI, and IP inspection.">
     <meta name="twitter:image" content="https://www.hbenali.ovh/android-chrome-512x512.png">
 
     <!-- Structured Data -->
@@ -47,17 +47,17 @@
             "https://github.com/hbenali",
             "https://about.hbenali.ovh/"
         ],
-        "knowsAbout": ["DevOps", "Security", "Email Authentication", "SPF", "DKIM", "DMARC", "BIMI", "CAA"]
+        "knowsAbout": ["DevOps", "Open Source", "Security", "Email Authentication", "SPF", "DKIM", "DMARC", "BIMI", "CAA", "Docker", "Kubernetes", "Terraform"]
     }
     </script>
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
 
@@ -69,41 +69,33 @@
         }
 
         :root {
-            --primary: #0f172a;
-            --secondary: #475569;
-            --accent: #3b82f6;
-            --accent-light: #60a5fa;
-            --accent-dark: #2563eb;
-            --accent-glow: rgba(59, 130, 246, 0.3);
             --bg: #ffffff;
-            --bg-secondary: #f1f5f9;
-            --text: #0f172a;
-            --text-secondary: #64748b;
-            --card-bg: rgba(255, 255, 255, 0.72);
-            --card-border: rgba(226, 232, 240, 0.5);
-            --card-shadow: rgba(0, 0, 0, 0.06);
-            --glow-color: rgba(59, 130, 246, 0.12);
-            --noise-opacity: 0.025;
-            --gradient-start: #3b82f6;
-            --gradient-end: #8b5cf6;
+            --bg-alt: #f6f8fa;
+            --border: #d0d7de;
+            --text: #1f2328;
+            --muted: #656d76;
+            --green: #1a7f37;
+            --cyan: #0969da;
+            --amber: #9a6700;
+            --red: #cf222e;
+            --purple: #8250df;
+            --shadow: rgba(31, 35, 40, 0.08);
+            --glow: rgba(9, 105, 218, 0.15);
         }
 
         [data-theme="dark"] {
-            --primary: #f1f5f9;
-            --secondary: #94a3b8;
-            --accent: #60a5fa;
-            --accent-light: #93c5fd;
-            --accent-dark: #3b82f6;
-            --accent-glow: rgba(96, 165, 250, 0.3);
-            --bg: #0b1120;
-            --bg-secondary: #131c31;
-            --text: #f1f5f9;
-            --text-secondary: #8899b4;
-            --card-bg: rgba(15, 23, 42, 0.72);
-            --card-border: rgba(51, 65, 85, 0.5);
-            --card-shadow: rgba(0, 0, 0, 0.3);
-            --glow-color: rgba(96, 165, 250, 0.08);
-            --noise-opacity: 0.03;
+            --bg: #0d1117;
+            --bg-alt: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --muted: #8b949e;
+            --green: #3fb950;
+            --cyan: #58a6ff;
+            --amber: #d29922;
+            --red: #f85149;
+            --purple: #bc8cff;
+            --shadow: rgba(0, 0, 0, 0.4);
+            --glow: rgba(63, 185, 80, 0.15);
         }
 
         html {
@@ -113,663 +105,566 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
             line-height: 1.7;
             color: var(--text);
             background: var(--bg);
-            transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: background-color 0.4s ease, color 0.4s ease;
             min-height: 100vh;
+            font-size: 15px;
         }
 
-        /* ── Noise ── */
-        body::after {
-            content: '';
+        /* ── Scroll Progress ── */
+        .scroll-progress {
             position: fixed;
-            inset: 0;
-            opacity: var(--noise-opacity);
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-            background-repeat: repeat;
-            background-size: 256px 256px;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: overlay;
-        }
-
-        /* ── Orbs ── */
-        .bg-orbs {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            will-change: transform;
-        }
-
-        .orb-1 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);
-            top: -15%;
-            left: -10%;
-            animation: orbFloat1 25s ease-in-out infinite;
-        }
-
-        .orb-2 {
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.25), transparent 70%);
-            bottom: -20%;
-            right: -10%;
-            animation: orbFloat2 30s ease-in-out infinite;
-        }
-
-        .orb-3 {
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.15), transparent 70%);
-            top: 50%;
-            left: 50%;
-            animation: orbFloat3 20s ease-in-out infinite;
-        }
-
-        [data-theme="dark"] .orb-1 { background: radial-gradient(circle, rgba(59, 130, 246, 0.35), transparent 70%); }
-        [data-theme="dark"] .orb-2 { background: radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent 70%); }
-        [data-theme="dark"] .orb-3 { background: radial-gradient(circle, rgba(16, 185, 129, 0.2), transparent 70%); }
-
-        @keyframes orbFloat1 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(60px, 40px) scale(1.08); }
-            66% { transform: translate(-30px, -20px) scale(0.95); }
-        }
-
-        @keyframes orbFloat2 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(-50px, -30px) scale(1.05); }
-            66% { transform: translate(40px, 20px) scale(0.92); }
-        }
-
-        @keyframes orbFloat3 {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); }
-            50% { transform: translate(-50%, -50%) scale(1.12); }
-        }
-
-        /* ── Cursor Glow ── */
-        .cursor-glow {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            will-change: transform;
-            transition: opacity 0.3s ease;
-            opacity: 0;
-        }
-
-        .cursor-glow.visible { opacity: 1; }
-
-        /* ── Particles ── */
-        .particles {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            will-change: transform;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--green), var(--cyan));
+            z-index: 200;
+            transition: width 0.1s linear;
         }
 
         /* ── Controls ── */
         .controls {
             position: fixed;
-            top: 1.5rem;
-            right: 1.5rem;
+            top: 1.25rem;
+            right: 1.25rem;
             z-index: 100;
-            display: flex;
-            gap: 0.75rem;
         }
 
         .control-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 14px;
-            border: 1px solid var(--card-border);
+            width: 38px;
+            height: 38px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.05rem;
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            color: var(--text-secondary);
-            box-shadow: 0 4px 16px var(--card-shadow);
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            background: var(--bg-alt);
+            color: var(--muted);
         }
 
         .control-btn:hover {
-            transform: scale(1.1) rotate(8deg);
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-            box-shadow: 0 8px 24px var(--accent-glow);
+            color: var(--cyan);
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 3px var(--glow);
         }
 
         /* ── Container ── */
         .container {
-            max-width: 1200px;
+            max-width: 880px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 4rem 1.5rem 3rem;
         }
 
-        /* ── Hero ── */
-        .hero {
-            text-align: center;
-            margin-bottom: 4rem;
-            opacity: 0;
-            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
-        }
-
-        .avatar {
-            width: 112px;
-            height: 112px;
-            margin: 0 auto 1.25rem;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 20px 40px var(--accent-glow);
-            position: relative;
-        }
-
-        .avatar::after {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            background: inherit;
-            opacity: 0.3;
-            filter: blur(16px);
-            z-index: -1;
-        }
-
-        .avatar i {
-            font-size: 2.75rem;
-            color: white;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--card-border);
-            padding: 0.4rem 1rem;
-            border-radius: 100px;
-            font-size: 0.85rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 12px var(--card-shadow);
-        }
-
-        .badge i { font-size: 0.8rem; }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-description {
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            font-size: 1.05rem;
-        }
-
-        /* ── Progress Banner ── */
-        .progress-banner {
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 1.25rem 1.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            box-shadow: 0 8px 32px var(--card-shadow);
-            opacity: 0;
-            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-        }
-
-        .progress-banner p {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .progress-bar-container {
-            width: 180px;
-            height: 6px;
-            background: var(--bg-secondary);
-            border-radius: 3px;
+        /* ── Terminal Window ── */
+        .terminal-window {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 10px;
             overflow: hidden;
+            box-shadow: 0 12px 40px var(--shadow);
+            opacity: 0;
+            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
         }
 
-        .progress-bar-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-            border-radius: 3px;
-            position: relative;
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .progress-bar-fill::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: shimmer 1.5s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        .countdown-badge {
-            font-weight: 600;
-            color: var(--accent);
-            background: var(--bg-secondary);
-            padding: 0.25rem 0.75rem;
-            border-radius: 100px;
-            font-size: 0.85rem;
-            display: inline-flex;
+        .terminal-titlebar {
+            display: flex;
             align-items: center;
-            gap: 0.35rem;
-            border: 1px solid var(--card-border);
+            gap: 0.75rem;
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-alt);
         }
 
-        .countdown-badge .digit {
-            display: inline-block;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        .terminal-title {
+            flex: 1;
+            text-align: left;
+            font-size: 0.78rem;
+            color: var(--muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .skip-link {
-            color: var(--text-secondary);
-            text-decoration: none;
+        .win-controls {
+            display: flex;
+            gap: 0.3rem;
+            flex-shrink: 0;
+        }
+
+        .win-btn {
+            width: 22px;
+            height: 22px;
+            border: none;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font: inherit;
+            color: var(--muted);
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+        }
+
+        .win-btn:hover {
+            background: var(--border);
+            color: var(--text);
+        }
+
+        .win-btn:active {
+            transform: scale(0.85);
+        }
+
+        .win-btn.win-close:hover {
+            background: var(--red);
+            color: #ffffff;
+        }
+
+        /* ── Window control animations ── */
+        .terminal-window.wm-pop {
+            animation: wmPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes wmPop {
+            0% { transform: scale(0.94); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .terminal-window.wm-closing {
+            animation: wmClose 0.35s cubic-bezier(0.4, 0, 1, 1) forwards;
+        }
+
+        @keyframes wmClose {
+            to { transform: scale(0.85); opacity: 0; }
+        }
+
+        .terminal-window.wm-maximized {
+            position: fixed;
+            inset: 1.25rem;
+            width: auto;
+            max-width: none;
+            z-index: 300;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-window.wm-maximized .terminal-titlebar,
+        .terminal-window.wm-maximized .status-bar {
+            flex-shrink: 0;
+        }
+
+        .terminal-window.wm-maximized .terminal-body {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .respawn-msg {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            color: var(--green);
             font-size: 0.85rem;
-            transition: all 0.2s ease;
-        }
-
-        .skip-link:hover { color: var(--accent); }
-
-        .go-now {
-            color: var(--accent);
-            text-decoration: none;
             font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.2s ease;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            z-index: 250;
         }
 
-        .go-now i { transition: transform 0.2s ease; }
-        .go-now:hover i { transform: translateX(3px); }
+        .respawn-msg.show { opacity: 1; }
 
-        /* ── Section Title ── */
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 700;
+        .terminal-body {
+            padding: 1.75rem 1.75rem 2rem;
+            max-height: 4000px;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, padding 0.35s ease;
+        }
+
+        .terminal-window.wm-minimized .terminal-body,
+        .terminal-window.wm-minimized .status-bar {
+            max-height: 0;
+            opacity: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-color: transparent;
+        }
+
+        /* ── Command line ── */
+        .cmd-line {
+            font-size: 0.88rem;
             margin-bottom: 1.5rem;
             display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            opacity: 0;
-            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
-        }
-
-        .section-title i { color: var(--accent); }
-
-        /* ── Projects ── */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 1.75rem;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            text-decoration: none;
-            color: var(--text);
-            display: block;
-            box-shadow: 0 4px 16px var(--card-shadow);
-            opacity: 0;
-            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card:nth-child(1) { animation-delay: 0.35s; }
-        .project-card:nth-child(2) { animation-delay: 0.40s; }
-        .project-card:nth-child(3) { animation-delay: 0.45s; }
-        .project-card:nth-child(4) { animation-delay: 0.50s; }
-        .project-card:nth-child(5) { animation-delay: 0.55s; }
-        .project-card:nth-child(6) { animation-delay: 0.60s; }
-
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            right: -1px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--gradient-start), var(--gradient-end), transparent);
-            background-size: 200% 100%;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .project-card:hover::before {
-            opacity: 1;
-            animation: borderGlow 2s linear infinite;
-        }
-
-        @keyframes borderGlow {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-
-        .project-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 48px var(--card-shadow);
-            border-color: var(--accent);
-        }
-
-        .project-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            box-shadow: 0 8px 20px var(--accent-glow);
-        }
-
-        .project-icon i {
-            font-size: 1.4rem;
-            color: white;
-        }
-
-        .project-card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.01em;
-        }
-
-        .project-card p {
-            color: var(--text-secondary);
-            font-size: 0.88rem;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
             gap: 0.5rem;
-        }
-
-        .tag {
-            background: var(--bg-secondary);
-            padding: 0.2rem 0.75rem;
-            border-radius: 100px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: var(--accent);
-            border: 1px solid var(--card-border);
-        }
-
-        /* ── About ── */
-        .about-section {
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 8px 32px var(--card-shadow);
-            opacity: 0;
-            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
-        }
-
-        .about-content {
-            display: flex;
             flex-wrap: wrap;
-            gap: 2.5rem;
         }
 
-        .about-text {
-            flex: 2;
-            min-width: 280px;
+        .cmd-line .prompt-user { color: var(--green); font-weight: 600; }
+        .cmd-line .prompt-path { color: var(--cyan); font-weight: 600; }
+        .cmd-line .prompt-dollar { color: var(--muted); }
+        .cmd-line .prompt-cmd {
+            color: var(--text);
+            font-weight: 500;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid var(--green);
+            width: 15.5ch;
+            animation: typing 1s steps(14) 0.3s forwards, caretBlink 0.8s step-end 1.3s infinite;
         }
 
-        .about-text p {
-            color: var(--text-secondary);
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 15.5ch; }
+        }
+
+        @keyframes caretBlink {
+            0%, 100% { border-color: var(--green); }
+            50% { border-color: transparent; }
+        }
+
+        /* ── Markdown output ── */
+        .md-mark { color: var(--muted); font-weight: 400; opacity: 0.6; }
+
+        .md-output {
+            opacity: 0;
+            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+        }
+
+        .md-quote {
+            border-left: 3px solid var(--border);
+            padding-left: 0.9rem;
+            color: var(--muted);
+            font-style: italic;
             margin-bottom: 1rem;
             font-size: 0.95rem;
         }
 
-        .about-text strong { color: var(--text); }
-
-        .stats {
-            flex: 1;
-            min-width: 200px;
+        .badges-row {
             display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.1rem;
         }
 
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.75rem;
-            background: var(--bg-secondary);
-            border-radius: 14px;
-            border: 1px solid var(--card-border);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .badge-pill {
+            display: inline-flex;
+            border-radius: 4px;
+            overflow: hidden;
+            font-size: 0.68rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
         }
 
-        .stat-item:hover {
-            transform: translateX(4px);
-            box-shadow: 0 4px 12px var(--card-shadow);
+        .badge-label {
+            background: var(--bg);
+            color: var(--muted);
+            padding: 0.22rem 0.55rem;
         }
 
-        .stat-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--card-bg);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            border: 1px solid var(--card-border);
-            flex-shrink: 0;
+        .badge-value {
+            padding: 0.22rem 0.55rem;
+            color: #ffffff;
         }
 
-        .stat-info h3 {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
+        .badge-value.green { background: var(--green); }
+        .badge-value.blue { background: var(--cyan); }
+
+        .meta-line {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-bottom: 1.75rem;
         }
 
-        .stat-info p {
-            font-size: 1rem;
+        .role-typed {
+            color: var(--cyan);
+            font-weight: 600;
+        }
+
+        .md-quote .cursor-blink {
+            background: var(--cyan);
+            margin-left: 1px;
+        }
+
+        h2.md-h2 {
+            font-size: 1.15rem;
             font-weight: 700;
-            color: var(--text);
-        }
-
-        /* ── Social ── */
-        .social-links {
+            margin: 2.25rem 0 1rem;
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 2.5rem 0;
-            opacity: 0;
-            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.75s forwards;
+            align-items: baseline;
+            gap: 0.4rem;
         }
 
-        .social-links a {
-            width: 44px;
-            height: 44px;
+        .about-text p {
+            color: var(--text);
+            margin-bottom: 0.85rem;
+            font-size: 0.92rem;
+        }
+
+        .about-text strong { color: var(--cyan); font-weight: 600; }
+
+        /* ── Tools grid ── */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .tool-entry {
+            position: relative;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.1rem 1.2rem;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+            overflow: hidden;
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .tool-entry::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), var(--glow), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .tool-entry:hover {
+            border-color: var(--cyan);
+            transform: translateY(-2px);
+        }
+
+        .tool-entry:hover::before { opacity: 1; }
+
+        .tool-head {
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            border-radius: 14px;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid var(--card-border);
-            text-decoration: none;
-            box-shadow: 0 4px 12px var(--card-shadow);
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-name {
+            font-weight: 700;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tool-name i { color: var(--cyan); font-size: 0.85rem; }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            flex-shrink: 0;
             position: relative;
         }
 
-        .social-links a:hover {
-            background: var(--accent);
-            color: white;
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 8px 24px var(--accent-glow);
-            border-color: var(--accent);
-        }
-
-        .social-links a .tooltip {
-            position: absolute;
-            bottom: calc(100% + 8px);
-            left: 50%;
-            transform: translateX(-50%) translateY(4px);
-            background: var(--text);
-            color: var(--bg);
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .social-links a .tooltip::after {
+        .status-dot::after {
             content: '';
             position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 4px solid transparent;
-            border-top-color: var(--text);
+            inset: -4px;
+            border-radius: 50%;
+            border: 1px solid var(--green);
+            opacity: 0.6;
+            animation: pulseRing 1.8s ease-out infinite;
         }
 
-        .social-links a:hover .tooltip {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
+        @keyframes pulseRing {
+            0% { transform: scale(0.6); opacity: 0.6; }
+            100% { transform: scale(1.8); opacity: 0; }
         }
 
-        /* ── Footer ── */
-        .footer {
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--card-border);
+        .status-label {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.68rem;
+            color: var(--green);
+            font-weight: 600;
+            text-transform: lowercase;
+        }
+
+        .tool-desc {
+            color: var(--muted);
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.55;
+        }
+
+        .topic-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .topic-tag {
+            background: var(--glow);
+            color: var(--cyan);
+            font-size: 0.68rem;
+            font-weight: 500;
+            padding: 0.1rem 0.55rem;
+            border-radius: 2em;
+        }
+
+        /* ── Code block (tech stack) ── */
+        .code-block {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            font-size: 0.82rem;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        .yaml-key { color: var(--purple); }
+        .yaml-punc { color: var(--muted); }
+        .yaml-val { color: var(--green); }
+
+        /* ── Contact list ── */
+        .md-list { list-style: none; }
+
+        .md-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.55rem;
+            font-size: 0.9rem;
+        }
+
+        .md-list a {
+            color: var(--cyan);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .md-list a:hover { text-decoration: underline; }
+        .md-list i { width: 16px; text-align: center; color: var(--muted); }
+
+        .copy-hint {
+            color: var(--muted);
+            font-size: 0.72rem;
             opacity: 0;
-            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+            transition: opacity 0.2s ease;
         }
 
-        .footer a {
-            color: var(--accent);
-            text-decoration: underline;
-            text-decoration-color: currentColor;
-            text-underline-offset: 2px;
+        .copy-hint.show { opacity: 1; }
+
+        /* ── Launch script block ── */
+        .launch-block {
+            margin-top: 2.25rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border);
         }
+
+        .site-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            background: var(--green);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .site-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--glow);
+        }
+
+        /* ── Final prompt ── */
+        .final-prompt {
+            margin-top: 1.75rem;
+            font-size: 0.88rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .cursor-blink {
+            display: inline-block;
+            width: 8px;
+            height: 1.1em;
+            background: var(--green);
+            animation: caretBlink 0.9s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        /* ── Status bar footer ── */
+        .status-bar {
+            display: flex;
+            align-items: stretch;
+            font-size: 0.72rem;
+            border-top: 1px solid var(--border);
+            max-height: 60px;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, border-color 0.25s ease;
+        }
+
+        .status-bar .sb-mode {
+            background: var(--green);
+            color: #0d1117;
+            font-weight: 700;
+            padding: 0.4rem 0.75rem;
+        }
+
+        .status-bar .sb-info {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.4rem 0.9rem;
+            color: var(--muted);
+            background: var(--bg-alt);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .status-bar .sb-info a { color: var(--muted); text-decoration: none; }
+        .status-bar .sb-info a:hover { color: var(--cyan); }
 
         /* ── Animations ── */
         @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ── Responsive ── */
         @media (max-width: 768px) {
-            .container { padding: 2rem 1.5rem; }
-
-            h1 { font-size: 1.8rem; }
-
-            .projects-grid { grid-template-columns: 1fr; }
-
-            .about-content { flex-direction: column; }
-
-            .controls { top: 1rem; right: 1rem; }
-
-            .control-btn { width: 40px; height: 40px; border-radius: 12px; }
-
-            .progress-banner p { flex-direction: column; }
-
-            .about-section { padding: 1.5rem; border-radius: 20px; }
-
-            .cursor-glow { display: none; }
-
-            .avatar { width: 88px; height: 88px; }
-            .avatar i { font-size: 2.25rem; }
-
-            .project-card { padding: 1.5rem; }
-
-            .section-title { font-size: 1.2rem; }
-        }
-
-        @media (max-width: 400px) {
-            .container { padding: 1.5rem 1rem; }
+            .container { padding: 2rem 1rem 2.5rem; }
+            .terminal-body { padding: 1.25rem 1.1rem 1.5rem; }
             h1 { font-size: 1.5rem; }
+            .tools-grid { grid-template-columns: 1fr; }
+            .controls { top: 0.9rem; right: 0.9rem; }
+            .status-bar .sb-info { gap: 0.75rem; }
         }
 
         /* ── Reduced Motion ── */
@@ -780,27 +675,21 @@
                 transition-duration: 0.01ms !important;
             }
 
-            .hero, .progress-banner, .section-title,
-            .project-card, .about-section,
-            .social-links, .footer {
+            .terminal-window, .md-output {
                 opacity: 1;
                 animation: none;
             }
 
-            .cursor-glow { display: none; }
+            .cmd-line .prompt-cmd {
+                width: 15.5ch;
+                border-right-color: transparent;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="bg-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-
-    <div class="particles" id="particles"></div>
-    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="scroll-progress" id="scrollProgress"></div>
 
     <div class="controls">
         <button class="control-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
@@ -810,176 +699,176 @@
 
     <div class="container">
         <main>
-        <!-- Hero -->
-        <div class="hero">
-            <div class="avatar">
-                <i class="fas fa-user-astronaut"></i>
-            </div>
-            <div class="badge">
-                <i class="fas fa-map-marker-alt"></i> Tunisia / France · Remote
-                <i class="fas fa-circle" style="font-size: 4px; margin: 0 0.5rem; opacity: 0.3;"></i>
-                5+ Years Experience
-            </div>
-            <h1>Houssem Ben Ali</h1>
-            <p class="hero-description">DevOps Engineer & Security Enthusiast. Building tools to make the internet more secure, one DNS record at a time.</p>
-        </div>
-
-        <!-- Progress Banner -->
-        <div class="progress-banner">
-            <p>
-                <i class="fas fa-tools"></i>
-                <span>Main site under construction — launching soon</span>
-                <span class="progress-bar-container"><span class="progress-bar-fill" id="progressFill"></span></span>
-                <span class="countdown-badge"><i class="fas fa-clock" style="font-size: 0.75rem;"></i> <span class="digit" id="countdown">30</span>s</span>
-                <a href="https://about.hbenali.ovh" class="go-now">Go now <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i></a>
-            </p>
-        </div>
-
-        <!-- Projects -->
-        <h2 class="section-title">
-            <i class="fas fa-cubes"></i>
-            <span>My Security Tools</span>
-        </h2>
-        <div class="projects-grid">
-            <a href="https://caa.hbenali.ovh" class="project-card" target="_blank" rel="noopener">
-                <div class="project-icon"><i class="fas fa-lock"></i></div>
-                <h3>CAA Inspector</h3>
-                <p>Check Certification Authority Authorization records. Verify which CAs can issue certificates for your domain.</p>
-                <div class="project-tags"><span class="tag">PKI</span><span class="tag">SSL/TLS</span><span class="tag">Security</span></div>
-            </a>
-            <a href="https://dkim.hbenali.ovh" class="project-card" target="_blank" rel="noopener">
-                <div class="project-icon"><i class="fas fa-envelope"></i></div>
-                <h3>DKIM Validator</h3>
-                <p>Validate DomainKeys Identified Mail records. Ensure your emails are properly authenticated and prevent spoofing.</p>
-                <div class="project-tags"><span class="tag">Email Security</span><span class="tag">DKIM</span><span class="tag">Authentication</span></div>
-            </a>
-            <a href="https://spf.hbenali.ovh" class="project-card" target="_blank" rel="noopener">
-                <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>SPF Checker</h3>
-                <p>Inspect Sender Policy Framework records. Prevent email spoofing by verifying authorized mail servers.</p>
-                <div class="project-tags"><span class="tag">SPF</span><span class="tag">Anti-Spoofing</span><span class="tag">Email</span></div>
-            </a>
-            <a href="https://dmarc.hbenali.ovh" class="project-card" target="_blank" rel="noopener">
-                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                <h3>DMARC Analyzer</h3>
-                <p>Analyze DMARC reports and policies. Monitor email authentication and protect your domain from unauthorized use.</p>
-                <div class="project-tags"><span class="tag">DMARC</span><span class="tag">Reporting</span><span class="tag">Compliance</span></div>
-            </a>
-            <a href="https://bimi.hbenali.ovh" class="project-card" target="_blank" rel="noopener">
-                <div class="project-icon"><i class="fas fa-image"></i></div>
-                <h3>BIMI Inspector</h3>
-                <p>Check BIMI records and logo requirements. Display your brand logo in supported email clients.</p>
-                <div class="project-tags"><span class="tag">BIMI</span><span class="tag">Branding</span><span class="tag">Email</span></div>
-            </a>
-            <a href="https://ip.hbenali.ovh" class="project-card" target="_blank" rel="noopener">
-                <div class="project-icon"><i class="fas fa-globe"></i></div>
-                <h3>IP Inspector</h3>
-                <p>Geolocation, network intelligence, and security insights for any IP address or domain.</p>
-                <div class="project-tags"><span class="tag">Network</span><span class="tag">Geolocation</span><span class="tag">Security</span></div>
-            </a>
-        </div>
-
-        <!-- About -->
-        <div class="about-section">
-            <h2 class="section-title" style="margin-top: 0;">
-                <i class="fas fa-user-circle"></i>
-                <span>About Me</span>
-            </h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>DevOps Engineer with 5+ years of experience in infrastructure automation, CI/CD pipelines, and security. Passionate about building tools that help developers and sysadmins secure their infrastructure and understand complex security standards.</p>
-                    <p>Currently working at <strong>eXo Platform</strong> managing cloud infrastructure, implementing security best practices, and automating everything from CI/CD to monitoring. Created these security tools to help the community understand and implement email authentication standards like SPF, DKIM, DMARC, and BIMI.</p>
-                    <p>All tools are open-source and free to use. Explore them above to check your domain's security posture!</p>
-                </div>
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-code"></i></div>
-                        <div class="stat-info"><h3>Experience</h3><p>5+ Years</p></div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-tools"></i></div>
-                        <div class="stat-info"><h3>Tools & Tech</h3><p>50+</p></div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-language"></i></div>
-                        <div class="stat-info"><h3>Languages</h3><p>Arabic · French · English</p></div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fas fa-globe"></i></div>
-                        <div class="stat-info"><h3>Security Tools</h3><p>6 Active</p></div>
-                    </div>
+        <div class="terminal-window">
+            <div class="terminal-titlebar">
+                <div class="terminal-title"><i class="fas fa-terminal" style="font-size: 0.72rem; margin-right: 0.4rem;"></i>houssem@devops: ~ &mdash; bash &mdash; 88&times;40</div>
+                <div class="win-controls">
+                    <button type="button" class="win-btn" id="winMinimize" aria-label="Minimize terminal"><i class="fas fa-minus" aria-hidden="true"></i></button>
+                    <button type="button" class="win-btn" id="winMaximize" aria-label="Maximize terminal"><i class="far fa-square" aria-hidden="true"></i></button>
+                    <button type="button" class="win-btn win-close" id="winClose" aria-label="Close terminal"><i class="fas fa-xmark" aria-hidden="true"></i></button>
                 </div>
             </div>
-        </div>
 
-        <!-- Social -->
-        <div class="social-links">
-            <a href="https://github.com/hbenali" target="_blank" rel="noopener" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-                <span class="tooltip">GitHub</span>
-            </a>
-            <a href="https://linkedin.com/in/houssembali" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-                <span class="tooltip">LinkedIn</span>
-            </a>
-            <a href="mailto:contact@hbenali.ovh" aria-label="Email">
-                <i class="fas fa-envelope"></i>
-                <span class="tooltip">Email</span>
-            </a>
-            <a href="https://about.hbenali.ovh" target="_blank" rel="noopener" aria-label="About">
-                <i class="fas fa-user"></i>
-                <span class="tooltip">About</span>
-            </a>
+            <div class="terminal-body">
+                <p class="cmd-line">
+                    <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
+                    <span class="prompt-cmd">glow README.md</span>
+                </p>
+
+                <div class="md-output">
+                    <h1><span class="md-mark" aria-hidden="true"># </span>Houssem Ben Ali</h1>
+                    <p class="md-quote"><span class="md-mark" aria-hidden="true">&gt; </span>DevOps Engineer &middot; <span class="role-typed" id="roleTyped"></span><span class="cursor-blink"></span></p>
+
+                    <div class="badges-row">
+                        <span class="badge-pill"><span class="badge-label">build</span><span class="badge-value green">passing</span></span>
+                        <span class="badge-pill"><span class="badge-label">status</span><span class="badge-value green">online</span></span>
+                        <span class="badge-pill"><span class="badge-label">open&nbsp;source</span><span class="badge-value blue">yes</span></span>
+                        <span class="badge-pill"><span class="badge-label">PRs</span><span class="badge-value blue">welcome</span></span>
+                    </div>
+
+                    <p class="meta-line"><i class="fas fa-location-dot"></i> Tunisia / France &middot; Remote &middot; 8 years experience</p>
+
+                    <h2 class="md-h2"><span class="md-mark" aria-hidden="true">## </span>About</h2>
+                    <div class="about-text">
+                        <p>DevOps Engineer with 8 years across a path that took me from <strong>IT Consultant</strong> to <strong>Software Factory</strong> engineering, then <strong>Cloud</strong> and <strong>SRE</strong> work, before landing in DevOps. Each stop added a layer: client-facing consulting, industrialized delivery pipelines, cloud architecture, and production reliability &mdash; now stitched together into infrastructure automation, CI/CD, and security hardening.</p>
+                        <p>Currently at <strong>eXo Platform</strong>, running cloud infrastructure and CI/CD, and shipping the tools below in my spare time to help the community check their email authentication and DNS security posture.</p>
+                    </div>
+
+                    <h2 class="md-h2"><span class="md-mark" aria-hidden="true">## </span>&#128736;&#65039; Security Tools</h2>
+                    <div class="tools-grid" id="toolsGrid">
+                        <a href="https://caa.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                            <div class="tool-head">
+                                <span class="tool-name"><i class="fas fa-lock"></i>caa.hbenali.ovh</span>
+                                <span class="status-label"><span class="status-dot"></span>online</span>
+                            </div>
+                            <p class="tool-desc">CAA Inspector &mdash; see which CAs are authorized to issue certs for your domain.</p>
+                            <div class="topic-tags"><span class="topic-tag">pki</span><span class="topic-tag">tls</span></div>
+                        </a>
+                        <a href="https://dkim.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                            <div class="tool-head">
+                                <span class="tool-name"><i class="fas fa-envelope"></i>dkim.hbenali.ovh</span>
+                                <span class="status-label"><span class="status-dot"></span>online</span>
+                            </div>
+                            <p class="tool-desc">DKIM Validator &mdash; verify your mail is signed correctly and hard to spoof.</p>
+                            <div class="topic-tags"><span class="topic-tag">dkim</span><span class="topic-tag">email-auth</span></div>
+                        </a>
+                        <a href="https://spf.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                            <div class="tool-head">
+                                <span class="tool-name"><i class="fas fa-shield-halved"></i>spf.hbenali.ovh</span>
+                                <span class="status-label"><span class="status-dot"></span>online</span>
+                            </div>
+                            <p class="tool-desc">SPF Checker &mdash; inspect authorized senders and catch lookup-limit issues.</p>
+                            <div class="topic-tags"><span class="topic-tag">spf</span><span class="topic-tag">anti-spoofing</span></div>
+                        </a>
+                        <a href="https://dmarc.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                            <div class="tool-head">
+                                <span class="tool-name"><i class="fas fa-chart-line"></i>dmarc.hbenali.ovh</span>
+                                <span class="status-label"><span class="status-dot"></span>online</span>
+                            </div>
+                            <p class="tool-desc">DMARC Analyzer &mdash; read policies and reports, monitor domain abuse.</p>
+                            <div class="topic-tags"><span class="topic-tag">dmarc</span><span class="topic-tag">reporting</span></div>
+                        </a>
+                        <a href="https://bimi.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                            <div class="tool-head">
+                                <span class="tool-name"><i class="fas fa-image"></i>bimi.hbenali.ovh</span>
+                                <span class="status-label"><span class="status-dot"></span>online</span>
+                            </div>
+                            <p class="tool-desc">BIMI Inspector &mdash; check logo/VMC requirements for brand indicators.</p>
+                            <div class="topic-tags"><span class="topic-tag">bimi</span><span class="topic-tag">branding</span></div>
+                        </a>
+                        <a href="https://ip.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                            <div class="tool-head">
+                                <span class="tool-name"><i class="fas fa-globe"></i>ip.hbenali.ovh</span>
+                                <span class="status-label"><span class="status-dot"></span>online</span>
+                            </div>
+                            <p class="tool-desc">IP Inspector &mdash; geolocation, network intel, and security context.</p>
+                            <div class="topic-tags"><span class="topic-tag">network</span><span class="topic-tag">geoip</span></div>
+                        </a>
+                        <a href="https://rdap.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                            <div class="tool-head">
+                                <span class="tool-name"><i class="fas fa-magnifying-glass"></i>rdap.hbenali.ovh</span>
+                                <span class="status-label"><span class="status-dot"></span>online</span>
+                            </div>
+                            <p class="tool-desc">RDAP Inspector &mdash; modern, structured domain/IP/ASN lookups replacing WHOIS.</p>
+                            <div class="topic-tags"><span class="topic-tag">rdap</span><span class="topic-tag">whois</span></div>
+                        </a>
+                        <a href="https://ssl.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                            <div class="tool-head">
+                                <span class="tool-name"><i class="fas fa-certificate"></i>ssl.hbenali.ovh</span>
+                                <span class="status-label"><span class="status-dot"></span>online</span>
+                            </div>
+                            <p class="tool-desc">SSL Checker &mdash; quickly validate a TLS certificate chain for any domain.</p>
+                            <div class="topic-tags"><span class="topic-tag">tls</span><span class="topic-tag">certs</span></div>
+                        </a>
+                        <a href="https://frontail.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                            <div class="tool-head">
+                                <span class="tool-name"><i class="fas fa-scroll"></i>frontail.hbenali.ovh</span>
+                                <span class="status-label"><span class="status-dot"></span>online</span>
+                            </div>
+                            <p class="tool-desc">Frontail &mdash; stream and filter log files live in the browser.</p>
+                            <div class="topic-tags"><span class="topic-tag">logs</span><span class="topic-tag">observability</span></div>
+                        </a>
+                    </div>
+
+                    <h2 class="md-h2"><span class="md-mark" aria-hidden="true">## </span>&#9881;&#65039; Tech Stack</h2>
+                    <pre class="code-block"><code><span class="yaml-key">containers</span><span class="yaml-punc">:</span> <span class="yaml-punc">[</span><span class="yaml-val">Docker</span><span class="yaml-punc">,</span> <span class="yaml-val">Kubernetes</span><span class="yaml-punc">]</span>
+<span class="yaml-key">iac</span><span class="yaml-punc">:</span>        <span class="yaml-punc">[</span><span class="yaml-val">Terraform</span><span class="yaml-punc">,</span> <span class="yaml-val">Ansible</span><span class="yaml-punc">]</span>
+<span class="yaml-key">cloud</span><span class="yaml-punc">:</span>      <span class="yaml-punc">[</span><span class="yaml-val">AWS</span><span class="yaml-punc">]</span>
+<span class="yaml-key">os</span><span class="yaml-punc">:</span>         <span class="yaml-punc">[</span><span class="yaml-val">Linux</span><span class="yaml-punc">]</span>
+<span class="yaml-key">vcs</span><span class="yaml-punc">:</span>        <span class="yaml-punc">[</span><span class="yaml-val">Git</span><span class="yaml-punc">,</span> <span class="yaml-val">GitHub Actions</span><span class="yaml-punc">]</span>
+<span class="yaml-key">languages</span><span class="yaml-punc">:</span>  <span class="yaml-punc">[</span><span class="yaml-val">Python</span><span class="yaml-punc">,</span> <span class="yaml-val">Bash</span><span class="yaml-punc">]</span></code></pre>
+
+                    <h2 class="md-h2"><span class="md-mark" aria-hidden="true">## </span>&#128248; Contact</h2>
+                    <ul class="md-list">
+                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://github.com/hbenali" target="_blank" rel="noopener"><i class="fab fa-github"></i>github.com/hbenali</a></li>
+                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://linkedin.com/in/houssembali" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i>linkedin.com/in/houssembali</a></li>
+                        <li><span class="md-mark" aria-hidden="true">- </span><a href="mailto:contact@hbenali.ovh" id="emailLink"><i class="fas fa-envelope"></i>contact@hbenali.ovh</a> <span class="copy-hint" id="copyHint">copied to clipboard</span></li>
+                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://about.hbenali.ovh" target="_blank" rel="noopener"><i class="fas fa-user"></i>about.hbenali.ovh</a></li>
+                    </ul>
+
+                    <div class="launch-block">
+                        <p class="cmd-line" style="margin-bottom: 0.9rem;">
+                            <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
+                            <span>open about.hbenali.ovh</span>
+                        </p>
+                        <a href="https://about.hbenali.ovh" class="site-btn" target="_blank" rel="noopener">
+                            <i class="fas fa-arrow-up-right-from-square"></i> Visit the full site
+                        </a>
+                    </div>
+
+                    <p class="final-prompt">
+                        <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
+                        <span class="cursor-blink"></span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="status-bar">
+                <span class="sb-mode">NORMAL</span>
+                <span class="sb-info">
+                    <span>README.md</span>
+                    <span>UTF-8</span>
+                    <span>bash</span>
+                    <span>&copy; 2026 Houssem Ben Ali</span>
+                    <a href="https://github.com/hbenali" target="_blank" rel="noopener">All tools free &amp; open-source</a>
+                </span>
+            </div>
         </div>
+        <p class="respawn-msg" id="respawnMsg" aria-hidden="true">$ respawning shell&hellip;<span class="cursor-blink"></span></p>
         </main>
-
-        <div class="footer">
-            <p>© 2026 Houssem Ben Ali · <a href="https://github.com/hbenali" target="_blank" rel="noopener">GitHub</a> · <a href="https://about.hbenali.ovh" target="_blank" rel="noopener">About Me</a> · All tools are free and open-source</p>
-        </div>
     </div>
 
     <script>
-        const REDIRECT_URL = 'https://about.hbenali.ovh';
-        const REDIRECT_SECONDS = 30;
-
         const body = document.body;
         const themeToggle = document.querySelector('.theme-toggle');
         const themeIcon = themeToggle.querySelector('i');
-        const cursorGlow = document.getElementById('cursorGlow');
-        const particlesContainer = document.getElementById('particles');
-        const countdownEl = document.getElementById('countdown');
-        const progressFill = document.getElementById('progressFill');
-        let isTouching = false;
-
-        // ── Particles ──
-        (function createParticles() {
-            const count = 20;
-            const fragment = document.createDocumentFragment();
-            for (let i = 0; i < count; i++) {
-                const el = document.createElement('div');
-                el.className = 'particle';
-                const size = 2 + Math.random() * 4;
-                const x = Math.random() * 100;
-                const y = Math.random() * 100;
-                const colors = ['rgba(59,130,246,0.25)', 'rgba(139,92,246,0.2)', 'rgba(16,185,129,0.15)', 'rgba(251,191,36,0.12)'];
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                const dur = 12 + Math.random() * 20;
-                const delay = Math.random() * 10;
-                el.style.cssText = `width:${size}px;height:${size}px;left:${x}%;top:${y}%;background:${color};border-radius:${Math.random() > 0.5 ? '50%' : '4px'};animation:floatP ${dur}s ${delay}s ease-in-out infinite;`;
-                fragment.appendChild(el);
-            }
-            particlesContainer.appendChild(fragment);
-        })();
-
-        const ps = document.createElement('style');
-        ps.textContent = `@keyframes floatP{0%,100%{transform:translate(0,0) scale(1);opacity:0}10%{opacity:1}50%{transform:translate(${20+Math.random()*30}px,${-30+Math.random()*60}px) scale(1.3)}90%{opacity:1}100%{transform:translate(${-20+Math.random()*30}px,${-60+Math.random()*30}px) scale(0.8);opacity:0}}`;
-        document.head.appendChild(ps);
+        const scrollProgress = document.getElementById('scrollProgress');
 
         // ── Theme ──
         const getPreferredTheme = () => {
             const saved = localStorage.getItem('theme');
             if (saved) return saved;
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            return 'dark';
         };
 
         const setTheme = (theme) => {
@@ -997,50 +886,108 @@
             setTheme(body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
         });
 
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
-        });
+        // ── Window controls ──
+        const terminalWindow = document.querySelector('.terminal-window');
+        const winMinimize = document.getElementById('winMinimize');
+        const winMaximize = document.getElementById('winMaximize');
+        const winClose = document.getElementById('winClose');
+        const respawnMsg = document.getElementById('respawnMsg');
 
-        // ── Cursor Glow ──
-        document.addEventListener('touchstart', () => { isTouching = true; }, { passive: true });
-
-        document.addEventListener('mousemove', (e) => {
-            cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
-            if (!cursorGlow.classList.contains('visible')) cursorGlow.classList.add('visible');
-        });
-
-        document.addEventListener('mouseleave', () => {
-            cursorGlow.classList.remove('visible');
-        });
-
-        // ── Countdown ──
-        let secondsLeft = REDIRECT_SECONDS;
-        const total = REDIRECT_SECONDS;
-
-        function updateProgress() {
-            progressFill.style.width = ((total - secondsLeft) / total * 100) + '%';
+        function pop() {
+            terminalWindow.classList.remove('wm-pop');
+            void terminalWindow.offsetWidth;
+            terminalWindow.classList.add('wm-pop');
         }
 
-        function updateCountdown() {
-            countdownEl.textContent = secondsLeft;
+        winMinimize.addEventListener('click', () => {
+            terminalWindow.classList.remove('wm-maximized');
+            terminalWindow.classList.toggle('wm-minimized');
+        });
+
+        winMaximize.addEventListener('click', () => {
+            terminalWindow.classList.remove('wm-minimized');
+            terminalWindow.classList.toggle('wm-maximized');
+            pop();
+        });
+
+        winClose.addEventListener('click', () => {
+            if (terminalWindow.classList.contains('wm-closing')) return;
+            terminalWindow.classList.remove('wm-maximized', 'wm-minimized');
+            terminalWindow.classList.add('wm-closing');
+            setTimeout(() => respawnMsg.classList.add('show'), 350);
+            setTimeout(() => {
+                respawnMsg.classList.remove('show');
+                terminalWindow.classList.remove('wm-closing');
+                pop();
+            }, 950);
+        });
+
+        // ── Scroll progress ──
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement;
+            const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+            scrollProgress.style.width = (isFinite(pct) ? pct : 0) + '%';
+        }, { passive: true });
+
+        // ── Role typewriter ──
+        const roles = ['IT Consultant', 'Software Factory Engineer', 'Cloud Engineer', 'SRE', 'Automation Enthusiast'];
+        const roleEl = document.getElementById('roleTyped');
+        let roleIdx = 0;
+
+        function typeRole(text, cb) {
+            roleEl.textContent = '';
+            let i = 0;
+            const iv = setInterval(() => {
+                roleEl.textContent = text.slice(0, ++i);
+                if (i === text.length) { clearInterval(iv); setTimeout(cb, 1600); }
+            }, 45);
         }
 
-        function startCountdown() {
-            updateProgress();
-            updateCountdown();
-            const interval = setInterval(() => {
-                secondsLeft--;
-                if (secondsLeft <= 0) {
-                    clearInterval(interval);
-                    window.location.href = REDIRECT_URL;
-                    return;
-                }
-                updateProgress();
-                updateCountdown();
-            }, 1000);
+        function eraseRole(cb) {
+            const text = roleEl.textContent;
+            let i = text.length;
+            const iv = setInterval(() => {
+                roleEl.textContent = text.slice(0, --i);
+                if (i === 0) { clearInterval(iv); cb(); }
+            }, 25);
         }
 
-        startCountdown();
+        function cycleRoles() {
+            typeRole(roles[roleIdx], () => {
+                eraseRole(() => {
+                    roleIdx = (roleIdx + 1) % roles.length;
+                    cycleRoles();
+                });
+            });
+        }
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            cycleRoles();
+        } else {
+            roleEl.textContent = roles[0];
+        }
+
+        // ── Tool card spotlight ──
+        document.querySelectorAll('[data-tool]').forEach((card) => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
+                card.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
+            });
+        });
+
+        // ── Copy email ──
+        const emailLink = document.getElementById('emailLink');
+        const copyHint = document.getElementById('copyHint');
+        emailLink.addEventListener('click', () => {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText('contact@hbenali.ovh').then(() => {
+                    copyHint.classList.add('show');
+                    setTimeout(() => copyHint.classList.remove('show'), 2000);
+                });
+            }
+        });
+
     </script>
 </body>
 
