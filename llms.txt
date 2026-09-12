@@ -1,0 +1,20 @@
+# Houssem Ben Ali
+
+> DevOps engineer's homepage — an interactive terminal/README linking to a set of free, open-source security and network inspection tools.
+
+Live at https://www.hbenali.ovh. No backend, single static `index.html`.
+
+## Tools
+- [BIMI Checker](https://bimi.hbenali.ovh/): BIMI record, DMARC readiness, and VMC certificate validator.
+- [CAA Checker](https://caa.hbenali.ovh/): DNS CAA record inspector and generator.
+- [SSL Chain Checker](https://ssl.hbenali.ovh/): TLS certificate chain validator.
+- [RDAP Inspector](https://rdap.hbenali.ovh/): domain, IP, and ASN registration lookup (RDAP).
+- [IP Inspector](https://ip.hbenali.ovh/): IP geolocation, ISP/ASN, and VPN/proxy/Tor detection.
+- [DKIM Checker](https://dkim.hbenali.ovh/): DKIM DNS record inspector.
+- [DMARC Checker](https://dmarc.hbenali.ovh/): DMARC DNS record inspector.
+- [SPF Checker](https://spf.hbenali.ovh/): SPF DNS record inspector.
+- [CommitSign](https://commitsign.hbenali.ovh/): Git SSH commit signing setup scripts and guides.
+- [frontail](https://frontail.hbenali.ovh/): streams log files to the browser, live demo.
+
+## About
+- [About](https://about.hbenali.ovh/): background, experience, and CV.
