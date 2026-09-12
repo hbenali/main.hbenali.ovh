@@ -20,6 +20,10 @@
     <meta name="theme-color" content="#0d1117">
     <link rel="canonical" href="https://www.hbenali.ovh/">
 
+    <!-- Security (static hosting: no custom HTTP headers, so CSP/referrer are set here; X-Frame-Options/X-Content-Type-Options need a real header and aren't achievable via meta) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="hbenali.ovh - Houssem Ben Ali | DevOps Engineer & Open-Source Security Tools">
@@ -380,7 +384,7 @@
 
         .badge-value {
             padding: 0.22rem 0.55rem;
-            color: #ffffff;
+            color: var(--bg);
         }
 
         .badge-value.green { background: var(--green); }
@@ -587,7 +591,7 @@
             align-items: center;
             gap: 0.55rem;
             background: var(--green);
-            color: #ffffff;
+            color: var(--bg);
             text-decoration: none;
             font-weight: 700;
             font-size: 0.85rem;
