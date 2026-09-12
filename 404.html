@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 · Not Found - Houssem Ben Ali</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Head back to hbenali.ovh.">
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0d1117">
+    <link rel="canonical" href="https://www.hbenali.ovh/404.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #ffffff;
+            --bg-alt: #f6f8fa;
+            --border: #d0d7de;
+            --text: #1f2328;
+            --muted: #656d76;
+            --green: #1a7f37;
+            --cyan: #0969da;
+            --red: #cf222e;
+            --shadow: rgba(31, 35, 40, 0.08);
+            --glow: rgba(9, 105, 218, 0.15);
+        }
+
+        [data-theme="dark"] {
+            --bg: #0d1117;
+            --bg-alt: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --muted: #8b949e;
+            --green: #3fb950;
+            --cyan: #58a6ff;
+            --red: #f85149;
+            --shadow: rgba(0, 0, 0, 0.4);
+            --glow: rgba(63, 185, 80, 0.15);
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            transition: background-color 0.4s ease, color 0.4s ease;
+            min-height: 100vh;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .controls {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 100;
+        }
+
+        .control-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            background: var(--bg-alt);
+            color: var(--muted);
+        }
+
+        .control-btn:hover {
+            color: var(--cyan);
+            border-color: var(--cyan);
+            box-shadow: 0 0 0 3px var(--glow);
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            width: 100%;
+        }
+
+        .terminal-window {
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px var(--shadow);
+            opacity: 0;
+            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+        }
+
+        .terminal-titlebar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-alt);
+        }
+
+        .terminal-title {
+            flex: 1;
+            text-align: left;
+            font-size: 0.78rem;
+            color: var(--muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .win-controls {
+            display: flex;
+            gap: 0.3rem;
+            flex-shrink: 0;
+        }
+
+        .win-btn {
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            color: var(--muted);
+            background: transparent;
+        }
+
+        .terminal-body {
+            padding: 1.75rem 1.75rem 2rem;
+        }
+
+        .cmd-line {
+            font-size: 0.88rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cmd-line .prompt-user { color: var(--green); font-weight: 600; }
+        .cmd-line .prompt-path { color: var(--cyan); font-weight: 600; }
+        .cmd-line .prompt-dollar { color: var(--muted); }
+        .cmd-line .prompt-cmd { color: var(--text); font-weight: 500; word-break: break-all; }
+
+        .err-line {
+            color: var(--red);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            word-break: break-all;
+        }
+
+        .md-output {
+            opacity: 0;
+            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+            color: var(--red);
+        }
+
+        .md-mark { color: var(--muted); font-weight: 400; opacity: 0.6; }
+
+        .md-quote {
+            border-left: 3px solid var(--border);
+            padding-left: 0.9rem;
+            color: var(--muted);
+            font-style: italic;
+            margin-bottom: 1.75rem;
+            font-size: 0.95rem;
+        }
+
+        .md-list { list-style: none; margin-bottom: 1.75rem; }
+
+        .md-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.55rem;
+            font-size: 0.9rem;
+        }
+
+        .md-list a {
+            color: var(--cyan);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .md-list a:hover { text-decoration: underline; }
+        .md-list i { width: 16px; text-align: center; color: var(--muted); }
+
+        .site-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            background: var(--green);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .site-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px var(--glow);
+        }
+
+        .final-prompt {
+            margin-top: 1.75rem;
+            font-size: 0.88rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .cursor-blink {
+            display: inline-block;
+            width: 8px;
+            height: 1.1em;
+            background: var(--green);
+            animation: caretBlink 0.9s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes caretBlink {
+            0%, 100% { background: var(--green); }
+            50% { background: transparent; }
+        }
+
+        .status-bar {
+            display: flex;
+            align-items: stretch;
+            font-size: 0.72rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .status-bar .sb-mode {
+            background: var(--red);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 0.4rem 0.75rem;
+        }
+
+        .status-bar .sb-info {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.4rem 0.9rem;
+            color: var(--muted);
+            background: var(--bg-alt);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 2rem 1rem; }
+            .terminal-body { padding: 1.25rem 1.1rem 1.5rem; }
+            h1 { font-size: 1.9rem; }
+            .controls { top: 0.9rem; right: 0.9rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+
+            .terminal-window, .md-output {
+                opacity: 1;
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="controls">
+        <button class="control-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <main>
+            <div class="terminal-window">
+                <div class="terminal-titlebar">
+                    <div class="terminal-title"><i class="fas fa-terminal" style="font-size: 0.72rem; margin-right: 0.4rem;"></i>houssem@devops: ~ &mdash; bash &mdash; 404</div>
+                    <div class="win-controls">
+                        <span class="win-btn"><i class="fas fa-minus" aria-hidden="true"></i></span>
+                        <span class="win-btn"><i class="far fa-square" aria-hidden="true"></i></span>
+                        <span class="win-btn"><i class="fas fa-xmark" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+
+                <div class="terminal-body">
+                    <p class="cmd-line">
+                        <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
+                        <span class="prompt-cmd">cat <span id="reqPath">.</span></span>
+                    </p>
+                    <p class="err-line">cat: <span id="reqPathEcho">.</span>: No such file or directory</p>
+
+                    <div class="md-output">
+                        <h1><span class="md-mark" aria-hidden="true">## </span>404</h1>
+                        <p class="md-quote"><span class="md-mark" aria-hidden="true">&gt; </span>This path doesn't exist in the filesystem.</p>
+
+                        <ul class="md-list">
+                            <li><span class="md-mark" aria-hidden="true">- </span><a href="/"><i class="fas fa-house"></i>Home &mdash; www.hbenali.ovh</a></li>
+                            <li><span class="md-mark" aria-hidden="true">- </span><a href="https://about.hbenali.ovh" target="_blank" rel="noopener"><i class="fas fa-user"></i>about.hbenali.ovh</a></li>
+                            <li><span class="md-mark" aria-hidden="true">- </span><a href="https://github.com/hbenali" target="_blank" rel="noopener"><i class="fab fa-github"></i>github.com/hbenali</a></li>
+                        </ul>
+
+                        <p class="cmd-line" style="margin-bottom: 0.9rem;">
+                            <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
+                            <span>cd ~ &amp;&amp; open .</span>
+                        </p>
+                        <a href="/" class="site-btn">
+                            <i class="fas fa-arrow-left"></i> Back to the terminal
+                        </a>
+
+                        <p class="final-prompt">
+                            <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
+                            <span class="cursor-blink"></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="status-bar">
+                    <span class="sb-mode">ERROR</span>
+                    <span class="sb-info">
+                        <span>404.html</span>
+                        <span>UTF-8</span>
+                        <span>bash</span>
+                        <span>&copy; 2026 Houssem Ben Ali</span>
+                    </span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const body = document.body;
+        const themeToggle = document.querySelector('.theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        const getPreferredTheme = () => {
+            const saved = localStorage.getItem('theme');
+            if (saved) return saved;
+            return 'dark';
+        };
+
+        const setTheme = (theme) => {
+            body.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeIcon.classList.replace(
+                theme === 'dark' ? 'fa-moon' : 'fa-sun',
+                theme === 'dark' ? 'fa-sun' : 'fa-moon'
+            );
+        };
+
+        setTheme(getPreferredTheme());
+
+        themeToggle.addEventListener('click', () => {
+            setTheme(body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
+
+        const path = decodeURIComponent(window.location.pathname) || '/';
+        document.getElementById('reqPath').textContent = path;
+        document.getElementById('reqPathEcho').textContent = path;
+    </script>
+</body>
+
+</html>
