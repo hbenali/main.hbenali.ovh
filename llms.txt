@@ -7,6 +7,7 @@ Live at https://www.hbenali.ovh. No backend, single static `index.html`.
 ## Tools
 - [BIMI Checker](https://bimi.hbenali.ovh/): BIMI record, DMARC readiness, and VMC certificate validator.
 - [CAA Checker](https://caa.hbenali.ovh/): DNS CAA record inspector and generator.
+- [DNSSEC Inspector](https://dnssec.hbenali.ovh/): validates a domain's DNSSEC chain of trust and diagnoses why validation failed.
 - [SSL Chain Checker](https://ssl.hbenali.ovh/): TLS certificate chain validator.
 - [RDAP Inspector](https://rdap.hbenali.ovh/): domain, IP, and ASN registration lookup (RDAP).
 - [IP Inspector](https://ip.hbenali.ovh/): IP geolocation, ISP/ASN, and VPN/proxy/Tor detection.

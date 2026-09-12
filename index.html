@@ -511,6 +511,20 @@
             text-transform: lowercase;
         }
 
+        .pwa-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.2rem;
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: var(--cyan);
+            background: var(--glow);
+            padding: 0.1rem 0.4rem;
+            border-radius: 2em;
+            letter-spacing: 0.02em;
+            flex-shrink: 0;
+        }
+
         .tool-desc {
             color: var(--muted);
             font-size: 0.8rem;
@@ -742,7 +756,7 @@
                     <div class="tools-grid" id="toolsGrid">
                         <a href="https://caa.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
                             <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-lock"></i>caa.hbenali.ovh</span>
+                                <span class="tool-name"><i class="fas fa-lock"></i>caa.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
                                 <span class="status-label"><span class="status-dot"></span>online</span>
                             </div>
                             <p class="tool-desc">CAA Inspector &mdash; see which CAs are authorized to issue certs for your domain.</p>
@@ -750,7 +764,7 @@
                         </a>
                         <a href="https://dnssec.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
                             <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-link"></i>dnssec.hbenali.ovh</span>
+                                <span class="tool-name"><i class="fas fa-link"></i>dnssec.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
                                 <span class="status-label"><span class="status-dot"></span>online</span>
                             </div>
                             <p class="tool-desc">DNSSEC Inspector &mdash; validate a domain's chain of trust and see why it failed if it did.</p>
@@ -782,7 +796,7 @@
                         </a>
                         <a href="https://bimi.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
                             <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-image"></i>bimi.hbenali.ovh</span>
+                                <span class="tool-name"><i class="fas fa-image"></i>bimi.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
                                 <span class="status-label"><span class="status-dot"></span>online</span>
                             </div>
                             <p class="tool-desc">BIMI Inspector &mdash; check logo/VMC requirements for brand indicators.</p>
@@ -790,7 +804,7 @@
                         </a>
                         <a href="https://ip.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
                             <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-globe"></i>ip.hbenali.ovh</span>
+                                <span class="tool-name"><i class="fas fa-globe"></i>ip.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
                                 <span class="status-label"><span class="status-dot"></span>online</span>
                             </div>
                             <p class="tool-desc">IP Inspector &mdash; geolocation, network intel, and security context.</p>
@@ -798,7 +812,7 @@
                         </a>
                         <a href="https://rdap.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
                             <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-magnifying-glass"></i>rdap.hbenali.ovh</span>
+                                <span class="tool-name"><i class="fas fa-magnifying-glass"></i>rdap.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
                                 <span class="status-label"><span class="status-dot"></span>online</span>
                             </div>
                             <p class="tool-desc">RDAP Inspector &mdash; modern, structured domain/IP/ASN lookups replacing WHOIS.</p>
@@ -806,7 +820,7 @@
                         </a>
                         <a href="https://ssl.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
                             <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-certificate"></i>ssl.hbenali.ovh</span>
+                                <span class="tool-name"><i class="fas fa-certificate"></i>ssl.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
                                 <span class="status-label"><span class="status-dot"></span>online</span>
                             </div>
                             <p class="tool-desc">SSL Checker &mdash; quickly validate a TLS certificate chain for any domain.</p>
@@ -822,7 +836,7 @@
                         </a>
                         <a href="https://commitsign.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
                             <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-file-signature"></i>commitsign.hbenali.ovh</span>
+                                <span class="tool-name"><i class="fas fa-file-signature"></i>commitsign.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
                                 <span class="status-label"><span class="status-dot"></span>online</span>
                             </div>
                             <p class="tool-desc">CommitSign &mdash; one-command SSH commit signing setup, plus manual SSH/GPG guides.</p>
