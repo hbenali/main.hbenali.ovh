@@ -20,8 +20,8 @@
     <meta name="theme-color" content="#0d1117">
     <link rel="canonical" href="https://www.hbenali.ovh/">
 
-    <!-- Security (static hosting: no custom HTTP headers, so CSP/referrer are set here; X-Frame-Options/X-Content-Type-Options need a real header and aren't achievable via meta) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <!-- Security (static hosting: no custom HTTP headers, so CSP/referrer are set here, with no inline script/style; X-Frame-Options/X-Content-Type-Options need a real header and aren't achievable via meta) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- Open Graph -->
@@ -29,14 +29,19 @@
     <meta property="og:title" content="hbenali.ovh - Houssem Ben Ali | DevOps & SecOps Engineer · Open-Source Security Tools">
     <meta property="og:description" content="DevOps & SecOps Engineer. Open-source security tools: CAA, DKIM, SPF, DMARC, BIMI, and IP inspection.">
     <meta property="og:url" content="https://www.hbenali.ovh/">
-    <meta property="og:image" content="https://www.hbenali.ovh/android-chrome-512x512.png">
+    <meta property="og:image" content="https://www.hbenali.ovh/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Houssem Ben Ali - DevOps &amp; SecOps Engineer. 11 free, open-source security tools for DNS, TLS and email authentication.">
     <meta property="og:site_name" content="Houssem Ben Ali">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="hbenali.ovh - Houssem Ben Ali | DevOps & SecOps Engineer · Open-Source Security Tools">
     <meta name="twitter:description" content="DevOps & SecOps Engineer. Open-source security tools: CAA, DKIM, SPF, DMARC, BIMI, and IP inspection.">
-    <meta name="twitter:image" content="https://www.hbenali.ovh/android-chrome-512x512.png">
+    <meta name="twitter:image" content="https://www.hbenali.ovh/og-image.png">
+    <meta name="twitter:image:alt" content="Houssem Ben Ali - DevOps &amp; SecOps Engineer. 11 free, open-source security tools for DNS, TLS and email authentication.">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -55,663 +60,19 @@
     }
     </script>
 
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </noscript>
-
-    <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg: #ffffff;
-            --bg-alt: #f6f8fa;
-            --border: #d0d7de;
-            --text: #1f2328;
-            --muted: #656d76;
-            --green: #1a7f37;
-            --cyan: #0969da;
-            --amber: #9a6700;
-            --red: #cf222e;
-            --purple: #8250df;
-            --shadow: rgba(31, 35, 40, 0.08);
-            --glow: rgba(9, 105, 218, 0.15);
-        }
-
-        [data-theme="dark"] {
-            --bg: #0d1117;
-            --bg-alt: #161b22;
-            --border: #30363d;
-            --text: #c9d1d9;
-            --muted: #8b949e;
-            --green: #3fb950;
-            --cyan: #58a6ff;
-            --amber: #d29922;
-            --red: #f85149;
-            --purple: #bc8cff;
-            --shadow: rgba(0, 0, 0, 0.4);
-            --glow: rgba(63, 185, 80, 0.15);
-        }
-
-        html {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-            line-height: 1.7;
-            color: var(--text);
-            background: var(--bg);
-            transition: background-color 0.4s ease, color 0.4s ease;
-            min-height: 100vh;
-            font-size: 15px;
-        }
-
-        /* ── Scroll Progress ── */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            width: 0%;
-            background: linear-gradient(90deg, var(--green), var(--cyan));
-            z-index: 200;
-            transition: width 0.1s linear;
-        }
-
-        /* ── Controls ── */
-        .controls {
-            position: fixed;
-            top: 1.25rem;
-            right: 1.25rem;
-            z-index: 100;
-        }
-
-        .control-btn {
-            width: 38px;
-            height: 38px;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            background: var(--bg-alt);
-            color: var(--muted);
-        }
-
-        .control-btn:hover {
-            color: var(--cyan);
-            border-color: var(--cyan);
-            box-shadow: 0 0 0 3px var(--glow);
-        }
-
-        /* ── Container ── */
-        .container {
-            max-width: 880px;
-            margin: 0 auto;
-            padding: 4rem 1.5rem 3rem;
-        }
-
-        /* ── Terminal Window ── */
-        .terminal-window {
-            background: var(--bg-alt);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 12px 40px var(--shadow);
-            opacity: 0;
-            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
-        }
-
-        .terminal-titlebar {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.7rem 1rem;
-            border-bottom: 1px solid var(--border);
-            background: var(--bg-alt);
-        }
-
-        .terminal-title {
-            flex: 1;
-            text-align: left;
-            font-size: 0.78rem;
-            color: var(--muted);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .win-controls {
-            display: flex;
-            gap: 0.3rem;
-            flex-shrink: 0;
-        }
-
-        .win-btn {
-            width: 22px;
-            height: 22px;
-            border: none;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.65rem;
-            font: inherit;
-            color: var(--muted);
-            background: transparent;
-            cursor: pointer;
-            transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
-        }
-
-        .win-btn:hover {
-            background: var(--border);
-            color: var(--text);
-        }
-
-        .win-btn:active {
-            transform: scale(0.85);
-        }
-
-        .win-btn.win-close:hover {
-            background: var(--red);
-            color: #ffffff;
-        }
-
-        /* ── Window control animations ── */
-        .terminal-window.wm-pop {
-            animation: wmPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        @keyframes wmPop {
-            0% { transform: scale(0.94); opacity: 0.5; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        .terminal-window.wm-closing {
-            animation: wmClose 0.35s cubic-bezier(0.4, 0, 1, 1) forwards;
-        }
-
-        @keyframes wmClose {
-            to { transform: scale(0.85); opacity: 0; }
-        }
-
-        .terminal-window.wm-maximized {
-            position: fixed;
-            inset: 1.25rem;
-            width: auto;
-            max-width: none;
-            z-index: 300;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .terminal-window.wm-maximized .terminal-titlebar,
-        .terminal-window.wm-maximized .status-bar {
-            flex-shrink: 0;
-        }
-
-        .terminal-window.wm-maximized .terminal-body {
-            flex: 1;
-            overflow-y: auto;
-        }
-
-        .respawn-msg {
-            position: fixed;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.3rem;
-            color: var(--green);
-            font-size: 0.85rem;
-            font-weight: 600;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s ease;
-            z-index: 250;
-        }
-
-        .respawn-msg.show { opacity: 1; }
-
-        .terminal-body {
-            padding: 1.75rem 1.75rem 2rem;
-            max-height: 4000px;
-            overflow: hidden;
-            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, padding 0.35s ease;
-        }
-
-        .terminal-window.wm-minimized .terminal-body,
-        .terminal-window.wm-minimized .status-bar {
-            max-height: 0;
-            opacity: 0;
-            padding-top: 0;
-            padding-bottom: 0;
-            border-color: transparent;
-        }
-
-        /* ── Command line ── */
-        .cmd-line {
-            font-size: 0.88rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .cmd-line .prompt-user { color: var(--green); font-weight: 600; }
-        .cmd-line .prompt-path { color: var(--cyan); font-weight: 600; }
-        .cmd-line .prompt-dollar { color: var(--muted); }
-        .cmd-line .prompt-cmd {
-            color: var(--text);
-            font-weight: 500;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid var(--green);
-            width: 15.5ch;
-            animation: typing 1s steps(14) 0.3s forwards, caretBlink 0.8s step-end 1.3s infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 15.5ch; }
-        }
-
-        @keyframes caretBlink {
-            0%, 100% { border-color: var(--green); }
-            50% { border-color: transparent; }
-        }
-
-        /* ── Markdown output ── */
-        .md-mark { color: var(--muted); font-weight: 400; opacity: 0.6; }
-
-        .md-output {
-            opacity: 0;
-            animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s forwards;
-        }
-
-        h1 {
-            font-size: 1.9rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.4rem;
-        }
-
-        .md-quote {
-            border-left: 3px solid var(--border);
-            padding-left: 0.9rem;
-            color: var(--muted);
-            font-style: italic;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .badges-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.1rem;
-        }
-
-        .badge-pill {
-            display: inline-flex;
-            border-radius: 4px;
-            overflow: hidden;
-            font-size: 0.68rem;
-            font-weight: 600;
-            border: 1px solid var(--border);
-        }
-
-        .badge-label {
-            background: var(--bg);
-            color: var(--muted);
-            padding: 0.22rem 0.55rem;
-        }
-
-        .badge-value {
-            padding: 0.22rem 0.55rem;
-            color: var(--bg);
-        }
-
-        .badge-value.green { background: var(--green); }
-        .badge-value.blue { background: var(--cyan); }
-
-        .meta-line {
-            color: var(--muted);
-            font-size: 0.85rem;
-            margin-bottom: 1.75rem;
-        }
-
-        .role-typed {
-            color: var(--cyan);
-            font-weight: 600;
-        }
-
-        .md-quote .cursor-blink {
-            background: var(--cyan);
-            margin-left: 1px;
-        }
-
-        h2.md-h2 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin: 2.25rem 0 1rem;
-            display: flex;
-            align-items: baseline;
-            gap: 0.4rem;
-        }
-
-        .about-text p {
-            color: var(--text);
-            margin-bottom: 0.85rem;
-            font-size: 0.92rem;
-        }
-
-        .about-text strong { color: var(--cyan); font-weight: 600; }
-
-        /* ── Tools grid ── */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1rem;
-        }
-
-        .tool-entry {
-            position: relative;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.1rem 1.2rem;
-            text-decoration: none;
-            color: var(--text);
-            display: block;
-            overflow: hidden;
-            transition: border-color 0.25s ease, transform 0.25s ease;
-        }
-
-        .tool-entry::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), var(--glow), transparent 60%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .tool-entry:hover {
-            border-color: var(--cyan);
-            transform: translateY(-2px);
-        }
-
-        .tool-entry:hover::before { opacity: 1; }
-
-        .tool-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
-        .tool-name {
-            font-weight: 700;
-            font-size: 0.92rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .tool-name i { color: var(--cyan); font-size: 0.85rem; }
-
-        .status-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--green);
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .status-dot::after {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            border: 1px solid var(--green);
-            opacity: 0.6;
-            animation: pulseRing 1.8s ease-out infinite;
-        }
-
-        @keyframes pulseRing {
-            0% { transform: scale(0.6); opacity: 0.6; }
-            100% { transform: scale(1.8); opacity: 0; }
-        }
-
-        .status-label {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            font-size: 0.68rem;
-            color: var(--green);
-            font-weight: 600;
-            text-transform: lowercase;
-        }
-
-        .pwa-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.2rem;
-            font-size: 0.6rem;
-            font-weight: 700;
-            color: var(--cyan);
-            background: var(--glow);
-            padding: 0.1rem 0.4rem;
-            border-radius: 2em;
-            letter-spacing: 0.02em;
-            flex-shrink: 0;
-        }
-
-        .tool-desc {
-            color: var(--muted);
-            font-size: 0.8rem;
-            margin-bottom: 0.75rem;
-            line-height: 1.55;
-        }
-
-        .topic-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-        }
-
-        .topic-tag {
-            background: var(--glow);
-            color: var(--cyan);
-            font-size: 0.68rem;
-            font-weight: 500;
-            padding: 0.1rem 0.55rem;
-            border-radius: 2em;
-        }
-
-        /* ── Code block (tech stack) ── */
-        .code-block {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem 1.25rem;
-            font-size: 0.82rem;
-            overflow-x: auto;
-            white-space: pre;
-        }
-
-        .yaml-key { color: var(--purple); }
-        .yaml-punc { color: var(--muted); }
-        .yaml-val { color: var(--green); }
-
-        /* ── Contact list ── */
-        .md-list { list-style: none; }
-
-        .md-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            margin-bottom: 0.55rem;
-            font-size: 0.9rem;
-        }
-
-        .md-list a {
-            color: var(--cyan);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .md-list a:hover { text-decoration: underline; }
-        .md-list i { width: 16px; text-align: center; color: var(--muted); }
-
-        .copy-hint {
-            color: var(--muted);
-            font-size: 0.72rem;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .copy-hint.show { opacity: 1; }
-
-        /* ── Launch script block ── */
-        .launch-block {
-            margin-top: 2.25rem;
-            padding-top: 1.5rem;
-            border-top: 1px dashed var(--border);
-        }
-
-        .site-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.55rem;
-            background: var(--green);
-            color: var(--bg);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .site-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px var(--glow);
-        }
-
-        /* ── Final prompt ── */
-        .final-prompt {
-            margin-top: 1.75rem;
-            font-size: 0.88rem;
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .cursor-blink {
-            display: inline-block;
-            width: 8px;
-            height: 1.1em;
-            background: var(--green);
-            animation: caretBlink 0.9s step-end infinite;
-            vertical-align: text-bottom;
-        }
-
-        /* ── Status bar footer ── */
-        .status-bar {
-            display: flex;
-            align-items: stretch;
-            font-size: 0.72rem;
-            border-top: 1px solid var(--border);
-            max-height: 60px;
-            overflow: hidden;
-            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, border-color 0.25s ease;
-        }
-
-        .status-bar .sb-mode {
-            background: var(--green);
-            color: #0d1117;
-            font-weight: 700;
-            padding: 0.4rem 0.75rem;
-        }
-
-        .status-bar .sb-info {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.4rem 0.9rem;
-            color: var(--muted);
-            background: var(--bg-alt);
-            overflow-x: auto;
-            white-space: nowrap;
-        }
-
-        .status-bar .sb-info a { color: var(--muted); text-decoration: none; }
-        .status-bar .sb-info a:hover { color: var(--cyan); }
-
-        /* ── Animations ── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 768px) {
-            .container { padding: 2rem 1rem 2.5rem; }
-            .terminal-body { padding: 1.25rem 1.1rem 1.5rem; }
-            h1 { font-size: 1.5rem; }
-            .tools-grid { grid-template-columns: 1fr; }
-            .controls { top: 0.9rem; right: 0.9rem; }
-            .status-bar .sb-info { gap: 0.75rem; }
-        }
-
-        /* ── Reduced Motion ── */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-
-            .terminal-window, .md-output {
-                opacity: 1;
-                animation: none;
-            }
-
-            .cmd-line .prompt-cmd {
-                width: 15.5ch;
-                border-right-color: transparent;
-            }
-        }
-    </style>
+    <!-- Assets (all self-hosted) -->
+    <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin-wght.woff2" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <script src="theme.js"></script>
+    <script src="app.js" defer></script>
 </head>
 
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
 
     <div class="controls">
-        <button class="control-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
-            <i class="fas fa-moon"></i>
+        <button type="button" class="control-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme" aria-pressed="true">
+            <svg class="icon" aria-hidden="true"><use href="icons.svg#i-sun"/></svg>
         </button>
     </div>
 
@@ -719,11 +80,11 @@
         <main>
         <div class="terminal-window">
             <div class="terminal-titlebar">
-                <div class="terminal-title"><i class="fas fa-terminal" style="font-size: 0.72rem; margin-right: 0.4rem;"></i>houssem@devops: ~ &mdash; bash &mdash; 88&times;40</div>
+                <div class="terminal-title"><svg class="icon title-icon" aria-hidden="true"><use href="icons.svg#i-terminal"/></svg>houssem@devops: ~ &mdash; bash &mdash; 88&times;40</div>
                 <div class="win-controls">
-                    <button type="button" class="win-btn" id="winMinimize" aria-label="Minimize terminal"><i class="fas fa-minus" aria-hidden="true"></i></button>
-                    <button type="button" class="win-btn" id="winMaximize" aria-label="Maximize terminal"><i class="far fa-square" aria-hidden="true"></i></button>
-                    <button type="button" class="win-btn win-close" id="winClose" aria-label="Close terminal"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+                    <button type="button" class="win-btn" id="winMinimize" aria-label="Minimize terminal"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-minus"/></svg></button>
+                    <button type="button" class="win-btn" id="winMaximize" aria-label="Maximize terminal"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-square"/></svg></button>
+                    <button type="button" class="win-btn win-close" id="winClose" aria-label="Close terminal"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-xmark"/></svg></button>
                 </div>
             </div>
 
@@ -735,7 +96,7 @@
 
                 <div class="md-output">
                     <h1><span class="md-mark" aria-hidden="true"># </span>Houssem Ben Ali</h1>
-                    <p class="md-quote"><span class="md-mark" aria-hidden="true">&gt; </span>DevOps &amp; SecOps Engineer &middot; <span class="role-typed" id="roleTyped"></span><span class="cursor-blink"></span></p>
+                    <p class="md-quote"><span class="md-mark" aria-hidden="true">&gt; </span>DevOps &amp; SecOps Engineer &middot; <span class="role-typed" id="roleTyped">IT Consultant</span><span class="cursor-blink"></span></p>
 
                     <div class="badges-row">
                         <span class="badge-pill"><span class="badge-label">build</span><span class="badge-value green">passing</span></span>
@@ -744,104 +105,141 @@
                         <span class="badge-pill"><span class="badge-label">PRs</span><span class="badge-value blue">welcome</span></span>
                     </div>
 
-                    <p class="meta-line"><i class="fas fa-location-dot"></i> Tunisia / France &middot; Remote &middot; 8 years experience</p>
+                    <p class="meta-line"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-location-dot"/></svg> Tunisia / France &middot; Remote &middot; 8 years experience</p>
+
+                    <h2 class="md-h2" id="tools"><span class="md-mark" aria-hidden="true">## </span>&#128736;&#65039; Security Tools</h2>
+                    <p class="lead">11 free, open-source tools to check your email authentication, DNS and TLS setup. No sign-up. Press <kbd>/</kbd> to search.</p>
+
+                    <div class="tool-filter" role="search">
+                        <span class="prompt" aria-hidden="true"><span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span></span>
+                        <label for="toolFilter">grep -i</label>
+                        <input type="search" id="toolFilter" placeholder="dmarc, tls, dns&hellip;" autocomplete="off" spellcheck="false" aria-controls="toolsList">
+                        <kbd aria-hidden="true">/</kbd>
+                        <span class="tool-count" id="toolCount" role="status" aria-live="polite">11 tools</span>
+                    </div>
+
+                    <div id="toolsList">
+                    <div class="tool-group">
+                        <h3><span class="md-mark" aria-hidden="true">### </span>email authentication</h3>
+                        <div class="tools-grid">
+                            <a href="https://spf.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                                <div class="tool-head">
+                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-shield-halved"/></svg>spf.hbenali.ovh</span>
+                                    <span class="status-label"><span class="status-dot"></span>online</span>
+                                </div>
+                                <p class="tool-desc">SPF Checker &mdash; inspect authorized senders and catch lookup-limit issues.</p>
+                                <p class="tool-checks"><b>checks:</b> SPF DNS record</p>
+                                <div class="topic-tags"><span class="topic-tag">spf</span><span class="topic-tag">anti-spoofing</span></div>
+                            </a>
+                            <a href="https://dkim.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                                <div class="tool-head">
+                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-envelope"/></svg>dkim.hbenali.ovh</span>
+                                    <span class="status-label"><span class="status-dot"></span>online</span>
+                                </div>
+                                <p class="tool-desc">DKIM Validator &mdash; verify your mail is signed correctly and hard to spoof.</p>
+                                <p class="tool-checks"><b>checks:</b> DKIM DNS record</p>
+                                <div class="topic-tags"><span class="topic-tag">dkim</span><span class="topic-tag">email-auth</span></div>
+                            </a>
+                            <a href="https://dmarc.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                                <div class="tool-head">
+                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-chart-line"/></svg>dmarc.hbenali.ovh</span>
+                                    <span class="status-label"><span class="status-dot"></span>online</span>
+                                </div>
+                                <p class="tool-desc">DMARC Analyzer &mdash; read policies and reports, monitor domain abuse.</p>
+                                <p class="tool-checks"><b>checks:</b> DMARC DNS record</p>
+                                <div class="topic-tags"><span class="topic-tag">dmarc</span><span class="topic-tag">reporting</span></div>
+                            </a>
+                            <a href="https://bimi.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                                <div class="tool-head">
+                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-image"/></svg>bimi.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
+                                    <span class="status-label"><span class="status-dot"></span>online</span>
+                                </div>
+                                <p class="tool-desc">BIMI Inspector &mdash; check logo/VMC requirements for brand indicators.</p>
+                                <p class="tool-checks"><b>checks:</b> BIMI record, DMARC readiness, VMC certificate</p>
+                                <div class="topic-tags"><span class="topic-tag">bimi</span><span class="topic-tag">branding</span></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tool-group">
+                        <h3><span class="md-mark" aria-hidden="true">### </span>dns &amp; certificates</h3>
+                        <div class="tools-grid">
+                            <a href="https://caa.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                                <div class="tool-head">
+                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-lock"/></svg>caa.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
+                                    <span class="status-label"><span class="status-dot"></span>online</span>
+                                </div>
+                                <p class="tool-desc">CAA Inspector &mdash; see which CAs are authorized to issue certs for your domain.</p>
+                                <p class="tool-checks"><b>checks:</b> CAA records (inspector and generator)</p>
+                                <div class="topic-tags"><span class="topic-tag">pki</span><span class="topic-tag">tls</span></div>
+                            </a>
+                            <a href="https://dnssec.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                                <div class="tool-head">
+                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-link"/></svg>dnssec.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
+                                    <span class="status-label"><span class="status-dot"></span>online</span>
+                                </div>
+                                <p class="tool-desc">DNSSEC Inspector &mdash; validate a domain's chain of trust and see why it failed if it did.</p>
+                                <p class="tool-checks"><b>checks:</b> DNSSEC chain of trust and failure diagnosis</p>
+                                <div class="topic-tags"><span class="topic-tag">dnssec</span><span class="topic-tag">dns-security</span></div>
+                            </a>
+                            <a href="https://ssl.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                                <div class="tool-head">
+                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-certificate"/></svg>ssl.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
+                                    <span class="status-label"><span class="status-dot"></span>online</span>
+                                </div>
+                                <p class="tool-desc">SSL Checker &mdash; quickly validate a TLS certificate chain for any domain.</p>
+                                <p class="tool-checks"><b>checks:</b> TLS certificate chain</p>
+                                <div class="topic-tags"><span class="topic-tag">tls</span><span class="topic-tag">certs</span></div>
+                            </a>
+                            <a href="https://rdap.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                                <div class="tool-head">
+                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-magnifying-glass"/></svg>rdap.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
+                                    <span class="status-label"><span class="status-dot"></span>online</span>
+                                </div>
+                                <p class="tool-desc">RDAP Inspector &mdash; modern, structured domain/IP/ASN lookups replacing WHOIS.</p>
+                                <p class="tool-checks"><b>checks:</b> Domain, IP and ASN registration (RDAP)</p>
+                                <div class="topic-tags"><span class="topic-tag">rdap</span><span class="topic-tag">whois</span></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tool-group">
+                        <h3><span class="md-mark" aria-hidden="true">### </span>network &amp; developer tools</h3>
+                        <div class="tools-grid">
+                            <a href="https://ip.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                                <div class="tool-head">
+                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-globe"/></svg>ip.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
+                                    <span class="status-label"><span class="status-dot"></span>online</span>
+                                </div>
+                                <p class="tool-desc">IP Inspector &mdash; geolocation, network intel, and security context.</p>
+                                <p class="tool-checks"><b>checks:</b> Geolocation, ISP/ASN, VPN/proxy/Tor detection</p>
+                                <div class="topic-tags"><span class="topic-tag">network</span><span class="topic-tag">geoip</span></div>
+                            </a>
+                            <a href="https://commitsign.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                                <div class="tool-head">
+                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-file-signature"/></svg>commitsign.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
+                                    <span class="status-label"><span class="status-dot"></span>online</span>
+                                </div>
+                                <p class="tool-desc">CommitSign &mdash; one-command SSH commit signing setup, plus manual SSH/GPG guides.</p>
+                                <p class="tool-checks"><b>checks:</b> Git SSH commit signing scripts and guides</p>
+                                <div class="topic-tags"><span class="topic-tag">git</span><span class="topic-tag">signing</span></div>
+                            </a>
+                            <a href="https://frontail.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
+                                <div class="tool-head">
+                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-scroll"/></svg>frontail.hbenali.ovh</span>
+                                    <span class="status-label"><span class="status-dot"></span>online</span>
+                                </div>
+                                <p class="tool-desc">Frontail &mdash; stream and filter log files live in the browser.</p>
+                                <p class="tool-checks"><b>checks:</b> Live log streaming (demo)</p>
+                                <div class="topic-tags"><span class="topic-tag">logs</span><span class="topic-tag">observability</span></div>
+                            </a>
+                        </div>
+                    </div>
+                        <p class="tool-empty" id="toolEmpty" hidden>No tool matches that search. Press <kbd>Esc</kbd> to clear it.</p>
+                    </div>
 
                     <h2 class="md-h2"><span class="md-mark" aria-hidden="true">## </span>About</h2>
                     <div class="about-text">
                         <p>DevOps &amp; SecOps Engineer with 8 years in software, from <strong>frontend and J2EE development</strong> and <strong>technical support</strong> to <strong>DevOps</strong> since 2020. I run the software factory and release pipeline at <strong>eXo Platform</strong> (Jenkins, Nexus, GitHub Actions, signed Docker images) and maintain the internal tool that deploys its acceptance and demo environments.</p>
-                        <p>I also host and secure the infrastructure (Puppet, Ansible, Google Cloud, OVH; TLS, DNS and email authentication), use AI assistants daily to speed up automation and review, and ship the tools below in my spare time to help the community check their email authentication and DNS security posture.</p>
-                    </div>
-
-                    <h2 class="md-h2"><span class="md-mark" aria-hidden="true">## </span>&#128736;&#65039; Security Tools</h2>
-                    <div class="tools-grid" id="toolsGrid">
-                        <a href="https://caa.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                            <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-lock"></i>caa.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                <span class="status-label"><span class="status-dot"></span>online</span>
-                            </div>
-                            <p class="tool-desc">CAA Inspector &mdash; see which CAs are authorized to issue certs for your domain.</p>
-                            <div class="topic-tags"><span class="topic-tag">pki</span><span class="topic-tag">tls</span></div>
-                        </a>
-                        <a href="https://dnssec.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                            <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-link"></i>dnssec.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                <span class="status-label"><span class="status-dot"></span>online</span>
-                            </div>
-                            <p class="tool-desc">DNSSEC Inspector &mdash; validate a domain's chain of trust and see why it failed if it did.</p>
-                            <div class="topic-tags"><span class="topic-tag">dnssec</span><span class="topic-tag">dns-security</span></div>
-                        </a>
-                        <a href="https://dkim.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                            <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-envelope"></i>dkim.hbenali.ovh</span>
-                                <span class="status-label"><span class="status-dot"></span>online</span>
-                            </div>
-                            <p class="tool-desc">DKIM Validator &mdash; verify your mail is signed correctly and hard to spoof.</p>
-                            <div class="topic-tags"><span class="topic-tag">dkim</span><span class="topic-tag">email-auth</span></div>
-                        </a>
-                        <a href="https://spf.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                            <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-shield-halved"></i>spf.hbenali.ovh</span>
-                                <span class="status-label"><span class="status-dot"></span>online</span>
-                            </div>
-                            <p class="tool-desc">SPF Checker &mdash; inspect authorized senders and catch lookup-limit issues.</p>
-                            <div class="topic-tags"><span class="topic-tag">spf</span><span class="topic-tag">anti-spoofing</span></div>
-                        </a>
-                        <a href="https://dmarc.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                            <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-chart-line"></i>dmarc.hbenali.ovh</span>
-                                <span class="status-label"><span class="status-dot"></span>online</span>
-                            </div>
-                            <p class="tool-desc">DMARC Analyzer &mdash; read policies and reports, monitor domain abuse.</p>
-                            <div class="topic-tags"><span class="topic-tag">dmarc</span><span class="topic-tag">reporting</span></div>
-                        </a>
-                        <a href="https://bimi.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                            <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-image"></i>bimi.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                <span class="status-label"><span class="status-dot"></span>online</span>
-                            </div>
-                            <p class="tool-desc">BIMI Inspector &mdash; check logo/VMC requirements for brand indicators.</p>
-                            <div class="topic-tags"><span class="topic-tag">bimi</span><span class="topic-tag">branding</span></div>
-                        </a>
-                        <a href="https://ip.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                            <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-globe"></i>ip.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                <span class="status-label"><span class="status-dot"></span>online</span>
-                            </div>
-                            <p class="tool-desc">IP Inspector &mdash; geolocation, network intel, and security context.</p>
-                            <div class="topic-tags"><span class="topic-tag">network</span><span class="topic-tag">geoip</span></div>
-                        </a>
-                        <a href="https://rdap.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                            <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-magnifying-glass"></i>rdap.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                <span class="status-label"><span class="status-dot"></span>online</span>
-                            </div>
-                            <p class="tool-desc">RDAP Inspector &mdash; modern, structured domain/IP/ASN lookups replacing WHOIS.</p>
-                            <div class="topic-tags"><span class="topic-tag">rdap</span><span class="topic-tag">whois</span></div>
-                        </a>
-                        <a href="https://ssl.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                            <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-certificate"></i>ssl.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                <span class="status-label"><span class="status-dot"></span>online</span>
-                            </div>
-                            <p class="tool-desc">SSL Checker &mdash; quickly validate a TLS certificate chain for any domain.</p>
-                            <div class="topic-tags"><span class="topic-tag">tls</span><span class="topic-tag">certs</span></div>
-                        </a>
-                        <a href="https://frontail.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                            <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-scroll"></i>frontail.hbenali.ovh</span>
-                                <span class="status-label"><span class="status-dot"></span>online</span>
-                            </div>
-                            <p class="tool-desc">Frontail &mdash; stream and filter log files live in the browser.</p>
-                            <div class="topic-tags"><span class="topic-tag">logs</span><span class="topic-tag">observability</span></div>
-                        </a>
-                        <a href="https://commitsign.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                            <div class="tool-head">
-                                <span class="tool-name"><i class="fas fa-file-signature"></i>commitsign.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                <span class="status-label"><span class="status-dot"></span>online</span>
-                            </div>
-                            <p class="tool-desc">CommitSign &mdash; one-command SSH commit signing setup, plus manual SSH/GPG guides.</p>
-                            <div class="topic-tags"><span class="topic-tag">git</span><span class="topic-tag">signing</span></div>
-                        </a>
+                        <p>I also host and secure the infrastructure (Puppet, Ansible, Google Cloud, OVH; TLS, DNS and email authentication), use AI assistants daily to speed up automation and review, and ship the tools above in my spare time to help the community check their email authentication and DNS security posture.</p>
                     </div>
 
                     <h2 class="md-h2"><span class="md-mark" aria-hidden="true">## </span>&#9881;&#65039; Tech Stack</h2>
@@ -854,19 +252,19 @@
 
                     <h2 class="md-h2"><span class="md-mark" aria-hidden="true">## </span>&#128248; Contact</h2>
                     <ul class="md-list">
-                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://github.com/hbenali" target="_blank" rel="noopener"><i class="fab fa-github"></i>github.com/hbenali</a></li>
-                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://linkedin.com/in/houssembali" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i>linkedin.com/in/houssembali</a></li>
-                        <li><span class="md-mark" aria-hidden="true">- </span><a href="mailto:contact@hbenali.ovh" id="emailLink"><i class="fas fa-envelope"></i>contact@hbenali.ovh</a> <span class="copy-hint" id="copyHint">copied to clipboard</span></li>
-                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://about.hbenali.ovh" target="_blank" rel="noopener"><i class="fas fa-user"></i>about.hbenali.ovh</a></li>
+                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://github.com/hbenali" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-github"/></svg>github.com/hbenali</a></li>
+                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://linkedin.com/in/houssembali" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-linkedin"/></svg>linkedin.com/in/houssembali</a></li>
+                        <li><span class="md-mark" aria-hidden="true">- </span><a href="mailto:contact@hbenali.ovh" id="emailLink"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-envelope"/></svg>contact@hbenali.ovh</a> <span class="copy-hint" id="copyHint">copied to clipboard</span></li>
+                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://about.hbenali.ovh" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-user"/></svg>about.hbenali.ovh</a></li>
                     </ul>
 
                     <div class="launch-block">
-                        <p class="cmd-line" style="margin-bottom: 0.9rem;">
+                        <p class="cmd-line">
                             <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
                             <span>open about.hbenali.ovh</span>
                         </p>
                         <a href="https://about.hbenali.ovh" class="site-btn" target="_blank" rel="noopener">
-                            <i class="fas fa-arrow-up-right-from-square"></i> Visit the full site
+                            <svg class="icon" aria-hidden="true"><use href="icons.svg#i-arrow-up-right-from-square"/></svg> Visit the full site
                         </a>
                     </div>
 
@@ -891,138 +289,6 @@
         <p class="respawn-msg" id="respawnMsg" aria-hidden="true">$ respawning shell&hellip;<span class="cursor-blink"></span></p>
         </main>
     </div>
-
-    <script>
-        const body = document.body;
-        const themeToggle = document.querySelector('.theme-toggle');
-        const themeIcon = themeToggle.querySelector('i');
-        const scrollProgress = document.getElementById('scrollProgress');
-
-        // ── Theme ──
-        const getPreferredTheme = () => {
-            const saved = localStorage.getItem('theme');
-            if (saved) return saved;
-            return 'dark';
-        };
-
-        const setTheme = (theme) => {
-            body.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            themeIcon.classList.replace(
-                theme === 'dark' ? 'fa-moon' : 'fa-sun',
-                theme === 'dark' ? 'fa-sun' : 'fa-moon'
-            );
-        };
-
-        setTheme(getPreferredTheme());
-
-        themeToggle.addEventListener('click', () => {
-            setTheme(body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-        });
-
-        // ── Window controls ──
-        const terminalWindow = document.querySelector('.terminal-window');
-        const winMinimize = document.getElementById('winMinimize');
-        const winMaximize = document.getElementById('winMaximize');
-        const winClose = document.getElementById('winClose');
-        const respawnMsg = document.getElementById('respawnMsg');
-
-        function pop() {
-            terminalWindow.classList.remove('wm-pop');
-            void terminalWindow.offsetWidth;
-            terminalWindow.classList.add('wm-pop');
-        }
-
-        winMinimize.addEventListener('click', () => {
-            terminalWindow.classList.remove('wm-maximized');
-            terminalWindow.classList.toggle('wm-minimized');
-        });
-
-        winMaximize.addEventListener('click', () => {
-            terminalWindow.classList.remove('wm-minimized');
-            terminalWindow.classList.toggle('wm-maximized');
-            pop();
-        });
-
-        winClose.addEventListener('click', () => {
-            if (terminalWindow.classList.contains('wm-closing')) return;
-            terminalWindow.classList.remove('wm-maximized', 'wm-minimized');
-            terminalWindow.classList.add('wm-closing');
-            setTimeout(() => respawnMsg.classList.add('show'), 350);
-            setTimeout(() => {
-                respawnMsg.classList.remove('show');
-                terminalWindow.classList.remove('wm-closing');
-                pop();
-            }, 950);
-        });
-
-        // ── Scroll progress ──
-        window.addEventListener('scroll', () => {
-            const h = document.documentElement;
-            const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-            scrollProgress.style.width = (isFinite(pct) ? pct : 0) + '%';
-        }, { passive: true });
-
-        // ── Role typewriter ──
-        const roles = ['IT Consultant', 'Software Factory Engineer', 'Cloud Engineer', 'SRE', 'Automation Enthusiast'];
-        const roleEl = document.getElementById('roleTyped');
-        let roleIdx = 0;
-
-        function typeRole(text, cb) {
-            roleEl.textContent = '';
-            let i = 0;
-            const iv = setInterval(() => {
-                roleEl.textContent = text.slice(0, ++i);
-                if (i === text.length) { clearInterval(iv); setTimeout(cb, 1600); }
-            }, 45);
-        }
-
-        function eraseRole(cb) {
-            const text = roleEl.textContent;
-            let i = text.length;
-            const iv = setInterval(() => {
-                roleEl.textContent = text.slice(0, --i);
-                if (i === 0) { clearInterval(iv); cb(); }
-            }, 25);
-        }
-
-        function cycleRoles() {
-            typeRole(roles[roleIdx], () => {
-                eraseRole(() => {
-                    roleIdx = (roleIdx + 1) % roles.length;
-                    cycleRoles();
-                });
-            });
-        }
-
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            cycleRoles();
-        } else {
-            roleEl.textContent = roles[0];
-        }
-
-        // ── Tool card spotlight ──
-        document.querySelectorAll('[data-tool]').forEach((card) => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                card.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
-                card.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
-            });
-        });
-
-        // ── Copy email ──
-        const emailLink = document.getElementById('emailLink');
-        const copyHint = document.getElementById('copyHint');
-        emailLink.addEventListener('click', () => {
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText('contact@hbenali.ovh').then(() => {
-                    copyHint.classList.add('show');
-                    setTimeout(() => copyHint.classList.remove('show'), 2000);
-                });
-            }
-        });
-
-    </script>
 </body>
 
 </html>
