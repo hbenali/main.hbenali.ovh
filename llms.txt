@@ -1,6 +1,6 @@
 # Houssem Ben Ali
 
-> DevOps engineer's homepage — an interactive terminal/README linking to a set of free, open-source security and network inspection tools.
+> DevOps & SecOps engineer's homepage — an interactive terminal/README linking to a set of free, open-source security and network inspection tools.
 
 Live at https://www.hbenali.ovh. No backend, single static `index.html`.
 
