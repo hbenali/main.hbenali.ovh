@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tessera for eXo - Privacy Policy | Houssem Ben Ali</title>
+
+    <meta name="description" content="Privacy policy for Tessera for eXo, a browser extension that opens the Tessera chat client in a drawer on the eXo workspace.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Houssem Ben Ali">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#3b82f6">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://www.hbenali.ovh/tessera-exo-privacy.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tessera for eXo - Privacy Policy">
+    <meta property="og:description" content="Privacy policy for the Tessera for eXo browser extension.">
+    <meta property="og:url" content="https://www.hbenali.ovh/tessera-exo-privacy.html">
+    <meta property="og:image" content="https://www.hbenali.ovh/android-chrome-512x512.png">
+    <meta property="og:site_name" content="Houssem Ben Ali">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #475569;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --accent-dark: #2563eb;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+            --bg: #ffffff;
+            --bg-secondary: #f1f5f9;
+            --text: #0f172a;
+            --text-secondary: #64748b;
+            --card-bg: rgba(255, 255, 255, 0.72);
+            --card-border: rgba(226, 232, 240, 0.5);
+            --card-shadow: rgba(0, 0, 0, 0.06);
+            --gradient-start: #3b82f6;
+            --gradient-end: #8b5cf6;
+        }
+
+        [data-theme="dark"] {
+            --primary: #f1f5f9;
+            --secondary: #94a3b8;
+            --accent: #60a5fa;
+            --accent-light: #93c5fd;
+            --accent-dark: #3b82f6;
+            --accent-glow: rgba(96, 165, 250, 0.3);
+            --bg: #0b1120;
+            --bg-secondary: #131c31;
+            --text: #f1f5f9;
+            --text-secondary: #8899b4;
+            --card-bg: rgba(15, 23, 42, 0.72);
+            --card-border: rgba(51, 65, 85, 0.5);
+            --card-shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: 100vh;
+        }
+
+        .bg-orbs {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            will-change: transform;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);
+            top: -15%;
+            left: -10%;
+            animation: orbFloat1 25s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.25), transparent 70%);
+            bottom: -20%;
+            right: -10%;
+            animation: orbFloat2 30s ease-in-out infinite;
+        }
+
+        [data-theme="dark"] .orb-1 { background: radial-gradient(circle, rgba(59, 130, 246, 0.35), transparent 70%); }
+        [data-theme="dark"] .orb-2 { background: radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent 70%); }
+
+        @keyframes orbFloat1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(60px, 40px) scale(1.08); }
+            66% { transform: translate(-30px, -20px) scale(0.95); }
+        }
+
+        @keyframes orbFloat2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-50px, -30px) scale(1.05); }
+            66% { transform: translate(40px, 20px) scale(0.92); }
+        }
+
+        .controls {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 100;
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .control-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            border: 1px solid var(--card-border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            color: var(--text-secondary);
+            box-shadow: 0 4px 16px var(--card-shadow);
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1) rotate(8deg);
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px var(--accent-glow);
+        }
+
+        .lang-toggle {
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem 6rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--accent); }
+
+        .page-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+            box-shadow: 0 4px 12px var(--card-shadow);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .updated {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 1.75rem;
+            box-shadow: 0 4px 16px var(--card-shadow);
+            margin-bottom: 1.25rem;
+        }
+
+        .card h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .card h2 i {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .card p, .card li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .card p + p { margin-top: 0.75rem; }
+
+        .card ul {
+            margin: 0.5rem 0 0 1.25rem;
+        }
+
+        .card li + li { margin-top: 0.4rem; }
+
+        .card strong { color: var(--text); }
+
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .container { padding: 4rem 1.25rem 4rem; }
+            h1 { font-size: 1.8rem; }
+            .card { padding: 1.4rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <div class="controls">
+        <button class="control-btn lang-toggle" aria-label="Switch language" title="Switch language">
+            <span class="lang-toggle-label">FR</span>
+        </button>
+        <button class="control-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <div id="lang-en" class="lang-content">
+            <a href="https://about.hbenali.ovh" class="back-link"><i class="fas fa-arrow-left"></i> Back to hbenali.ovh</a>
+
+            <div class="page-header">
+                <div class="badge"><i class="fas fa-puzzle-piece"></i> Tessera for eXo (Chrome and Firefox)</div>
+                <h1>Privacy Policy</h1>
+                <p class="updated">Last updated: October 28, 2026</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                <p>Tessera for eXo is a browser extension that replaces the chat icon on the eXo workspace page with a Tessera icon and an unread badge, and opens the Tessera chat client in a side drawer. It is an independent project and is not affiliated with or endorsed by eXo Platform.</p>
+                <p>The extension does not collect, store, sell or share any personal data. It has no analytics, no telemetry, no backend server and no remote code.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-eye"></i> What the extension does</h2>
+                <ul>
+                    <li>On <strong>community.exoplatform.com</strong> it adds the icon, the badge and the drawer.</li>
+                    <li>It opens Tessera (<strong>tessera.hbenali.ovh</strong>, or the address you set in the options) inside the drawer.</li>
+                    <li>A small script inside the Tessera frame reads the unread count and the colour theme and passes them to the drawer. This happens only in your browser.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-database"></i> What is stored</h2>
+                <p>Only your own settings (the Tessera address, the preload option and the pinned state), in the browser's extension storage. This data stays in your browser and is never sent to the developer.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-comments"></i> Your messages and sign-in</h2>
+                <p>Tessera is a separate web app. Your messages and your sign-in go from your browser to the Matrix server you choose there, exactly as when you open Tessera in a normal tab. The extension never sees them. The drawer keeps its own browser storage, so you sign in to Tessera once inside it.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-file-alt"></i> Changes to this policy</h2>
+                <p>If this policy changes, the "Last updated" date above will be revised.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-envelope"></i> Contact</h2>
+                <p>Questions about this policy can be sent to <a href="mailto:contact@hbenali.ovh" style="color: var(--accent);">contact@hbenali.ovh</a>.</p>
+            </div>
+
+            <footer>
+                &copy; 2026 Houssem Ben Ali &middot; <a href="https://about.hbenali.ovh">hbenali.ovh</a>
+            </footer>
+        </div>
+
+        <div id="lang-fr" class="lang-content" style="display: none;">
+            <a href="https://about.hbenali.ovh" class="back-link"><i class="fas fa-arrow-left"></i> Retour à hbenali.ovh</a>
+
+            <div class="page-header">
+                <div class="badge"><i class="fas fa-puzzle-piece"></i> Tessera for eXo (Chrome et Firefox)</div>
+                <h1>Politique de confidentialité</h1>
+                <p class="updated">Dernière mise à jour : 28 octobre 2026</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-info-circle"></i> Aperçu</h2>
+                <p>Tessera for eXo est une extension de navigateur qui remplace l'icône de chat de la page de l'espace de travail eXo par une icône Tessera avec un badge de messages non lus, et ouvre le client de chat Tessera dans un tiroir latéral. C'est un projet indépendant, non affilié à eXo Platform ni approuvé par celle-ci.</p>
+                <p>L'extension ne collecte, ne stocke, ne vend ni ne partage aucune donnée personnelle. Elle n'a ni analytique, ni télémétrie, ni serveur backend, ni code distant.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-eye"></i> Ce que fait l'extension</h2>
+                <ul>
+                    <li>Sur <strong>community.exoplatform.com</strong>, elle ajoute l'icône, le badge et le tiroir.</li>
+                    <li>Elle ouvre Tessera (<strong>tessera.hbenali.ovh</strong>, ou l'adresse définie dans les options) dans le tiroir.</li>
+                    <li>Un petit script dans le cadre Tessera lit le nombre de messages non lus et le thème de couleurs et les transmet au tiroir. Cela se passe uniquement dans votre navigateur.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-database"></i> Ce qui est stocké</h2>
+                <p>Uniquement vos propres réglages (l'adresse de Tessera, l'option de préchargement et l'état épinglé), dans le stockage d'extension du navigateur. Ces données restent dans votre navigateur et ne sont jamais envoyées au développeur.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-comments"></i> Vos messages et votre connexion</h2>
+                <p>Tessera est une application web distincte. Vos messages et votre connexion vont de votre navigateur au serveur Matrix que vous y choisissez, exactement comme lorsque vous ouvrez Tessera dans un onglet normal. L'extension ne les voit jamais. Le tiroir conserve son propre stockage, vous vous connectez donc à Tessera une seule fois dedans.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-file-alt"></i> Modifications de cette politique</h2>
+                <p>Si cette politique change, la date de « Dernière mise à jour » ci-dessus sera révisée.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-envelope"></i> Contact</h2>
+                <p>Les questions sur cette politique peuvent être envoyées à <a href="mailto:contact@hbenali.ovh" style="color: var(--accent);">contact@hbenali.ovh</a>.</p>
+            </div>
+
+            <footer>
+                &copy; 2026 Houssem Ben Ali &middot; <a href="https://about.hbenali.ovh">hbenali.ovh</a>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const body = document.body;
+        const themeToggle = document.querySelector('.theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        const getPreferredTheme = () => {
+            const saved = localStorage.getItem('theme');
+            if (saved) return saved;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+
+        const setTheme = (theme) => {
+            body.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeIcon.classList.replace(
+                theme === 'dark' ? 'fa-moon' : 'fa-sun',
+                theme === 'dark' ? 'fa-sun' : 'fa-moon'
+            );
+        };
+
+        setTheme(getPreferredTheme());
+
+        themeToggle.addEventListener('click', () => {
+            setTheme(body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
+        });
+
+        const langToggle = document.querySelector('.lang-toggle');
+        const langLabel = langToggle.querySelector('.lang-toggle-label');
+        const contentEn = document.getElementById('lang-en');
+        const contentFr = document.getElementById('lang-fr');
+
+        const getPreferredLang = () => {
+            const saved = localStorage.getItem('lang');
+            if (saved) return saved;
+            return navigator.language.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+        };
+
+        const setLang = (lang) => {
+            contentEn.style.display = lang === 'en' ? '' : 'none';
+            contentFr.style.display = lang === 'fr' ? '' : 'none';
+            langLabel.textContent = lang === 'en' ? 'FR' : 'EN';
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+        };
+
+        setLang(getPreferredLang());
+
+        langToggle.addEventListener('click', () => {
+            setLang(contentEn.style.display === 'none' ? 'en' : 'fr');
+        });
+    </script>
+</body>
+
+</html>
