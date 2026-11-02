@@ -13,6 +13,12 @@
         <priority>0.3</priority>
     </url>
     <url>
+        <loc>https://www.hbenali.ovh/permission-diff-privacy.html</loc>
+        <lastmod>2026-11-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
         <loc>https://www.hbenali.ovh/tessera-exo-privacy.html</loc>
         <lastmod>2026-10-28</lastmod>
         <changefreq>yearly</changefreq>

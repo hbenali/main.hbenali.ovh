@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permission Diff - Privacy Policy | Houssem Ben Ali</title>
+
+    <meta name="description" content="Privacy policy for Permission Diff, a browser extension that tells you when a website starts using new capabilities or third-party domains.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Houssem Ben Ali">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#3b82f6">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://www.hbenali.ovh/permission-diff-privacy.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Permission Diff - Privacy Policy">
+    <meta property="og:description" content="Privacy policy for the Permission Diff browser extension.">
+    <meta property="og:url" content="https://www.hbenali.ovh/permission-diff-privacy.html">
+    <meta property="og:image" content="https://www.hbenali.ovh/android-chrome-512x512.png">
+    <meta property="og:site_name" content="Houssem Ben Ali">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0f172a;
+            --secondary: #475569;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --accent-dark: #2563eb;
+            --accent-glow: rgba(59, 130, 246, 0.3);
+            --bg: #ffffff;
+            --bg-secondary: #f1f5f9;
+            --text: #0f172a;
+            --text-secondary: #64748b;
+            --card-bg: rgba(255, 255, 255, 0.72);
+            --card-border: rgba(226, 232, 240, 0.5);
+            --card-shadow: rgba(0, 0, 0, 0.06);
+            --gradient-start: #3b82f6;
+            --gradient-end: #8b5cf6;
+        }
+
+        [data-theme="dark"] {
+            --primary: #f1f5f9;
+            --secondary: #94a3b8;
+            --accent: #60a5fa;
+            --accent-light: #93c5fd;
+            --accent-dark: #3b82f6;
+            --accent-glow: rgba(96, 165, 250, 0.3);
+            --bg: #0b1120;
+            --bg-secondary: #131c31;
+            --text: #f1f5f9;
+            --text-secondary: #8899b4;
+            --card-bg: rgba(15, 23, 42, 0.72);
+            --card-border: rgba(51, 65, 85, 0.5);
+            --card-shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            min-height: 100vh;
+        }
+
+        .bg-orbs {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            will-change: transform;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3), transparent 70%);
+            top: -15%;
+            left: -10%;
+            animation: orbFloat1 25s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.25), transparent 70%);
+            bottom: -20%;
+            right: -10%;
+            animation: orbFloat2 30s ease-in-out infinite;
+        }
+
+        [data-theme="dark"] .orb-1 { background: radial-gradient(circle, rgba(59, 130, 246, 0.35), transparent 70%); }
+        [data-theme="dark"] .orb-2 { background: radial-gradient(circle, rgba(139, 92, 246, 0.3), transparent 70%); }
+
+        @keyframes orbFloat1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(60px, 40px) scale(1.08); }
+            66% { transform: translate(-30px, -20px) scale(0.95); }
+        }
+
+        @keyframes orbFloat2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-50px, -30px) scale(1.05); }
+            66% { transform: translate(40px, 20px) scale(0.92); }
+        }
+
+        .controls {
+            position: fixed;
+            top: 1.5rem;
+            right: 1.5rem;
+            z-index: 100;
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .control-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            border: 1px solid var(--card-border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            color: var(--text-secondary);
+            box-shadow: 0 4px 16px var(--card-shadow);
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1) rotate(8deg);
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px var(--accent-glow);
+        }
+
+        .lang-toggle {
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+        }
+
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem 6rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2.5rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--accent); }
+
+        .page-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+            box-shadow: 0 4px 12px var(--card-shadow);
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .updated {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 1.75rem;
+            box-shadow: 0 4px 16px var(--card-shadow);
+            margin-bottom: 1.25rem;
+        }
+
+        .card h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .card h2 i {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .card p, .card li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .card p + p { margin-top: 0.75rem; }
+
+        .card ul {
+            margin: 0.5rem 0 0 1.25rem;
+        }
+
+        .card li + li { margin-top: 0.4rem; }
+
+        .card strong { color: var(--text); }
+
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .container { padding: 4rem 1.25rem 4rem; }
+            h1 { font-size: 1.8rem; }
+            .card { padding: 1.4rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <div class="controls">
+        <button class="control-btn lang-toggle" aria-label="Switch language" title="Switch language">
+            <span class="lang-toggle-label">FR</span>
+        </button>
+        <button class="control-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div class="container">
+                <div id="lang-en" class="lang-content">
+            <a href="https://about.hbenali.ovh" class="back-link"><i class="fas fa-arrow-left"></i> Back to hbenali.ovh</a>
+
+            <div class="page-header">
+                <div class="badge"><i class="fas fa-puzzle-piece"></i> Permission Diff (Chrome and Firefox)</div>
+                <h1>Privacy Policy</h1>
+                <p class="updated">Last updated: November 2, 2026</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-info-circle"></i> Overview</h2>
+                <p>Permission Diff is a browser extension that tells you when a website starts using a browser capability (such as geolocation or WebRTC) or loading a third-party domain that it did not use on your earlier visits.</p>
+                <p>The extension runs entirely in your browser. <strong>It does not send any data anywhere.</strong> It has no server, no account, no analytics, no telemetry and no remote code.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-database"></i> What is stored</h2>
+                <p>For each website you visit, on your device only (in the browser's extension storage):</p>
+                <ul>
+                    <li>the site's hostname (for example <strong>example.com</strong>);</li>
+                    <li>the hostnames of third-party domains the page requested resources from;</li>
+                    <li>the names of browser capabilities the page used (for example <strong>geolocation</strong>, <strong>webrtc</strong>).</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-ban"></i> What is not stored</h2>
+                <p>The extension does not store page content, URLs with paths or query strings, form data, cookies, passwords or your identity.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-key"></i> Why it needs its permissions</h2>
+                <ul>
+                    <li><strong>All sites</strong>: to observe capability use and requests on the pages you visit, so it can tell you what changed.</li>
+                    <li><strong>webRequest</strong>: to see which third-party hosts a page contacts. It only observes; it never blocks or modifies requests.</li>
+                    <li><strong>webNavigation and tabs</strong>: to know when a page visit starts and ends, and to show the result for the active tab.</li>
+                    <li><strong>storage</strong>: to keep the per-site baseline on your device.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-trash"></i> Your control</h2>
+                <p>The popup has a <strong>Clear stored data</strong> button that deletes everything the extension has stored. Removing the extension also deletes it.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-file-alt"></i> Changes to this policy</h2>
+                <p>If this policy changes, the "Last updated" date above will be revised.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-envelope"></i> Contact</h2>
+                <p>Questions about this policy can be sent to <a href="mailto:contact@hbenali.ovh" style="color: var(--accent);">contact@hbenali.ovh</a>, or opened as an issue at <a href="https://github.com/hbenali/permission-diff" style="color: var(--accent);">github.com/hbenali/permission-diff</a>.</p>
+            </div>
+
+            <footer>
+                &copy; 2026 Houssem Ben Ali &middot; <a href="https://about.hbenali.ovh">hbenali.ovh</a>
+            </footer>
+        </div>
+
+        <div id="lang-fr" class="lang-content" style="display: none;">
+            <a href="https://about.hbenali.ovh" class="back-link"><i class="fas fa-arrow-left"></i> Retour à hbenali.ovh</a>
+
+            <div class="page-header">
+                <div class="badge"><i class="fas fa-puzzle-piece"></i> Permission Diff (Chrome et Firefox)</div>
+                <h1>Politique de confidentialité</h1>
+                <p class="updated">Dernière mise à jour : 2 novembre 2026</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-info-circle"></i> Aperçu</h2>
+                <p>Permission Diff est une extension de navigateur qui vous prévient lorsqu'un site commence à utiliser une capacité du navigateur (comme la géolocalisation ou WebRTC) ou à charger un domaine tiers qu'il n'utilisait pas lors de vos visites précédentes.</p>
+                <p>L'extension fonctionne entièrement dans votre navigateur. <strong>Elle n'envoie aucune donnée nulle part.</strong> Elle n'a ni serveur, ni compte, ni analytique, ni télémétrie, ni code distant.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-database"></i> Ce qui est stocké</h2>
+                <p>Pour chaque site visité, uniquement sur votre appareil (dans le stockage d'extension du navigateur) :</p>
+                <ul>
+                    <li>le nom d'hôte du site (par exemple <strong>example.com</strong>) ;</li>
+                    <li>les noms d'hôte des domaines tiers dont la page a demandé des ressources ;</li>
+                    <li>les noms des capacités du navigateur utilisées par la page (par exemple <strong>geolocation</strong>, <strong>webrtc</strong>).</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-ban"></i> Ce qui n'est pas stocké</h2>
+                <p>L'extension ne stocke ni le contenu des pages, ni les URL avec chemin ou paramètres, ni les données de formulaires, ni les cookies, ni les mots de passe, ni votre identité.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-key"></i> Pourquoi elle demande ses autorisations</h2>
+                <ul>
+                    <li><strong>Tous les sites</strong> : pour observer l'usage des capacités et les requêtes sur les pages que vous visitez, afin de vous dire ce qui a changé.</li>
+                    <li><strong>webRequest</strong> : pour voir quels hôtes tiers une page contacte. Elle observe uniquement ; elle ne bloque ni ne modifie jamais les requêtes.</li>
+                    <li><strong>webNavigation et tabs</strong> : pour savoir quand une visite commence et se termine, et afficher le résultat pour l'onglet actif.</li>
+                    <li><strong>storage</strong> : pour conserver la référence de chaque site sur votre appareil.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-trash"></i> Votre contrôle</h2>
+                <p>La fenêtre de l'extension a un bouton <strong>Clear stored data</strong> qui supprime tout ce que l'extension a stocké. Désinstaller l'extension supprime aussi ces données.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-file-alt"></i> Modifications de cette politique</h2>
+                <p>Si cette politique change, la date de « Dernière mise à jour » ci-dessus sera révisée.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-envelope"></i> Contact</h2>
+                <p>Les questions sur cette politique peuvent être envoyées à <a href="mailto:contact@hbenali.ovh" style="color: var(--accent);">contact@hbenali.ovh</a>, ou ouvertes comme ticket sur <a href="https://github.com/hbenali/permission-diff" style="color: var(--accent);">github.com/hbenali/permission-diff</a>.</p>
+            </div>
+
+            <footer>
+                &copy; 2026 Houssem Ben Ali &middot; <a href="https://about.hbenali.ovh">hbenali.ovh</a>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const body = document.body;
+        const themeToggle = document.querySelector('.theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        const getPreferredTheme = () => {
+            const saved = localStorage.getItem('theme');
+            if (saved) return saved;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+
+        const setTheme = (theme) => {
+            body.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            themeIcon.classList.replace(
+                theme === 'dark' ? 'fa-moon' : 'fa-sun',
+                theme === 'dark' ? 'fa-sun' : 'fa-moon'
+            );
+        };
+
+        setTheme(getPreferredTheme());
+
+        themeToggle.addEventListener('click', () => {
+            setTheme(body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        });
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
+        });
+
+        const langToggle = document.querySelector('.lang-toggle');
+        const langLabel = langToggle.querySelector('.lang-toggle-label');
+        const contentEn = document.getElementById('lang-en');
+        const contentFr = document.getElementById('lang-fr');
+
+        const getPreferredLang = () => {
+            const saved = localStorage.getItem('lang');
+            if (saved) return saved;
+            return navigator.language.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+        };
+
+        const setLang = (lang) => {
+            contentEn.style.display = lang === 'en' ? '' : 'none';
+            contentFr.style.display = lang === 'fr' ? '' : 'none';
+            langLabel.textContent = lang === 'en' ? 'FR' : 'EN';
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+        };
+
+        setLang(getPreferredLang());
+
+        langToggle.addEventListener('click', () => {
+            setLang(contentEn.style.display === 'none' ? 'en' : 'fr');
+        });
+    </script>
+</body>
+
+</html>
