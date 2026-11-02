@@ -331,13 +331,16 @@
                 <ul>
                     <li>the site's hostname (for example <strong>example.com</strong>);</li>
                     <li>the hostnames of third-party domains the page requested resources from;</li>
-                    <li>the names of browser capabilities the page used (for example <strong>geolocation</strong>, <strong>webrtc</strong>).</li>
+                    <li>the names of browser capabilities the page used (for example <strong>geolocation</strong>, <strong>webrtc</strong>);</li>
+                    <li>for external scripts the page loads, a short SHA-256 hash (8 bytes) keyed by the script's host and path, used to notice when a known script's content changes. The script itself is <strong>not</strong> stored;</li>
+                    <li>your choices: items you marked as trusted and sites you muted.</li>
                 </ul>
             </div>
 
             <div class="card">
                 <h2><i class="fas fa-ban"></i> What is not stored</h2>
-                <p>The extension does not store page content, URLs with paths or query strings, form data, cookies, passwords or your identity.</p>
+                <p>To compute a script hash, the extension requests the same script URL again, normally answered from your browser cache, without cookies. The response is hashed in memory and discarded.</p>
+                <p>The extension does not store page content, script source code, URLs with paths or query strings, form data, cookies, passwords or your identity.</p>
             </div>
 
             <div class="card">
@@ -391,13 +394,16 @@
                 <ul>
                     <li>le nom d'hôte du site (par exemple <strong>example.com</strong>) ;</li>
                     <li>les noms d'hôte des domaines tiers dont la page a demandé des ressources ;</li>
-                    <li>les noms des capacités du navigateur utilisées par la page (par exemple <strong>geolocation</strong>, <strong>webrtc</strong>).</li>
+                    <li>les noms des capacités du navigateur utilisées par la page (par exemple <strong>geolocation</strong>, <strong>webrtc</strong>) ;</li>
+                    <li>pour les scripts externes chargés par la page, une courte empreinte SHA-256 (8 octets) associée à l'hôte et au chemin du script, utilisée pour détecter qu'un script connu a changé de contenu. Le script lui-même n'est <strong>pas</strong> stocké ;</li>
+                    <li>vos choix : les éléments marqués comme fiables et les sites mis en sourdine.</li>
                 </ul>
             </div>
 
             <div class="card">
                 <h2><i class="fas fa-ban"></i> Ce qui n'est pas stocké</h2>
-                <p>L'extension ne stocke ni le contenu des pages, ni les URL avec chemin ou paramètres, ni les données de formulaires, ni les cookies, ni les mots de passe, ni votre identité.</p>
+                <p>Pour calculer l'empreinte d'un script, l'extension redemande la même URL, normalement servie depuis le cache du navigateur, sans cookies. La réponse est hachée en mémoire puis jetée.</p>
+                <p>L'extension ne stocke ni le contenu des pages, ni le code source des scripts, ni les URL avec chemin ou paramètres, ni les données de formulaires, ni les cookies, ni les mots de passe, ni votre identité.</p>
             </div>
 
             <div class="card">
