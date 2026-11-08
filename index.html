@@ -16,8 +16,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#3fb950">
-    <meta name="theme-color" content="#0d1117">
+    <meta name="msapplication-TileColor" content="#0c1218">
+    <meta name="theme-color" content="#0c1218">
     <link rel="canonical" href="https://www.hbenali.ovh/">
 
     <!-- Security (static hosting: no custom HTTP headers, so CSP/referrer are set here, with no inline script/style; X-Frame-Options/X-Content-Type-Options need a real header and aren't achievable via meta) -->
@@ -61,234 +61,176 @@
     </script>
 
     <!-- Assets (all self-hosted) -->
-    <link rel="preload" as="font" type="font/woff2" href="fonts/jetbrains-mono-latin-wght.woff2" crossorigin>
-    <link rel="stylesheet" href="style.css">
-    <script src="theme.js"></script>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/big-shoulders-latin-wght.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="fonts/newsreader-latin-wght.woff2" crossorigin>
+    <link rel="stylesheet" href="site.css">
     <script src="app.js" defer></script>
 </head>
 
 <body>
-    <div class="scroll-progress" id="scrollProgress"></div>
+    <a class="skip" href="#tools">Skip to the tools</a>
 
-    <div class="controls">
-        <button type="button" class="control-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme" aria-pressed="true">
-            <svg class="icon" aria-hidden="true"><use href="icons.svg#i-sun"/></svg>
-        </button>
-    </div>
-
-    <div class="container">
-        <main>
-        <div class="terminal-window">
-            <div class="terminal-titlebar">
-                <div class="terminal-title"><svg class="icon title-icon" aria-hidden="true"><use href="icons.svg#i-terminal"/></svg>houssem@devops: ~ &mdash; bash &mdash; 88&times;40</div>
-                <div class="win-controls">
-                    <button type="button" class="win-btn" id="winMinimize" aria-label="Minimize terminal"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-minus"/></svg></button>
-                    <button type="button" class="win-btn" id="winMaximize" aria-label="Maximize terminal"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-square"/></svg></button>
-                    <button type="button" class="win-btn win-close" id="winClose" aria-label="Close terminal"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-xmark"/></svg></button>
-                </div>
-            </div>
-
-            <div class="terminal-body">
-                <p class="cmd-line">
-                    <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
-                    <span class="prompt-cmd">glow README.md</span>
-                </p>
-
-                <div class="md-output">
-                    <h1><span class="md-mark" aria-hidden="true"># </span>Houssem Ben Ali</h1>
-                    <p class="md-quote"><span class="md-mark" aria-hidden="true">&gt; </span>DevOps &amp; SecOps Engineer &middot; <span class="role-typed" id="roleTyped">IT Consultant</span><span class="cursor-blink"></span></p>
-
-                    <div class="badges-row">
-                        <span class="badge-pill"><span class="badge-label">build</span><span class="badge-value green">passing</span></span>
-                        <span class="badge-pill"><span class="badge-label">status</span><span class="badge-value green">online</span></span>
-                        <span class="badge-pill"><span class="badge-label">open&nbsp;source</span><span class="badge-value blue">yes</span></span>
-                        <span class="badge-pill"><span class="badge-label">PRs</span><span class="badge-value blue">welcome</span></span>
-                    </div>
-
-                    <p class="meta-line"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-location-dot"/></svg> Tunisia / France &middot; Remote &middot; 8 years experience</p>
-
-                    <h2 class="md-h2" id="tools"><span class="md-mark" aria-hidden="true">## </span>&#128736;&#65039; Security Tools</h2>
-                    <p class="lead">11 free, open-source tools to check your email authentication, DNS and TLS setup. No sign-up. Press <kbd>/</kbd> to search.</p>
-
-                    <div class="tool-filter" role="search">
-                        <span class="prompt" aria-hidden="true"><span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span></span>
-                        <label for="toolFilter">grep -i</label>
-                        <input type="search" id="toolFilter" placeholder="dmarc, tls, dns&hellip;" autocomplete="off" spellcheck="false" aria-controls="toolsList">
-                        <kbd aria-hidden="true">/</kbd>
-                        <span class="tool-count" id="toolCount" role="status" aria-live="polite">11 tools</span>
-                    </div>
-
-                    <div id="toolsList">
-                    <div class="tool-group">
-                        <h3><span class="md-mark" aria-hidden="true">### </span>email authentication</h3>
-                        <div class="tools-grid">
-                            <a href="https://spf.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                                <div class="tool-head">
-                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-shield-halved"/></svg>spf.hbenali.ovh</span>
-                                    <span class="status-label"><span class="status-dot"></span>online</span>
-                                </div>
-                                <p class="tool-desc">SPF Checker &mdash; inspect authorized senders and catch lookup-limit issues.</p>
-                                <p class="tool-checks"><b>checks:</b> SPF DNS record</p>
-                                <div class="topic-tags"><span class="topic-tag">spf</span><span class="topic-tag">anti-spoofing</span></div>
-                            </a>
-                            <a href="https://dkim.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                                <div class="tool-head">
-                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-envelope"/></svg>dkim.hbenali.ovh</span>
-                                    <span class="status-label"><span class="status-dot"></span>online</span>
-                                </div>
-                                <p class="tool-desc">DKIM Validator &mdash; verify your mail is signed correctly and hard to spoof.</p>
-                                <p class="tool-checks"><b>checks:</b> DKIM DNS record</p>
-                                <div class="topic-tags"><span class="topic-tag">dkim</span><span class="topic-tag">email-auth</span></div>
-                            </a>
-                            <a href="https://dmarc.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                                <div class="tool-head">
-                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-chart-line"/></svg>dmarc.hbenali.ovh</span>
-                                    <span class="status-label"><span class="status-dot"></span>online</span>
-                                </div>
-                                <p class="tool-desc">DMARC Analyzer &mdash; read policies and reports, monitor domain abuse.</p>
-                                <p class="tool-checks"><b>checks:</b> DMARC DNS record</p>
-                                <div class="topic-tags"><span class="topic-tag">dmarc</span><span class="topic-tag">reporting</span></div>
-                            </a>
-                            <a href="https://bimi.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                                <div class="tool-head">
-                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-image"/></svg>bimi.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                    <span class="status-label"><span class="status-dot"></span>online</span>
-                                </div>
-                                <p class="tool-desc">BIMI Inspector &mdash; check logo/VMC requirements for brand indicators.</p>
-                                <p class="tool-checks"><b>checks:</b> BIMI record, DMARC readiness, VMC certificate</p>
-                                <div class="topic-tags"><span class="topic-tag">bimi</span><span class="topic-tag">branding</span></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="tool-group">
-                        <h3><span class="md-mark" aria-hidden="true">### </span>dns &amp; certificates</h3>
-                        <div class="tools-grid">
-                            <a href="https://caa.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                                <div class="tool-head">
-                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-lock"/></svg>caa.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                    <span class="status-label"><span class="status-dot"></span>online</span>
-                                </div>
-                                <p class="tool-desc">CAA Inspector &mdash; see which CAs are authorized to issue certs for your domain.</p>
-                                <p class="tool-checks"><b>checks:</b> CAA records (inspector and generator)</p>
-                                <div class="topic-tags"><span class="topic-tag">pki</span><span class="topic-tag">tls</span></div>
-                            </a>
-                            <a href="https://dnssec.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                                <div class="tool-head">
-                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-link"/></svg>dnssec.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                    <span class="status-label"><span class="status-dot"></span>online</span>
-                                </div>
-                                <p class="tool-desc">DNSSEC Inspector &mdash; validate a domain's chain of trust and see why it failed if it did.</p>
-                                <p class="tool-checks"><b>checks:</b> DNSSEC chain of trust and failure diagnosis</p>
-                                <div class="topic-tags"><span class="topic-tag">dnssec</span><span class="topic-tag">dns-security</span></div>
-                            </a>
-                            <a href="https://ssl.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                                <div class="tool-head">
-                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-certificate"/></svg>ssl.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                    <span class="status-label"><span class="status-dot"></span>online</span>
-                                </div>
-                                <p class="tool-desc">SSL Checker &mdash; quickly validate a TLS certificate chain for any domain.</p>
-                                <p class="tool-checks"><b>checks:</b> TLS certificate chain</p>
-                                <div class="topic-tags"><span class="topic-tag">tls</span><span class="topic-tag">certs</span></div>
-                            </a>
-                            <a href="https://rdap.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                                <div class="tool-head">
-                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-magnifying-glass"/></svg>rdap.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                    <span class="status-label"><span class="status-dot"></span>online</span>
-                                </div>
-                                <p class="tool-desc">RDAP Inspector &mdash; modern, structured domain/IP/ASN lookups replacing WHOIS.</p>
-                                <p class="tool-checks"><b>checks:</b> Domain, IP and ASN registration (RDAP)</p>
-                                <div class="topic-tags"><span class="topic-tag">rdap</span><span class="topic-tag">whois</span></div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="tool-group">
-                        <h3><span class="md-mark" aria-hidden="true">### </span>network &amp; developer tools</h3>
-                        <div class="tools-grid">
-                            <a href="https://ip.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                                <div class="tool-head">
-                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-globe"/></svg>ip.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                    <span class="status-label"><span class="status-dot"></span>online</span>
-                                </div>
-                                <p class="tool-desc">IP Inspector &mdash; geolocation, network intel, and security context.</p>
-                                <p class="tool-checks"><b>checks:</b> Geolocation, ISP/ASN, VPN/proxy/Tor detection</p>
-                                <div class="topic-tags"><span class="topic-tag">network</span><span class="topic-tag">geoip</span></div>
-                            </a>
-                            <a href="https://commitsign.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                                <div class="tool-head">
-                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-file-signature"/></svg>commitsign.hbenali.ovh<span class="pwa-badge" title="Installable as an app">📲 PWA</span></span>
-                                    <span class="status-label"><span class="status-dot"></span>online</span>
-                                </div>
-                                <p class="tool-desc">CommitSign &mdash; one-command SSH commit signing setup, plus manual SSH/GPG guides.</p>
-                                <p class="tool-checks"><b>checks:</b> Git SSH commit signing scripts and guides</p>
-                                <div class="topic-tags"><span class="topic-tag">git</span><span class="topic-tag">signing</span></div>
-                            </a>
-                            <a href="https://frontail.hbenali.ovh" class="tool-entry" target="_blank" rel="noopener" data-tool>
-                                <div class="tool-head">
-                                    <span class="tool-name"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-scroll"/></svg>frontail.hbenali.ovh</span>
-                                    <span class="status-label"><span class="status-dot"></span>online</span>
-                                </div>
-                                <p class="tool-desc">Frontail &mdash; stream and filter log files live in the browser.</p>
-                                <p class="tool-checks"><b>checks:</b> Live log streaming (demo)</p>
-                                <div class="topic-tags"><span class="topic-tag">logs</span><span class="topic-tag">observability</span></div>
-                            </a>
-                        </div>
-                    </div>
-                        <p class="tool-empty" id="toolEmpty" hidden>No tool matches that search. Press <kbd>Esc</kbd> to clear it.</p>
-                    </div>
-
-                    <h2 class="md-h2"><span class="md-mark" aria-hidden="true">## </span>About</h2>
-                    <div class="about-text">
-                        <p>DevOps &amp; SecOps Engineer with 8 years in software, from <strong>frontend and J2EE development</strong> and <strong>technical support</strong> to <strong>DevOps</strong> since 2020. I run the software factory and release pipeline at <strong>eXo Platform</strong> (Jenkins, Nexus, GitHub Actions, signed Docker images) and maintain the internal tool that deploys its acceptance and demo environments.</p>
-                        <p>I also host and secure the infrastructure (Puppet, Ansible, Google Cloud, OVH; TLS, DNS and email authentication), use AI assistants daily to speed up automation and review, and ship the tools above in my spare time to help the community check their email authentication and DNS security posture.</p>
-                    </div>
-
-                    <h2 class="md-h2"><span class="md-mark" aria-hidden="true">## </span>&#9881;&#65039; Tech Stack</h2>
-                    <pre class="code-block"><code><span class="yaml-key">containers</span><span class="yaml-punc">:</span> <span class="yaml-punc">[</span><span class="yaml-val">Docker</span><span class="yaml-punc">]</span>
-<span class="yaml-key">iac</span><span class="yaml-punc">:</span>        <span class="yaml-punc">[</span><span class="yaml-val">Terraform</span><span class="yaml-punc">,</span> <span class="yaml-val">Puppet</span><span class="yaml-punc">,</span> <span class="yaml-val">Ansible</span><span class="yaml-punc">]</span>
-<span class="yaml-key">cloud</span><span class="yaml-punc">:</span>      <span class="yaml-punc">[</span><span class="yaml-val">Google Cloud</span><span class="yaml-punc">,</span> <span class="yaml-val">OVH</span><span class="yaml-punc">]</span>
-<span class="yaml-key">os</span><span class="yaml-punc">:</span>         <span class="yaml-punc">[</span><span class="yaml-val">Linux</span><span class="yaml-punc">]</span>
-<span class="yaml-key">vcs</span><span class="yaml-punc">:</span>        <span class="yaml-punc">[</span><span class="yaml-val">Git</span><span class="yaml-punc">,</span> <span class="yaml-val">GitHub Actions</span><span class="yaml-punc">,</span> <span class="yaml-val">Jenkins</span><span class="yaml-punc">]</span>
-<span class="yaml-key">languages</span><span class="yaml-punc">:</span>  <span class="yaml-punc">[</span><span class="yaml-val">Python</span><span class="yaml-punc">,</span> <span class="yaml-val">Bash</span><span class="yaml-punc">]</span></code></pre>
-
-                    <h2 class="md-h2"><span class="md-mark" aria-hidden="true">## </span>&#128248; Contact</h2>
-                    <ul class="md-list">
-                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://github.com/hbenali" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-github"/></svg>github.com/hbenali</a></li>
-                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://linkedin.com/in/houssembali" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-linkedin"/></svg>linkedin.com/in/houssembali</a></li>
-                        <li><span class="md-mark" aria-hidden="true">- </span><a href="mailto:contact@hbenali.ovh" id="emailLink"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-envelope"/></svg>contact@hbenali.ovh</a> <span class="copy-hint" id="copyHint">copied to clipboard</span></li>
-                        <li><span class="md-mark" aria-hidden="true">- </span><a href="https://about.hbenali.ovh" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="icons.svg#i-user"/></svg>about.hbenali.ovh</a></li>
-                    </ul>
-
-                    <div class="launch-block">
-                        <p class="cmd-line">
-                            <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
-                            <span>open about.hbenali.ovh</span>
-                        </p>
-                        <a href="https://about.hbenali.ovh" class="site-btn" target="_blank" rel="noopener">
-                            <svg class="icon" aria-hidden="true"><use href="icons.svg#i-arrow-up-right-from-square"/></svg> Visit the full site
-                        </a>
-                    </div>
-
-                    <p class="final-prompt">
-                        <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
-                        <span class="cursor-blink"></span>
-                    </p>
-                </div>
-            </div>
-
-            <div class="status-bar">
-                <span class="sb-mode">NORMAL</span>
-                <span class="sb-info">
-                    <span>README.md</span>
-                    <span>UTF-8</span>
-                    <span>bash</span>
-                    <span>&copy; 2026 Houssem Ben Ali</span>
-                    <a href="https://github.com/hbenali" target="_blank" rel="noopener">All tools free &amp; open-source</a>
-                </span>
-            </div>
+    <header class="bar">
+        <div class="bar-inner">
+            <a class="mark" href="/" aria-label="hbenali.ovh, home">hbenali.ovh</a>
+            <nav aria-label="Sections">
+                <ul>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#stack">Stack</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a class="bar-end link" href="https://about.hbenali.ovh" target="_blank" rel="noopener">Portfolio</a>
         </div>
-        <p class="respawn-msg" id="respawnMsg" aria-hidden="true">$ respawning shell&hellip;<span class="cursor-blink"></span></p>
-        </main>
-    </div>
+    </header>
+
+    <main>
+        <section class="hero wrap" aria-labelledby="top-title">
+            <h1 id="top-title" class="display">
+                <span class="line"><span>Check your email,</span></span>
+                <span class="line"><span>DNS and TLS.</span></span>
+            </h1>
+            <p class="lead">11 free, open-source tools to check your email authentication, DNS and TLS setup. No sign-up.</p>
+            <p class="by">By Houssem Ben Ali, DevOps and SecOps engineer. Tunisia, France and remote.</p>
+        </section>
+
+        <section id="tools" class="wrap block" aria-labelledby="tools-title">
+            <div class="block-head">
+                <div>
+                    <h2 id="tools-title" class="display block-title">Security tools</h2>
+                    <div class="filter" role="search">
+                        <label for="toolFilter">Filter the tools</label>
+                        <div class="filter-row">
+                            <input type="search" id="toolFilter" placeholder="dmarc, tls, dns&hellip;" autocomplete="off" spellcheck="false" aria-controls="toolsList">
+                            <kbd aria-hidden="true">/</kbd>
+                        </div>
+                        <p class="filter-count" id="toolCount" role="status" aria-live="polite">11 tools</p>
+                    </div>
+                </div>
+            </div>
+            <div class="block-body" id="toolsList">
+                <div class="tool-group">
+                    <h3>Email authentication</h3>
+                    <a href="https://spf.hbenali.ovh" class="tool" target="_blank" rel="noopener" data-tool>
+                        <span class="tool-name">spf.hbenali.ovh</span>
+                        <span class="tool-status"><span class="dot" aria-hidden="true"></span>online</span>
+                        <span class="tool-desc">SPF Checker &mdash; inspect authorized senders and catch lookup-limit issues.</span>
+                        <span class="tool-meta">Checks: SPF DNS record. <i>spf, anti-spoofing</i><span class="sr-only"> (opens in a new tab)</span></span>
+                    </a>
+                    <a href="https://dkim.hbenali.ovh" class="tool" target="_blank" rel="noopener" data-tool>
+                        <span class="tool-name">dkim.hbenali.ovh</span>
+                        <span class="tool-status"><span class="dot" aria-hidden="true"></span>online</span>
+                        <span class="tool-desc">DKIM Validator &mdash; verify your mail is signed correctly and hard to spoof.</span>
+                        <span class="tool-meta">Checks: DKIM DNS record. <i>dkim, email-auth</i><span class="sr-only"> (opens in a new tab)</span></span>
+                    </a>
+                    <a href="https://dmarc.hbenali.ovh" class="tool" target="_blank" rel="noopener" data-tool>
+                        <span class="tool-name">dmarc.hbenali.ovh</span>
+                        <span class="tool-status"><span class="dot" aria-hidden="true"></span>online</span>
+                        <span class="tool-desc">DMARC Analyzer &mdash; read policies and reports, monitor domain abuse.</span>
+                        <span class="tool-meta">Checks: DMARC DNS record. <i>dmarc, reporting</i><span class="sr-only"> (opens in a new tab)</span></span>
+                    </a>
+                    <a href="https://bimi.hbenali.ovh" class="tool" target="_blank" rel="noopener" data-tool>
+                        <span class="tool-name">bimi.hbenali.ovh<span class="pwa" title="Installable as an app">PWA</span></span>
+                        <span class="tool-status"><span class="dot" aria-hidden="true"></span>online</span>
+                        <span class="tool-desc">BIMI Inspector &mdash; check logo/VMC requirements for brand indicators.</span>
+                        <span class="tool-meta">Checks: BIMI record, DMARC readiness, VMC certificate. <i>bimi, branding</i><span class="sr-only"> (opens in a new tab)</span></span>
+                    </a>
+                </div>
+                <div class="tool-group">
+                    <h3>DNS &amp; certificates</h3>
+                    <a href="https://caa.hbenali.ovh" class="tool" target="_blank" rel="noopener" data-tool>
+                        <span class="tool-name">caa.hbenali.ovh<span class="pwa" title="Installable as an app">PWA</span></span>
+                        <span class="tool-status"><span class="dot" aria-hidden="true"></span>online</span>
+                        <span class="tool-desc">CAA Inspector &mdash; see which CAs are authorized to issue certs for your domain.</span>
+                        <span class="tool-meta">Checks: CAA records (inspector and generator). <i>pki, tls</i><span class="sr-only"> (opens in a new tab)</span></span>
+                    </a>
+                    <a href="https://dnssec.hbenali.ovh" class="tool" target="_blank" rel="noopener" data-tool>
+                        <span class="tool-name">dnssec.hbenali.ovh<span class="pwa" title="Installable as an app">PWA</span></span>
+                        <span class="tool-status"><span class="dot" aria-hidden="true"></span>online</span>
+                        <span class="tool-desc">DNSSEC Inspector &mdash; validate a domain's chain of trust and see why it failed if it did.</span>
+                        <span class="tool-meta">Checks: DNSSEC chain of trust and failure diagnosis. <i>dnssec, dns-security</i><span class="sr-only"> (opens in a new tab)</span></span>
+                    </a>
+                    <a href="https://ssl.hbenali.ovh" class="tool" target="_blank" rel="noopener" data-tool>
+                        <span class="tool-name">ssl.hbenali.ovh<span class="pwa" title="Installable as an app">PWA</span></span>
+                        <span class="tool-status"><span class="dot" aria-hidden="true"></span>online</span>
+                        <span class="tool-desc">SSL Checker &mdash; quickly validate a TLS certificate chain for any domain.</span>
+                        <span class="tool-meta">Checks: TLS certificate chain. <i>tls, certs</i><span class="sr-only"> (opens in a new tab)</span></span>
+                    </a>
+                    <a href="https://rdap.hbenali.ovh" class="tool" target="_blank" rel="noopener" data-tool>
+                        <span class="tool-name">rdap.hbenali.ovh<span class="pwa" title="Installable as an app">PWA</span></span>
+                        <span class="tool-status"><span class="dot" aria-hidden="true"></span>online</span>
+                        <span class="tool-desc">RDAP Inspector &mdash; modern, structured domain/IP/ASN lookups replacing WHOIS.</span>
+                        <span class="tool-meta">Checks: Domain, IP and ASN registration (RDAP). <i>rdap, whois</i><span class="sr-only"> (opens in a new tab)</span></span>
+                    </a>
+                </div>
+                <div class="tool-group">
+                    <h3>Network &amp; developer tools</h3>
+                    <a href="https://ip.hbenali.ovh" class="tool" target="_blank" rel="noopener" data-tool>
+                        <span class="tool-name">ip.hbenali.ovh<span class="pwa" title="Installable as an app">PWA</span></span>
+                        <span class="tool-status"><span class="dot" aria-hidden="true"></span>online</span>
+                        <span class="tool-desc">IP Inspector &mdash; geolocation, network intel, and security context.</span>
+                        <span class="tool-meta">Checks: Geolocation, ISP/ASN, VPN/proxy/Tor detection. <i>network, geoip</i><span class="sr-only"> (opens in a new tab)</span></span>
+                    </a>
+                    <a href="https://commitsign.hbenali.ovh" class="tool" target="_blank" rel="noopener" data-tool>
+                        <span class="tool-name">commitsign.hbenali.ovh<span class="pwa" title="Installable as an app">PWA</span></span>
+                        <span class="tool-status"><span class="dot" aria-hidden="true"></span>online</span>
+                        <span class="tool-desc">CommitSign &mdash; one-command SSH commit signing setup, plus manual SSH/GPG guides.</span>
+                        <span class="tool-meta">Checks: Git SSH commit signing scripts and guides. <i>git, signing</i><span class="sr-only"> (opens in a new tab)</span></span>
+                    </a>
+                    <a href="https://frontail.hbenali.ovh" class="tool" target="_blank" rel="noopener" data-tool>
+                        <span class="tool-name">frontail.hbenali.ovh</span>
+                        <span class="tool-status"><span class="dot" aria-hidden="true"></span>online</span>
+                        <span class="tool-desc">Frontail &mdash; stream and filter log files live in the browser.</span>
+                        <span class="tool-meta">Checks: Live log streaming (demo). <i>logs, observability</i><span class="sr-only"> (opens in a new tab)</span></span>
+                    </a>
+                </div>
+                <p class="tool-empty" id="toolEmpty" hidden>No tool matches that search. Press <kbd>Esc</kbd> to clear it.</p>
+            </div>
+        </section>
+
+        <section id="about" class="wrap block" aria-labelledby="about-title">
+            <div class="block-head"><div><h2 id="about-title" class="display block-title">About</h2></div></div>
+            <div class="block-body about-text">
+                    <p>DevOps &amp; SecOps Engineer with 8 years in software, from <strong>frontend and J2EE development</strong> and <strong>technical support</strong> to <strong>DevOps</strong> since 2020. I run the software factory and release pipeline at <strong>eXo Platform</strong> (Jenkins, Nexus, GitHub Actions, signed Docker images) and maintain the internal tool that deploys its acceptance and demo environments.</p>
+                    <p>I also host and secure the infrastructure (Puppet, Ansible, Google Cloud, OVH; TLS, DNS and email authentication), use AI assistants daily to speed up automation and review, and ship the tools above in my spare time to help the community check their email authentication and DNS security posture.</p>
+            </div>
+        </section>
+
+        <section id="stack" class="wrap block" aria-labelledby="stack-title">
+            <div class="block-head"><div><h2 id="stack-title" class="display block-title">Tech stack</h2></div></div>
+            <div class="block-body">
+                <dl class="stack">
+                    <div><dt>Containers</dt><dd>Docker.</dd></div>
+                    <div><dt>Infrastructure as code</dt><dd>Terraform, Puppet, Ansible.</dd></div>
+                    <div><dt>Cloud</dt><dd>Google Cloud, OVH.</dd></div>
+                    <div><dt>System</dt><dd>Linux.</dd></div>
+                    <div><dt>Source and CI</dt><dd>Git, GitHub Actions, Jenkins.</dd></div>
+                    <div><dt>Languages</dt><dd>Python, Bash.</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section id="contact" class="wrap block" aria-labelledby="contact-title">
+            <div class="block-head"><div><h2 id="contact-title" class="display block-title">Contact</h2></div></div>
+            <div class="block-body">
+                <a class="link display contact-mail" href="mailto:contact@hbenali.ovh" id="emailLink">contact@hbenali.ovh</a>
+                <div><button type="button" class="copy link" id="copyBtn"><span id="copyLabel" role="status" aria-live="polite">Copy address</span></button></div>
+                <ul class="contact-links">
+                    <li><a class="link" href="https://github.com/hbenali" target="_blank" rel="noopener">github.com/hbenali</a></li>
+                    <li><a class="link" href="https://linkedin.com/in/houssembali" target="_blank" rel="noopener">linkedin.com/in/houssembali</a></li>
+                    <li><a class="link" href="https://about.hbenali.ovh" target="_blank" rel="noopener">about.hbenali.ovh</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="foot">
+        <div>
+            <span>&copy; 2026 Houssem Ben Ali</span>
+            <a class="link" href="https://github.com/hbenali" target="_blank" rel="noopener">All tools free &amp; open-source</a>
+        </div>
+    </footer>
 </body>
 
 </html>

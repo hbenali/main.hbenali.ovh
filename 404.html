@@ -12,82 +12,32 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#0d1117">
+    <meta name="theme-color" content="#0c1218">
     <link rel="canonical" href="https://www.hbenali.ovh/404.html">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- Absolute paths: this page is served for any missing URL, at any depth -->
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/jetbrains-mono-latin-wght.woff2" crossorigin>
-    <link rel="stylesheet" href="/404.css">
-    <script src="/theme.js"></script>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/big-shoulders-latin-wght.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader-latin-wght.woff2" crossorigin>
+    <link rel="stylesheet" href="/site.css">
     <script src="/404.js" defer></script>
 </head>
 
 <body>
-    <div class="controls">
-        <button type="button" class="control-btn theme-toggle" aria-label="Toggle dark mode" title="Toggle theme" aria-pressed="true">
-            <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-sun"/></svg>
-        </button>
-    </div>
+    <main class="nf wrap">
+        <p class="display nf-code" aria-hidden="true">404</p>
+        <h1 class="display">This page does not exist</h1>
+        <p class="nf-lead">The address may be mistyped, or the page has moved. Start again from the home page.</p>
 
-    <div class="container">
-        <main>
-            <div class="terminal-window">
-                <div class="terminal-titlebar">
-                    <div class="terminal-title"><svg class="icon title-icon" aria-hidden="true"><use href="/icons.svg#i-terminal"/></svg>houssem@devops: ~ &mdash; bash &mdash; 404</div>
-                    <div class="win-controls">
-                        <span class="win-btn"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-minus"/></svg></span>
-                        <span class="win-btn"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-square"/></svg></span>
-                        <span class="win-btn"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-xmark"/></svg></span>
-                    </div>
-                </div>
+        <ul class="nf-links">
+            <li><a class="link" href="/">Home, www.hbenali.ovh</a></li>
+            <li><a class="link" href="https://about.hbenali.ovh" target="_blank" rel="noopener">about.hbenali.ovh<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><a class="link" href="https://github.com/hbenali" target="_blank" rel="noopener">github.com/hbenali<span class="sr-only"> (opens in a new tab)</span></a></li>
+        </ul>
 
-                <div class="terminal-body">
-                    <p class="cmd-line">
-                        <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
-                        <span class="prompt-cmd">cat <span id="reqPath">.</span></span>
-                    </p>
-                    <p class="err-line">cat: <span id="reqPathEcho">.</span>: No such file or directory</p>
-
-                    <div class="md-output">
-                        <h1><span class="md-mark" aria-hidden="true">## </span>404</h1>
-                        <p class="md-quote"><span class="md-mark" aria-hidden="true">&gt; </span>This path doesn't exist in the filesystem.</p>
-
-                        <ul class="md-list">
-                            <li><span class="md-mark" aria-hidden="true">- </span><a href="/"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-house"/></svg>Home &mdash; www.hbenali.ovh</a></li>
-                            <li><span class="md-mark" aria-hidden="true">- </span><a href="https://about.hbenali.ovh" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-user"/></svg>about.hbenali.ovh</a></li>
-                            <li><span class="md-mark" aria-hidden="true">- </span><a href="https://github.com/hbenali" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="/icons.svg#i-github"/></svg>github.com/hbenali</a></li>
-                        </ul>
-
-                        <p class="cmd-line launch-block-cmd">
-                            <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
-                            <span>cd ~ &amp;&amp; open .</span>
-                        </p>
-                        <a href="/" class="site-btn">
-                            <svg class="icon" aria-hidden="true"><use href="/icons.svg#i-arrow-left"/></svg> Back to the terminal
-                        </a>
-
-                        <p class="final-prompt">
-                            <span class="prompt-user">houssem@devops</span><span class="prompt-path">:~</span><span class="prompt-dollar">$</span>
-                            <span class="cursor-blink"></span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="status-bar">
-                    <span class="sb-mode">ERROR</span>
-                    <span class="sb-info">
-                        <span>404.html</span>
-                        <span>UTF-8</span>
-                        <span>bash</span>
-                        <span>&copy; 2026 Houssem Ben Ali</span>
-                    </span>
-                </div>
-            </div>
-        </main>
-    </div>
-
+        <p class="nf-log" aria-hidden="true"><span class="dim">$ </span>curl -I https://www.hbenali.ovh<span id="reqPath"></span><br><span class="err">HTTP/1.1 404 Not Found</span></p>
+    </main>
 </body>
 
 </html>
