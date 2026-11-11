@@ -13,6 +13,7 @@ Live at https://www.hbenali.ovh. No backend, single static `index.html`.
 - [IP Inspector](https://ip.hbenali.ovh/): IP geolocation, ISP/ASN, and VPN/proxy/Tor detection.
 - [DKIM Checker](https://dkim.hbenali.ovh/): DKIM DNS record inspector.
 - [DMARC Checker](https://dmarc.hbenali.ovh/): DMARC DNS record inspector.
+- [MX Checker](https://mx.hbenali.ovh/): DNS MX record inspector and generator.
 - [SPF Checker](https://spf.hbenali.ovh/): SPF DNS record inspector.
 - [CommitSign](https://commitsign.hbenali.ovh/): Git SSH commit signing setup scripts and guides.
 - [frontail](https://frontail.hbenali.ovh/): streams log files to the browser, live demo.
