@@ -15,6 +15,16 @@ Live at https://www.hbenali.ovh. No backend, single static `index.html`.
 - [DMARC Checker](https://dmarc.hbenali.ovh/): DMARC DNS record inspector.
 - [MX Checker](https://mx.hbenali.ovh/): DNS MX record inspector and generator.
 - [SPF Checker](https://spf.hbenali.ovh/): SPF DNS record inspector.
+- [Email Health Audit](https://email.hbenali.ovh/): one-page grade for MX, SPF, DKIM, DMARC, BIMI and MTA-STS.
+- [MTA-STS Checker](https://mtasts.hbenali.ovh/): MTA-STS and TLS-RPT validator and generator.
+- [DANE Inspector](https://dane.hbenali.ovh/): TLSA record lookup and certificate matching.
+- [Email Header Analyzer](https://headers.hbenali.ovh/): offline email header analysis.
+- [DNS Lookup](https://dns.hbenali.ovh/): any DNS record type over DNS-over-HTTPS.
+- [Delegation Checker](https://delegation.hbenali.ovh/): nameserver, SOA and DS checks.
+- [Propagation Checker](https://propagation.hbenali.ovh/): compare answers from several public resolvers.
+- [Certificate Transparency Search](https://ct.hbenali.ovh/): certificates and subdomains from CT logs.
+- [Security Headers Grader](https://headers-sec.hbenali.ovh/): grade HTTP security headers.
+- [security.txt Validator](https://securitytxt.hbenali.ovh/): RFC 9116 validator and generator.
 - [CommitSign](https://commitsign.hbenali.ovh/): Git SSH commit signing setup scripts and guides.
 - [frontail](https://frontail.hbenali.ovh/): streams log files to the browser, live demo.
 
