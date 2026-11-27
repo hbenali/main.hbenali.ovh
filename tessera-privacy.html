@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tessera - Privacy Policy | Houssem Ben Ali</title>
+
+    <meta name="description" content="Privacy policy for Tessera, a fast and private Matrix chat client (web app and Android app).">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Houssem Ben Ali">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#0c1218">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#0c1218" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f4efe4" media="(prefers-color-scheme: light)">
+    <link rel="canonical" href="https://www.hbenali.ovh/tessera-privacy.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tessera - Privacy Policy">
+    <meta property="og:description" content="Privacy policy for the Tessera Matrix client.">
+    <meta property="og:url" content="https://www.hbenali.ovh/tessera-privacy.html">
+    <meta property="og:image" content="https://www.hbenali.ovh/android-chrome-512x512.png">
+    <meta property="og:site_name" content="Houssem Ben Ali">
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/big-shoulders-latin-wght.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/newsreader-latin-wght.woff2" crossorigin>
+    <script src="/theme.js"></script>
+    <link rel="stylesheet" href="/site.css">
+</head>
+
+<body>
+
+    <div class="controls">
+        <button class="control-btn lang-toggle" aria-label="Switch language" title="Switch language">
+            <span class="lang-toggle-label">FR</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <div id="lang-en" class="lang-content">
+            <a href="/" class="back-link">Back to hbenali.ovh</a>
+
+            <div class="page-header">
+                <div class="badge">Tessera for web and Android</div>
+                <h1>Privacy Policy</h1>
+                <p class="updated">Last updated: November 27, 2026</p>
+            </div>
+
+            <div class="card">
+                <h2>Overview</h2>
+                <p>Tessera is a Matrix chat client. It is available as a web app at tessera.hbenali.ovh and as an Android app, which is a Trusted Web Activity: a thin shell that opens the same web app full screen in Chrome. It is free, open source and not affiliated with the Matrix.org Foundation.</p>
+                <p>The developer runs no account system and no message server. You sign in to a homeserver of your choice (for example matrix.org or your own), and your messages, contacts and files are handled by that homeserver under its own privacy policy. The developer does not receive them.</p>
+            </div>
+
+            <div class="card">
+                <h2>Data stored on your device</h2>
+                <p>To work, the app keeps on your device: your session (including the access token issued by your homeserver), the encryption keys and message cache needed for end-to-end encrypted rooms, drafts, and your settings. These live in the browser storage of the web app (localStorage and IndexedDB) and are only sent to your own homeserver. Nothing is sent to the developer.</p>
+                <p>Signing out removes this data from the device. Uninstalling the app or clearing its site data does too.</p>
+            </div>
+
+            <div class="card">
+                <h2>Background notifications (optional)</h2>
+                <p>If you turn background notifications on, your homeserver asks a push gateway run by the developer (push.hbenali.ovh) to wake your device. The gateway receives the event and room identifiers, an unread count, and your device's push address, and passes a wake-up to your browser vendor's push service (Google's for Chrome on Android). It never receives the text of your messages: the app fetches the message from your homeserver itself, and encrypted rooms show "Encrypted message". The gateway keeps only short-lived operational logs (size-capped and rotated) and shares nothing with anyone else.</p>
+                <p>You can turn this off at any time in Settings, Notifications.</p>
+            </div>
+
+            <div class="card">
+                <h2>Link previews, location, camera and microphone</h2>
+                <p>Link previews are built by your homeserver, never in encrypted rooms and never for private addresses, and can be switched off in Settings, Privacy. Your location is only sent when you choose to share it in a conversation, to the people in that room via your homeserver; no map tiles are loaded until you click a map link, which opens OpenStreetMap. The camera and microphone are used only for calls and for attaching photos or voice messages, and only after you grant the permission.</p>
+            </div>
+
+            <div class="card">
+                <h2>No tracking</h2>
+                <p>Tessera contains no analytics, advertising, tracking or crash-reporting service, and loads no third-party scripts or fonts. The Android app only runs in Chrome; Chrome and Google Play are subject to Google's own privacy policy.</p>
+            </div>
+
+            <div class="card">
+                <h2>Deleting your account and data</h2>
+                <p>You can create an account on homeservers that allow it, and delete it from Settings, Account, Deactivate account. Deactivation is carried out by your homeserver, which decides what it retains. Because the developer holds none of your data, there is nothing to request from the developer; for data kept by your homeserver, contact its administrator.</p>
+            </div>
+
+            <div class="card">
+                <h2>Children's privacy</h2>
+                <p>Tessera is a general-purpose messaging client and is not directed at children under 13. It does not knowingly collect information from children.</p>
+            </div>
+
+            <div class="card">
+                <h2>Changes to this policy</h2>
+                <p>If this policy changes, the "Last updated" date above will be revised.</p>
+            </div>
+
+            <div class="card">
+                <h2>Contact</h2>
+                <p>Questions about this policy or the app: <a href="mailto:contact@hbenali.ovh">contact@hbenali.ovh</a>, or open an issue on <a href="https://github.com/hbenali/tessera/issues">GitHub</a>.</p>
+            </div>
+
+            <footer>
+                &copy; 2026 Houssem Ben Ali &middot; <a href="/">hbenali.ovh</a>
+            </footer>
+        </div>
+
+        <div id="lang-fr" class="lang-content" style="display: none;">
+            <a href="/" class="back-link">Retour à hbenali.ovh</a>
+
+            <div class="page-header">
+                <div class="badge">Tessera pour le web et Android</div>
+                <h1>Politique de confidentialité</h1>
+                <p class="updated">Dernière mise à jour : 27 novembre 2026</p>
+            </div>
+
+            <div class="card">
+                <h2>Aperçu</h2>
+                <p>Tessera est un client de messagerie Matrix. Il est disponible en application web sur tessera.hbenali.ovh et en application Android, qui est une Trusted Web Activity : une enveloppe légère qui ouvre la même application web en plein écran dans Chrome. Il est gratuit, open source et sans lien avec la Matrix.org Foundation.</p>
+                <p>Le développeur n'exploite ni système de comptes ni serveur de messages. Vous vous connectez au serveur d'accueil (homeserver) de votre choix (par exemple matrix.org ou le vôtre), et vos messages, contacts et fichiers sont traités par ce serveur selon sa propre politique de confidentialité. Le développeur ne les reçoit pas.</p>
+            </div>
+
+            <div class="card">
+                <h2>Données stockées sur votre appareil</h2>
+                <p>Pour fonctionner, l'application conserve sur votre appareil : votre session (dont le jeton d'accès délivré par votre serveur), les clés de chiffrement et le cache de messages nécessaires aux salons chiffrés de bout en bout, les brouillons et vos réglages. Ces données résident dans le stockage du navigateur de l'application web (localStorage et IndexedDB) et ne sont envoyées qu'à votre propre serveur. Rien n'est envoyé au développeur.</p>
+                <p>Se déconnecter supprime ces données de l'appareil. Désinstaller l'application ou effacer ses données de site fait de même.</p>
+            </div>
+
+            <div class="card">
+                <h2>Notifications en arrière-plan (optionnel)</h2>
+                <p>Si vous activez les notifications en arrière-plan, votre serveur demande à une passerelle push exploitée par le développeur (push.hbenali.ovh) de réveiller votre appareil. La passerelle reçoit les identifiants de l'événement et du salon, un compteur de non-lus et l'adresse push de votre appareil, puis transmet un signal de réveil au service push de votre navigateur (celui de Google pour Chrome sur Android). Elle ne reçoit jamais le texte de vos messages : l'application le récupère elle-même auprès de votre serveur, et les salons chiffrés affichent « Message chiffré ». La passerelle ne conserve que des journaux techniques de courte durée (taille limitée, rotation) et ne les partage avec personne.</p>
+                <p>Vous pouvez la désactiver à tout moment dans Paramètres, Notifications.</p>
+            </div>
+
+            <div class="card">
+                <h2>Aperçus de liens, position, caméra et micro</h2>
+                <p>Les aperçus de liens sont générés par votre serveur, jamais dans les salons chiffrés ni pour des adresses privées, et peuvent être désactivés dans Paramètres, Confidentialité. Votre position n'est envoyée que si vous choisissez de la partager dans une conversation, aux membres du salon via votre serveur ; aucune tuile de carte n'est chargée avant que vous cliquiez sur un lien de carte, qui ouvre OpenStreetMap. La caméra et le micro ne servent qu'aux appels et à l'ajout de photos ou de messages vocaux, et seulement après votre autorisation.</p>
+            </div>
+
+            <div class="card">
+                <h2>Aucun suivi</h2>
+                <p>Tessera ne contient aucun service d'analyse, de publicité, de suivi ou de rapport de plantage, et ne charge ni script ni police tiers. L'application Android s'exécute uniquement dans Chrome ; Chrome et Google Play relèvent de la politique de confidentialité de Google.</p>
+            </div>
+
+            <div class="card">
+                <h2>Suppression de votre compte et de vos données</h2>
+                <p>Vous pouvez créer un compte sur les serveurs qui l'autorisent, et le supprimer depuis Paramètres, Compte, Désactiver le compte. La désactivation est effectuée par votre serveur, qui décide de ce qu'il conserve. Comme le développeur ne détient aucune de vos données, il n'y a rien à lui demander ; pour les données conservées par votre serveur, contactez son administrateur.</p>
+            </div>
+
+            <div class="card">
+                <h2>Confidentialité des enfants</h2>
+                <p>Tessera est un client de messagerie généraliste et ne s'adresse pas aux enfants de moins de 13 ans. Il ne collecte sciemment aucune information auprès d'enfants.</p>
+            </div>
+
+            <div class="card">
+                <h2>Modifications de cette politique</h2>
+                <p>Si cette politique change, la date de « Dernière mise à jour » ci-dessus sera révisée.</p>
+            </div>
+
+            <div class="card">
+                <h2>Contact</h2>
+                <p>Questions sur cette politique ou sur l'application : <a href="mailto:contact@hbenali.ovh">contact@hbenali.ovh</a>, ou ouvrez un ticket sur <a href="https://github.com/hbenali/tessera/issues">GitHub</a>.</p>
+            </div>
+
+            <footer>
+                &copy; 2026 Houssem Ben Ali &middot; <a href="/">hbenali.ovh</a>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const langToggle = document.querySelector('.lang-toggle');
+        const langLabel = langToggle.querySelector('.lang-toggle-label');
+        const contentEn = document.getElementById('lang-en');
+        const contentFr = document.getElementById('lang-fr');
+
+        const getPreferredLang = () => {
+            const saved = localStorage.getItem('lang');
+            if (saved) return saved;
+            return navigator.language.toLowerCase().startsWith('fr') ? 'fr' : 'en';
+        };
+
+        const setLang = (lang) => {
+            contentEn.style.display = lang === 'en' ? '' : 'none';
+            contentFr.style.display = lang === 'fr' ? '' : 'none';
+            langLabel.textContent = lang === 'en' ? 'FR' : 'EN';
+            document.documentElement.lang = lang;
+            localStorage.setItem('lang', lang);
+        };
+
+        setLang(getPreferredLang());
+
+        langToggle.addEventListener('click', () => {
+            setLang(contentEn.style.display === 'none' ? 'en' : 'fr');
+        });
+    </script>
+</body>
+
+</html>
